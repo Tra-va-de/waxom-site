@@ -11,27 +11,56 @@
 
 <body>
     <nav class="nav">
-        <div class="nav__logo logo">
-            <img class="logo__img" src="./src/img/icons/logos.svg" alt="Logo Image">
-            <p class="logo__text">Waxom</p>
-        </div>
+        <div class="container">
+            <div class="nav__logo logo">
+                <svg class="logo__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="64px" height="56px">
+                    <defs>
+                        <filter id="Filter_0">
+                            <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut" />
+                            <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                            <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+                        </filter>
 
-        <ul class="nav__buttons">
-            <li class="nav__button"><a class="nav__link" href="">Home</a></li>
-            <li class="nav__button"><a class="nav__link" href="">About Us</a></li>
-            <li class="nav__button"><a class="nav__link" href="">Portfolio</a></li>
-            <li class="nav__button"><a class="nav__link" href="">Features</a></li>
-            <li class="nav__button"><a class="nav__link" href="">Blog</a></li>
-            <li class="nav__button"><a class="nav__link" href="">Pricing</a></li>
-            <li class="nav__button"><a class="nav__link" href="">Shortcodes</a></li>
-            <li class="nav__button"><a class="nav__link" href="">Contact</a></li>
-        </ul>
+                    </defs>
+                    <g filter="url(#Filter_0)">
+                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                            d="M52.873,55.128 L58.125,45.939 L63.377,55.128 L52.873,55.128 ZM46.303,45.172 L56.811,45.172 L51.557,54.359 L46.303,45.172 ZM51.557,34.451 L56.811,43.641 L46.303,43.641 L51.557,34.451 ZM39.738,33.686 L50.243,33.686 L44.990,42.874 L39.738,33.686 ZM44.990,22.967 L50.243,32.154 L39.738,32.154 L44.990,22.967 ZM33.168,22.202 L43.676,22.202 L38.422,31.390 L33.168,22.202 ZM38.422,11.480 L43.676,20.671 L33.168,20.671 L38.422,11.480 ZM26.600,10.713 L37.108,10.713 L31.854,19.905 L26.600,10.713 ZM31.854,-0.006 L37.108,9.184 L26.600,9.184 L31.854,-0.006 ZM20.032,20.671 L25.286,11.480 L30.540,20.671 L20.032,20.671 ZM13.465,32.154 L18.718,22.967 L23.971,32.154 L13.465,32.154 ZM6.897,43.641 L12.151,34.451 L17.404,43.641 L6.897,43.641 ZM0.331,55.128 L5.582,45.939 L10.836,55.128 L0.331,55.128 ZM17.404,45.172 L12.151,54.359 L6.897,45.172 L17.404,45.172 ZM23.971,33.686 L18.718,42.874 L13.465,33.686 L23.971,33.686 ZM30.540,22.202 L25.286,31.390 L20.032,22.202 L30.540,22.202 ZM37.108,55.128 L26.600,55.128 L31.854,45.939 L37.108,55.128 ZM43.676,45.172 L38.422,54.359 L33.168,45.172 L43.676,45.172 ZM50.243,55.128 L39.738,55.128 L44.990,45.939 L50.243,55.128 Z" />
+                    </g>
+                </svg>
+                <p class="logo__text">Waxom</p>
+            </div>
 
-        <div class="nav__actions">
-            <a class="nav__cart" href=""><img class="nav__img" src="./src/img/icons/icon-cart.svg"
-                    alt="Cart Button"></a>
-            <a class="nav__search" href=""><img class="nav__img" src="./src/img/icons/icon-search.svg"
-                    alt="Search Button"></a>
+            <div class="nav__elements">
+                <ul class="nav__buttons">
+                    <li class="nav__button"><a class="nav__link" href="">Home</a></li>
+                    <li class="nav__button"><a class="nav__link" href="">About Us</a></li>
+                    <li class="nav__button"><a class="nav__link" href="">Portfolio</a></li>
+                    <li class="nav__button"><a class="nav__link" href="">Features</a></li>
+                    <li class="nav__button"><a class="nav__link" href="">Blog</a></li>
+                    <li class="nav__button"><a class="nav__link" href="">Pricing</a></li>
+                    <li class="nav__button"><a class="nav__link" href="">Shortcodes</a></li>
+                    <li class="nav__button"><a class="nav__link" href="">Contact</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <a class="nav__cart" href="">
+                        <svg class="nav__img" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="24px">
+                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                d="M14.995,2.999 L13.496,2.999 C13.496,1.342 11.483,-0.002 8.999,-0.002 C6.514,-0.002 4.501,1.342 4.501,2.999 L3.002,2.999 C1.346,2.999 0.003,4.341 0.003,5.997 L0.003,20.995 C0.003,22.651 1.346,23.994 3.002,23.994 L14.995,23.994 C16.652,23.994 17.994,22.651 17.994,20.995 L17.994,5.997 C17.994,4.341 16.652,2.999 14.995,2.999 ZM8.999,1.498 C10.655,1.498 11.997,1.962 11.997,2.999 L6.000,2.999 C6.000,1.962 7.343,1.498 8.999,1.498 ZM16.495,20.995 C16.495,21.823 15.824,22.494 14.995,22.494 L3.002,22.494 C2.174,22.494 1.502,21.823 1.502,20.995 L1.502,19.495 L16.495,19.495 L16.495,20.995 ZM16.495,17.995 L1.502,17.995 L1.502,5.997 C1.502,5.169 2.174,4.497 3.002,4.497 L4.501,4.497 L4.501,8.998 L6.000,8.998 L6.000,4.497 L11.997,4.497 L11.997,8.998 L13.496,8.998 L13.496,4.497 L14.995,4.497 C15.824,4.497 16.495,5.169 16.495,5.997 L16.495,17.995 Z" />
+                        </svg>
+                    </a>
+                    <a class="nav__search" href="">
+                        <svg class="nav__img" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px">
+
+                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                d="M23.762,22.681 L17.569,16.586 C19.190,14.825 20.187,12.494 20.187,9.929 C20.186,4.443 15.668,-0.002 10.093,-0.002 C4.519,-0.002 0.001,4.443 0.001,9.929 C0.001,15.416 4.519,19.862 10.093,19.862 C12.502,19.862 14.711,19.028 16.446,17.644 L22.663,23.763 C22.966,24.062 23.458,24.062 23.761,23.763 C24.065,23.464 24.065,22.979 23.762,22.681 ZM10.093,18.334 C5.377,18.334 1.553,14.572 1.553,9.929 C1.553,5.288 5.377,1.525 10.093,1.525 C14.810,1.525 18.633,5.288 18.633,9.929 C18.633,14.572 14.810,18.334 10.093,18.334 Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -50,15 +79,16 @@
                 <a class="header__btn" href="#!">GET STARTED</a>
             </section>
         </div>
-        
+
         <section class="header__background">
             <svg class="header__btn-back" width="30px" height="50px" viewBox="0 0 40 80" xml:space="preserve">
                 <polyline fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
                     points="47.63,75.8 10.375,38.087 47.63,0.375 "></polyline>
             </svg>
 
-            <svg class="header__btn-forward" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px"
-                height="50px" viewBox="0 0 80 80" xml:space="preserve">
+            <svg class="header__btn-forward" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="50px" viewBox="0 0 80 80"
+                xml:space="preserve">
                 <polyline fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
                     points="10.375,0.375 47.63,38.087 10.375,75.8 "></polyline>
             </svg>
