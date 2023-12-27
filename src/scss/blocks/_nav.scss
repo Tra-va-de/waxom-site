@@ -1,0 +1,50 @@
+.nav {
+    background: #AAA;
+    color: $text-color;
+    padding: 40px 0;
+
+    &>.container {
+        @extend %flex-align-center;
+        justify-content: space-between;
+    }
+
+    &__elements {
+        @extend %flex-align-center;
+
+        gap: 64px;
+    }
+
+    &__buttons {
+        @extend %flex-align-center;
+        gap: 30px;
+    }
+
+    &__button {
+        @extend %hover-text;
+
+        font-size: 14px;
+    }
+
+    &__actions {
+        @extend %flex-align-center;
+        
+        gap: 28px;
+        
+        & > * {
+            @extend %hover-icon;
+
+            user-select: none;
+        }
+    }
+}
+
+.logo {
+    @extend %flex-align-center;
+
+    font-family: $title-font;
+    user-select: none;
+
+    &__text {
+        font-size: 34px;
+    }
+}

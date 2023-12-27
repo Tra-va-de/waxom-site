@@ -1,4 +1,7 @@
 /* Reset and base styles  */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 * {
   padding: 0px;
   margin: 0px;
@@ -87,4 +90,84 @@ label {
 
 legend {
   display: block;
+}
+
+.nav__button {
+  -webkit-transition: color 300ms ease-out;
+  transition: color 300ms ease-out;
+}
+.nav__button:hover {
+  color: #c7b299;
+}
+
+.nav__actions > * path {
+  -webkit-transition: fill 300ms ease-in-out;
+  transition: fill 300ms ease-in-out;
+  fill: #FFFFFF;
+}
+.nav__actions > :hover path {
+  fill: #c7b299;
+}
+
+.logo, .nav__actions, .nav__buttons, .nav__elements, .nav > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+html, body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.nav {
+  background: #AAA;
+  color: #FFFFFF;
+  padding: 40px 0;
+}
+.nav > .container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.nav__elements {
+  gap: 64px;
+}
+.nav__buttons {
+  gap: 30px;
+}
+.nav__button {
+  font-size: 14px;
+}
+.nav__actions {
+  gap: 28px;
+}
+.nav__actions > * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.logo__text {
+  font-size: 34px;
 }
