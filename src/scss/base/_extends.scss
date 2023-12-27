@@ -1,0 +1,43 @@
+%hover-scale {
+    transition: scale 300ms;
+
+    &:hover {
+        scale: 1.1;
+    }
+}
+
+%active-color {
+    transition: filter 300ms;
+
+    &:active {
+        filter: hue-rotate(15deg);
+    }
+}
+
+%hover-and-active {
+    @extend %hover-scale;
+    @extend %active-color;
+
+    transition: scale 300ms, filter 300ms;
+}
+
+%flex-all-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+%flex-justify-center {
+    display: flex;
+    align-items: center;
+}
+
+%full-size {
+    width: 100%;
+    height: 100%;
+}
