@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waxom</title>
+    <!-- Подключение SwiperJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Подключение собственного файла стилей -->
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
 
 <body>
     <nav class="nav">
         <div class="container">
-            <div class="nav__logo logo">
+            <a class="nav__logo logo" href="#!">
                 <svg class="logo__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     width="64px" height="56px">
                     <defs>
@@ -29,7 +32,7 @@
                     </g>
                 </svg>
                 <p class="logo__text">Waxom</p>
-            </div>
+            </a>
 
             <div class="nav__elements">
                 <ul class="nav__buttons">
@@ -65,11 +68,15 @@
     </nav>
 
     <header class="header">
-        <div class="container">
-            <section class="header__content">
+        <!-- Slider main container -->
+        <section class="header__content swiper">
+
+            <div class="container">
                 <div class="header__info">
-                    <h2 class="header__title">Unique and Modern Design</h2>
-                    <h1 class="header__sub-title">Portfolio PSD Template</h1>
+                    <div class="header__titles">
+                        <h2 class="header__title">Unique and Modern Design</h2>
+                        <h1 class="header__sub-title">Portfolio PSD Template</h1>
+                    </div>
                     <p class="header__text">
                         Nam liber tempor cum soluta nobis eleifend option congue
                         nihil imperdiet doming id quod mazim placerat facer possim
@@ -77,24 +84,49 @@
                     </p>
                 </div>
                 <a class="header__btn" href="#!">GET STARTED</a>
-            </section>
-        </div>
+            </div>
 
-        <section class="header__background">
-            <svg class="header__btn-back" width="30px" height="50px" viewBox="0 0 40 80" xml:space="preserve">
-                <polyline fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
-                    points="47.63,75.8 10.375,38.087 47.63,0.375 "></polyline>
-            </svg>
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/boy-1822614_1920.jpg" alt=""></img>
+                </div>
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/bg photo.png" alt=""></img>
+                </div>
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/forest-3119826_1920.jpg" alt=""></img>
+                </div>
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/forest-438432_1920.jpg" alt=""></img>
+                </div>
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/nature-3082832_1920.jpg" alt=""></img>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
 
-            <svg class="header__btn-forward" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="50px" viewBox="0 0 80 80"
-                xml:space="preserve">
-                <polyline fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
-                    points="10.375,0.375 47.63,38.087 10.375,75.8 "></polyline>
-            </svg>
+            <div class="header__slides-buttons">
+                <svg class="header__btn-back swiper-button-prev" width="30px" height="50px" viewBox="0 0 40 80"
+                    xml:space="preserve">
+                    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" points="47.63,75.8 10.375,38.087 47.63,0.375 "></polyline>
+                </svg>
+                <svg class="header__btn-forward swiper-button-next" width="30px" height="50px" viewBox="0 0 40 80"
+                    xml:space="preserve">
+                    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" points="47.63,75.8 10.375,38.087 47.63,0.375 "></polyline>
+                </svg>
+            </div>
         </section>
     </header>
 
+    <!-- Подключение скрипта SwiperJS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Подключение собственного скрипта -->
+    <script src="./src/js/script.js"></script>
 </body>
 
 </html>

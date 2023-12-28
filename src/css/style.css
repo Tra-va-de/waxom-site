@@ -100,16 +100,28 @@ legend {
   color: #c7b299;
 }
 
-.nav__actions > * path {
+.nav__actions * path {
   -webkit-transition: fill 300ms ease-in-out;
   transition: fill 300ms ease-in-out;
   fill: #FFFFFF;
 }
-.nav__actions > :hover path {
+.nav__actions :hover path {
   fill: #c7b299;
 }
 
-.logo, .nav__actions, .nav__buttons, .nav__elements, .nav > .container {
+.header .swiper-pagination, .header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__info, .logo, .nav__actions, .nav__buttons, .nav__elements, .nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,7 +130,7 @@ legend {
           align-items: center;
 }
 
-.container {
+.header__slide, .header .swiper, .header__content, .header__background, .container {
   width: 100%;
   height: 100%;
 }
@@ -133,14 +145,23 @@ html, body {
 }
 
 .nav {
-  background: #AAA;
   color: #FFFFFF;
   padding: 40px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
-.nav > .container {
+.nav .container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media screen and (max-width: 1300px) {
+  .nav .container {
+    padding: 0 25px;
+  }
 }
 .nav__elements {
   gap: 64px;
@@ -154,7 +175,7 @@ html, body {
 .nav__actions {
   gap: 28px;
 }
-.nav__actions > * {
+.nav__actions * {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -170,4 +191,113 @@ html, body {
 }
 .logo__text {
   font-size: 34px;
+}
+
+.header {
+  position: relative;
+  background: #9c9b98;
+  height: 100dvh;
+}
+.header__content {
+  position: relative;
+  z-index: 2;
+}
+.header__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.header .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 55px;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 998;
+}
+.header__info {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 17px;
+  width: 620px;
+  text-align: center;
+}
+.header__title {
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+}
+.header__sub-title {
+  font-size: 52px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+}
+.header__btn {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  background: #998675;
+  -webkit-box-shadow: 0 3px 0 #736357;
+          box-shadow: 0 3px 0 #736357;
+  padding: 20px 40px;
+  border-radius: 4px;
+}
+.header .swiper-wrapper {
+  position: absolute;
+  top: 0;
+}
+.header__slide {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.header .swiper-pagination {
+  gap: 10px;
+  z-index: 999;
+}
+.header .swiper-pagination.swiper-pagination-bullets {
+  bottom: 42px;
+}
+.header .swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  background: #8e8e90;
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0;
+}
+.header .swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background: transparent;
+  border: 2px solid #c1b19f;
+}
+.header__slides-buttons {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 998;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 92.1875%;
+  height: 100%;
+}
+.header__slides-buttons .swiper-button-prev,
+.header__slides-buttons .swiper-button-next {
+  width: 40px;
+  height: 75px;
+}
+.header__slides-buttons .swiper-button-prev polyline,
+.header__slides-buttons .swiper-button-next polyline {
+  stroke: #9c9b98;
+  -webkit-transition: stroke 200ms ease-in-out;
+  transition: stroke 200ms ease-in-out;
+}
+.header__slides-buttons .swiper-button-prev:hover polyline,
+.header__slides-buttons .swiper-button-next:hover polyline {
+  stroke: #90867a;
+}
+.header__slides-buttons .swiper-button-next {
+  rotate: 180deg;
 }

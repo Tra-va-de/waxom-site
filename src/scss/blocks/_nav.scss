@@ -1,11 +1,20 @@
 .nav {
-    background: #AAA;
     color: $text-color;
     padding: 40px 0;
 
-    &>.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    .container {
         @extend %flex-align-center;
         justify-content: space-between;
+
+        @media screen and (max-width: 1300px) {
+            padding: 0 25px;
+        }
     }
 
     &__elements {
@@ -16,6 +25,7 @@
 
     &__buttons {
         @extend %flex-align-center;
+
         gap: 30px;
     }
 
@@ -30,7 +40,7 @@
         
         gap: 28px;
         
-        & > * {
+        * {
             @extend %hover-icon;
 
             user-select: none;
