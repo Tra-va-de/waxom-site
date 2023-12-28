@@ -158,13 +158,20 @@ html, body {
 }
 
 .nav {
+  background-color: rgba(0, 0, 0, 0.9);
   color: #FFFFFF;
-  padding: 40px 0;
+  padding: 20px 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  -webkit-transition: background-color 150ms ease-in, padding 200ms ease-out;
+  transition: background-color 150ms ease-in, padding 200ms ease-out;
+}
+.nav--top {
+  background-color: transparent;
+  padding: 40px 0;
 }
 .nav .container {
   -webkit-box-pack: justify;
