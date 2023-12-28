@@ -1,0 +1,60 @@
+.services {
+
+    .container {
+        @extend %flex-all-center;
+
+        gap: 23px;
+    }
+
+    .card {
+        @extend %flex-align-center;
+        flex-direction: column;
+        gap: 30px;
+
+        text-align: center;
+
+        padding: 80px 0;
+
+        &:hover {
+            .card__icon path {
+                fill: $accent-color;
+            }
+            
+            .card__line { 
+                background-color: $accent-color;
+            }   
+        }   
+
+   
+        &__icon {
+            path {
+                fill: $title-color;
+
+                transition: fill 250ms ease-in-out;
+            }
+        }
+        
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        &__title {
+            font-size: 22px;
+        }
+        
+        &__text {
+            font-size: 14px;
+        }
+        
+        &__line {
+            background-color: #f1eee9;
+            
+            width: 70px;
+            height: 3px;
+
+            transition: background-color 250ms ease-in-out;
+        }
+    }
+}
