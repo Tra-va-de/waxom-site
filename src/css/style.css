@@ -121,7 +121,7 @@ legend {
           align-items: center;
 }
 
-.services .card, .header__info, .logo, .nav__actions, .nav__buttons, .nav__elements, .nav .container {
+.realization .container, .services .card, .header__info, .logo, .nav__actions, .nav__buttons, .nav__elements, .nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,7 +140,7 @@ html, body {
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1230px;
   margin: 0 auto;
 }
 
@@ -154,6 +154,8 @@ html, body {
 .section-text {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7rem;
   color: #8c8c8c;
 }
 
@@ -367,4 +369,24 @@ html, body {
   height: 3px;
   -webkit-transition: background-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out;
+}
+
+.realization {
+  background-color: #fbfaf8;
+}
+.realization .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding-top: 85px;
+  text-align: center;
+}
+.realization__text {
+  width: 65.811965812%;
+}
+.realization__img {
+  margin-top: 10px;
+  width: 100%;
 }

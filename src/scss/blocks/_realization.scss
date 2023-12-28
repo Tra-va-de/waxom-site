@@ -1,0 +1,24 @@
+.realization {
+    background-color: #fbfaf8;
+
+
+    .container {
+        @extend %flex-align-center;
+    
+        flex-direction: column;
+        gap: 20px;
+
+        padding-top: 85px;
+
+        text-align: center;
+    }
+    
+    &__text {
+        width: 770 / 1170 * 100%;
+    }
+
+    &__img {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
