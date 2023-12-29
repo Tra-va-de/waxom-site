@@ -121,7 +121,7 @@ legend {
           align-items: center;
 }
 
-.projects__header, .projects .container, .purchase .container, .realization .container, .services .card, .header__info, .logo, .nav__actions, .nav__buttons, .nav__elements, .nav .container {
+.projects__categories, .projects__main, .projects__header, .projects .container, .purchase .container, .realization .container, .services .card, .header__info, .logo, .nav__actions, .nav__buttons, .nav__elements, .nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,6 +143,9 @@ body {
 .container {
   max-width: 1170px;
   margin: 0 auto;
+}
+
+.container--vertical-padding {
   padding: 80px 0;
 }
 
@@ -348,7 +351,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
-  width: 25%;
+  width: calc(25% - 30px);
   text-align: center;
 }
 .services .card:hover .card__icon path {
@@ -438,6 +441,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 40px;
 }
 .projects__header {
   -webkit-box-orient: vertical;
@@ -445,4 +449,77 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
+}
+.projects__main {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+.projects__categories {
+  gap: 10px;
+}
+.projects__category:first-child * {
+  padding: 8px 30px;
+}
+.projects__category-btn {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 3px;
+  background-color: white;
+  border: 1px solid #ebebeb;
+  color: #8c8c8c !important;
+  -webkit-transition: background-color 0.3s ease-in-out, color 0.2s ease-in, border-color 0.4s ease-out, -webkit-filter 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.2s ease-in, border-color 0.4s ease-out, -webkit-filter 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out, color 0.2s ease-in, border-color 0.4s ease-out;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out, color 0.2s ease-in, border-color 0.4s ease-out, -webkit-filter 0.3s ease-in-out;
+}
+.projects__category-btn--active, .projects__category-btn:hover {
+  background-color: #c7b299;
+  border-color: transparent;
+  color: #FFFFFF !important;
+}
+.projects__category-btn:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+}
+.projects__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+}
+.projects .card {
+  width: calc(33.3333333333% - 30px);
+}
+.projects .card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6px;
+  background-color: #fbfaf8;
+  padding: 30px;
+}
+.projects .card__title {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #c7b299;
+}
+.projects .card__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #d1d1d1;
+}
+.projects__btn {
+  color: #FFFFFF !important;
 }
