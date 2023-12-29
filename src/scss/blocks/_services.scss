@@ -12,7 +12,7 @@
         flex-direction: column;
         gap: 30px;
 
-        width: calc(100% / 12 * 3 - 30px);
+        width: calc((100% - 90px) / 12 * 3);
 
         text-align: center;
 
