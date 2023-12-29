@@ -50,4 +50,13 @@ body {
     padding: 20px 0;
 
     border-radius: 4px;
+
+    transition: filter .3s ease-in-out,
+                scale .3s ease-in-out;
+
+    
+    &:hover {
+        filter: brightness(.9);
+        scale: 1.05;
+    }
 }

@@ -176,6 +176,15 @@ body {
   width: 16.6666666667%;
   padding: 20px 0;
   border-radius: 4px;
+  -webkit-transition: scale 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
+  transition: scale 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out, scale 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out, scale 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
+}
+.btn:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  scale: 1.05;
 }
 
 .nav {
