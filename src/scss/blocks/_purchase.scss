@@ -7,10 +7,10 @@
         @extend %flex-align-center;
 
         justify-content: space-between;
+
+        padding: 0;
     }
 
-    &__info {
-    }
     &__title {
         font-size: 28px;
         font-weight: 300;
@@ -25,11 +25,11 @@
       
     &__text {
         font-size: 18px;
-        line-height: 1.2;
 
+        line-height: 1.2;
+        text-align-last: left;
         color: #615855;
-    }
-  
-    &__btn {
-    }      
+
+        width: auto;
+    }    
 }

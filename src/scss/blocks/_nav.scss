@@ -20,7 +20,10 @@
 
     .container {
         @extend %flex-align-center;
+
         justify-content: space-between;
+
+        padding: 0;
 
         @media screen and (max-width: 1300px) {
             padding: 0 25px;
