@@ -23,7 +23,6 @@ const nav = document.querySelector(".nav");
 
 window.addEventListener('scroll', () => {
     let scrollDistance = window.scrollY;
-    console.log(scrollDistance);
 
     if (scrollDistance > 0) {
         if (nav.classList.contains('nav--top')) {
