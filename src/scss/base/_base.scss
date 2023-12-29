@@ -6,7 +6,7 @@ body {
 .container {
     @extend %full-size;
 
-    max-width: 1230px;
+    max-width: 1170px;
     margin: 0 auto;
 }
 
@@ -32,10 +32,13 @@ body {
     font-size: 14px;
     font-weight: 700;
 
+    text-align: center;
+
     background: $button-color;
     box-shadow: 0 3px 0 $button-second-color;
 
-    padding: 20px 40px;
+    width: 100% / 12 * 2;
+    padding: 20px 0;
 
     border-radius: 4px;
 }

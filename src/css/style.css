@@ -141,7 +141,7 @@ body {
 }
 
 .container {
-  max-width: 1230px;
+  max-width: 1170px;
   margin: 0 auto;
 }
 
@@ -164,10 +164,12 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 700;
+  text-align: center;
   background: #998675;
   -webkit-box-shadow: 0 3px 0 #736357;
           box-shadow: 0 3px 0 #736357;
-  padding: 20px 40px;
+  width: 16.6666666667%;
+  padding: 20px 0;
   border-radius: 4px;
 }
 
@@ -198,16 +200,23 @@ body {
   }
 }
 .nav__elements {
-  gap: 64px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 66.6666666667%;
 }
 .nav__buttons {
   gap: 30px;
 }
 .nav__button {
   font-size: 14px;
+  white-space: nowrap;
 }
 .nav__actions {
-  gap: 28px;
+  width: 8.3333333333%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .nav__actions * {
   -webkit-user-select: none;
@@ -386,11 +395,12 @@ body {
   text-align: center;
 }
 .realization__text {
-  width: 65.811965812%;
+  width: 66.6666666667%;
 }
 .realization__img {
   margin-top: 10px;
   width: 100%;
+  padding: 0 -30px;
 }
 
 .purchase {

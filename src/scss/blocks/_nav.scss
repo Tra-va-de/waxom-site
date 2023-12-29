@@ -30,7 +30,9 @@
     &__elements {
         @extend %flex-align-center;
 
-        gap: 64px;
+        justify-content: space-between;
+        
+        width: 100% / 12 * 8;
     }
 
     &__buttons {
@@ -43,12 +45,14 @@
         @extend %hover-text;
 
         font-size: 14px;
+        white-space: nowrap;
     }
 
     &__actions {
         @extend %flex-align-center;
         
-        gap: 28px;
+        width: 100% / 12 * 1;
+        justify-content: space-between;
         
         * {
             @extend %hover-icon;

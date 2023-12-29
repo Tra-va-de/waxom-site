@@ -14,11 +14,13 @@
     }
     
     &__text {
-        width: 770 / 1170 * 100%;
+        width: 100% / 12 * 8;
     }
 
     &__img {
         margin-top: 10px;
         width: 100%;
+
+        padding: 0 -30px;
     }
 }
