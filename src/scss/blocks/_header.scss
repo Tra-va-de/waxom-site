@@ -40,19 +40,6 @@
         font-weight: 800;
     }
     
-    &__btn {
-        font-family: $title-font;
-        font-size: 14px;
-        font-weight: 700;
-        
-        background: $button-color;
-        box-shadow: 0 3px 0 $button-second-color;
-        
-        padding: 20px 40px;
-        
-        border-radius: 4px;
-    }
-    
     .swiper {
         @extend %full-size;
         

@@ -1,0 +1,35 @@
+.purchase {
+    background-image: linear-gradient(45deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);     
+    color: $text-color;
+    padding: 50px 0;
+
+    .container {
+        @extend %flex-align-center;
+
+        justify-content: space-between;
+    }
+
+    &__info {
+    }
+    &__title {
+        font-size: 28px;
+        font-weight: 300;
+        line-height: 1.2;
+
+        color: inherit;
+    }
+
+    &__first-word {
+        color: $accent-color;
+    }
+      
+    &__text {
+        font-size: 18px;
+        line-height: 1.2;
+
+        color: #615855;
+    }
+  
+    &__btn {
+    }      
+}
