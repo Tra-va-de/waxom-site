@@ -97,6 +97,50 @@
             }
         }
 
+        &__demo {
+            position: relative;
+
+            &:hover {
+                .card__icons {
+                    opacity: 1;
+                }
+            }
+        }
+        
+        &__icons {
+            @extend %full-size;
+            @extend %flex-all-center;
+            
+            gap: 30px;
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            opacity: 0;
+
+            transition: opacity .3s ease-out;
+
+
+            & > * {
+                transition: scale .2s ease;
+
+                path {
+                    fill: $text-color;
+
+                    transition: fill .3s ease-in-out;
+                }  
+                
+                &:hover {
+                    scale: 1.1;
+
+                    path {
+                        fill: $accent-color;
+                    }  
+                }
+            }
+        }
+
         &__image {
             transition: filter .3s ease-in-out;
         }
