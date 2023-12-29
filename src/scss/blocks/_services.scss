@@ -12,7 +12,7 @@
         flex-direction: column;
         gap: 30px;
 
-        width: 100% / 12 * 3;
+        width: calc(100% / 12 * 3 - 30px);
 
         text-align: center;
 
@@ -26,7 +26,6 @@
             }   
         }   
 
-   
         &__icon {
             path {
                 fill: $title-color;
