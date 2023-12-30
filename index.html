@@ -235,15 +235,15 @@
                 <main class="projects__main">
                     <ul class="projects__categories">
                         <li class="projects__category"><a class="projects__category-btn projects__category-btn--active"
-                                href="#!">All</a></li>
-                        <li class="projects__category"><a class="projects__category-btn" href="#!">Web Design</a></li>
-                        <li class="projects__category"><a class="projects__category-btn" href="#!">Mobile App</a></li>
-                        <li class="projects__category"><a class="projects__category-btn" href="#!">Illustration</a></li>
-                        <li class="projects__category"><a class="projects__category-btn" href="#!">Photography</a></li>
+                                href="#!" data-category="all" onclick="filterCards(this)">All</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="web" onclick="filterCards(this)">Web Design</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="mobile" onclick="filterCards(this)">Mobile App</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="illustration" onclick="filterCards(this)">Illustration</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="photography" onclick="filterCards(this)">Photography</a></li>
                     </ul>
 
                     <div class="projects__cards">
-                        <div class="projects__card card">
+                        <div class="projects__card card" data-categories="web mobile illustration">
                             <div class="card__demo">
                                 <img class="card__image" src="./src/img/projects/1.png" alt="">
                                 <div class="card__icons">
@@ -270,7 +270,7 @@
                             </div>
                         </div>
 
-                        <div class="projects__card card">
+                        <div class="projects__card card" data-categories="photography">
                             <div class="card__demo">
                                 <img class="card__image" src="./src/img/projects/2.png" alt="">
                                 <div class="card__icons">
@@ -297,7 +297,7 @@
                             </div>
                         </div>
 
-                        <div class="projects__card card">
+                        <div class="projects__card card" data-categories="illustration">
                             <div class="card__demo">
                                 <img class="card__image" src="./src/img/projects/3.png" alt="">
                                 <div class="card__icons">
@@ -324,7 +324,7 @@
                             </div>
                         </div>
 
-                        <div class="projects__card card">
+                        <div class="projects__card card" data-categories="photography">
                             <div class="card__demo">
                                 <img class="card__image" src="./src/img/projects/4.png" alt="">
                                 <div class="card__icons">
@@ -351,7 +351,7 @@
                             </div>
                         </div>
 
-                        <div class="projects__card card">
+                        <div class="projects__card card" data-categories="illustration">
                             <div class="card__demo">
                                 <img class="card__image" src="./src/img/projects/5.png" alt="">
                                 <div class="card__icons">
@@ -378,7 +378,7 @@
                             </div>
                         </div>
 
-                        <div class="projects__card card">
+                        <div class="projects__card card" data-categories="photography">
                             <div class="card__demo">
                                 <img class="card__image" src="./src/img/projects/6.png" alt="">
                                 <div class="card__icons">
@@ -443,7 +443,7 @@
     </main>
 
     <footer class="footer">
-        
+
     </footer>
 
     <!-- Подключение скрипта SwiperJS -->
