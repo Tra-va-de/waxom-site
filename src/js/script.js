@@ -46,39 +46,30 @@ function filterCards(button) {
     // Получаем категорию текущей кнопки
     const category = button.getAttribute('data-category');
 
+    // Получаем контейнер с карточками
+    const cardsContainer = document.querySelector('.projects__cards');
+
     // Получаем все карточки
     const cards = document.querySelectorAll('.projects__card');
 
-    // Создаем массив промисов для отслеживания завершения анимации
-    const promises = [];
+    // Скрываем контейнер с карточками
+    cardsContainer.classList.add('hide');
 
-    // Скрываем все карточки с анимацией
-    cards.forEach(card => {
-        card.classList.add('hide');
-
-        let needsTransition = card.style.display !== 'none';
-
-        if (needsTransition) {
-            promises.push(new Promise(resolve => {
-                card.addEventListener('transitionend', () => {
-                    resolve();
-                    card.style.display = 'none';
-                }, { once: true });
-            }));
-        }
-    });
-
-    // После завершения анимации скрытия
-    Promise.all(promises).then(() => {
-        // Отображаем и плавно появляем нужные карточки
+    // После завершения скрытия прячем карточки
+    cardsContainer.addEventListener('transitionend', () => {
+        // Перебираем карточки для фильтрации
         cards.forEach(card => {
+            // Отображаем и плавно появляем нужные карточки
             const cardCategories = card.getAttribute('data-categories').split(' ');
-
+            
             if (category === 'all' || cardCategories.includes(category)) {
                 card.style.display = 'block';
-                // Добавляем класс для плавного появления
-                card.classList.remove('hide'); 
+            } else {
+                card.style.display = 'none';
             }
         });
-    });
+
+        // Отображаем контейнер с карточками
+        cardsContainer.classList.remove('hide');
+    }, { once: true });
 }

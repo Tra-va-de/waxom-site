@@ -547,16 +547,15 @@ body {
       flex-wrap: wrap;
   gap: 30px;
   width: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.projects__cards.hide {
+  opacity: 0;
 }
 .projects .card {
   width: calc((100% - 60px) / 12 * 4);
-  display: block;
-  opacity: 1;
-  -webkit-transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out;
-}
-.projects .card.hide {
-  opacity: 0;
 }
 .projects .card:hover .card__image {
   -webkit-filter: brightness(0.8);

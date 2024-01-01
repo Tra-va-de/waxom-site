@@ -70,21 +70,19 @@
         gap: 30px;
 
         width: 100%;
+        
+        opacity: 1;
+        transition: opacity .3s ease-in-out;
+        
+
+        &.hide {
+            opacity: 0;
+        }
     }
 
 
     .card {
         width: calc((100% - 60px) / 12 * 4);
-
-        display: block;
-        opacity: 1;
-
-        transition: opacity .5s ease-in-out, 
-                    display .5s ease-in-out;
-
-        &.hide {
-            opacity: 0;
-        }
 
 
         &:hover {
