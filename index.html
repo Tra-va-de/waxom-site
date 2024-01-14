@@ -234,15 +234,14 @@
 
                 <main class="projects__main">
                     <ul class="projects__categories">
-                        <li class="projects__category"><a class="projects__category-btn projects__category-btn--active"
-                                href="#!" data-category="all" onclick="filterCards(this)">All</a></li>
+                        <li class="projects__category"><a class="projects__category-btn projects__category-btn--active" href="#!" data-category="all" onclick="filterCards(this)">All</a></li>
                         <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="web" onclick="filterCards(this)">Web Design</a></li>
                         <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="mobile" onclick="filterCards(this)">Mobile App</a></li>
                         <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="illustration" onclick="filterCards(this)">Illustration</a></li>
                         <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="photography" onclick="filterCards(this)">Photography</a></li>
                     </ul>
 
-                    <div class="projects__cards">
+                    <div class="projects__cards" data-category="all">
                         <div class="projects__card card" data-categories="web mobile illustration">
                             <div class="card__demo">
                                 <img class="card__image" src="./src/img/projects/1.png" alt="">

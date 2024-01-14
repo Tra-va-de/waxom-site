@@ -511,6 +511,9 @@ body {
   gap: 40px;
   width: 100%;
 }
+.projects__filter {
+  display: none;
+}
 .projects__categories {
   gap: 10px;
 }
@@ -553,6 +556,18 @@ body {
 }
 .projects__cards.hide {
   opacity: 0;
+}
+.projects__cards[data-category=web] .card:not([data-categories~=web]) {
+  display: none;
+}
+.projects__cards[data-category=mobile] .card:not([data-categories~=mobile]) {
+  display: none;
+}
+.projects__cards[data-category=illustration] .card:not([data-categories~=illustration]) {
+  display: none;
+}
+.projects__cards[data-category=photography] .card:not([data-categories~=photography]) {
+  display: none;
 }
 .projects .card {
   width: calc((100% - 60px) / 12 * 4);
