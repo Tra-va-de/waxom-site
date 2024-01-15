@@ -23,6 +23,10 @@
         width: 100%;
     }
 
+    &__filter {
+        display: none;
+    }
+
     &__categories {
         @extend %flex-align-center;
 
@@ -70,13 +74,23 @@
         gap: 30px;
 
         width: 100%;
-        
+
         opacity: 1;
         transition: opacity .3s ease-in-out;
-        
+
 
         &.hide {
             opacity: 0;
+        }
+
+        // переменная с категориями
+        $categories: "web", "mobile", "illustration", "photography";
+
+        // скрываем карточки с неподходящей категорией
+        @each $category in $categories {
+            &[data-category="#{$category}"] .card:not([data-categories~="#{$category}"]) {
+                display: none;
+            }
         }
     }
 
@@ -132,7 +146,7 @@
             transition: opacity .3s ease-out;
 
 
-            & > * {
+            &>* {
                 transition: scale .2s ease;
 
                 path {
