@@ -237,7 +237,8 @@ body {
 .nav {
   background-color: rgba(0, 0, 0, 0.9);
   color: #FFFFFF;
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -254,12 +255,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0;
-}
-@media screen and (max-width: 1300px) {
-  .nav .container {
-    padding: 0 25px;
-  }
 }
 .nav__elements {
   -webkit-box-pack: justify;
@@ -276,6 +271,9 @@ body {
 }
 .nav__actions {
   width: 8.3333333333%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
