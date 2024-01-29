@@ -236,10 +236,14 @@
                     <ul class="projects__categories">
                         <li class="projects__category"><a class="projects__category-btn projects__category-btn--active"
                                 href="#!" data-category="all" onclick="filterCards(this)">All</a></li>
-                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="web" onclick="filterCards(this)">Web Design</a></li>
-                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="mobile" onclick="filterCards(this)">Mobile App</a></li>
-                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="illustration" onclick="filterCards(this)">Illustration</a></li>
-                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="photography" onclick="filterCards(this)">Photography</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="web"
+                                onclick="filterCards(this)">Web Design</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!"
+                                data-category="mobile" onclick="filterCards(this)">Mobile App</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!"
+                                data-category="illustration" onclick="filterCards(this)">Illustration</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!"
+                                data-category="photography" onclick="filterCards(this)">Photography</a></li>
                     </ul>
 
                     <div class="projects__cards">
@@ -412,9 +416,40 @@
         </section>
 
         <section class="presentation">
-            <div class="container">
+            <section class="presentation__content" id="presentation-content">
+                <div class="container">
+                    <div class="presentation__icon" onclick="playPresentationVideo()">
+                        <svg class="presentation__icon-src" id="play-icon" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px">
+                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                d="M31.253,18.653 L48.967,33.415 C49.437,33.807 49.709,34.386 49.709,34.997 C49.709,35.609 49.437,36.188 48.967,36.580 L31.253,51.343 C30.876,51.657 30.407,51.820 29.934,51.820 C29.638,51.820 29.339,51.755 29.060,51.626 C28.337,51.287 27.874,50.559 27.874,49.760 L27.874,20.235 C27.874,19.436 28.337,18.708 29.060,18.370 C29.783,18.030 30.640,18.141 31.253,18.653 ZM31.994,45.362 L44.431,34.997 L31.994,24.633 L31.994,45.362 ZM59.759,59.759 C53.033,66.484 44.026,69.998 34.937,69.998 C29.072,69.999 23.173,68.536 17.831,65.528 C16.839,64.970 16.488,63.713 17.046,62.722 C17.604,61.731 18.860,61.379 19.852,61.938 C31.870,68.703 47.082,66.611 56.845,56.845 C68.892,44.798 68.892,25.197 56.845,13.150 C44.798,1.101 25.196,1.102 13.150,13.150 C1.104,25.197 1.104,44.798 13.150,56.845 C13.955,57.650 13.955,58.954 13.150,59.759 C12.347,60.563 11.042,60.563 10.237,59.759 C-3.416,46.105 -3.416,23.890 10.237,10.236 C23.891,-3.416 46.104,-3.417 59.759,10.236 C73.412,23.890 73.412,46.105 59.759,59.759 Z" />
+                        </svg>
 
-            </div>
+                        <svg class="presentation__icon-src hide" id="pause-icon" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px">
+                            <image x="0px" y="0px" width="70px" height="70px" fill="red"
+                                xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAQAAADbJyoPAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfoAR0XIRLPn0TjAAAFAklEQVRo3s2a3U9cRRjGnx0+hBW6tCukadJCybYqUBMT25ImksYYmobPrdHGeKEG4oV/gLd6rSbtjcYmJkribSOyGsqF0mBal0pi0mxTYLcYetOED2WhlQaBx4udM5xdztkzc3Zxed6Lmbx7zju/M2dmznxsgPChMrThNFoRQSNqEUINKvAP0ljCPFJIYAoJbPmISzML8X0Oc4VeWuEw32PILLr+pYLdvM51Twy71nmd3RTFhankAFNGGHalOMBKnXICGm0mik8R2fV27+F3pJDEIzxBGkAdgjiCCCI4jVYEcq5P4SN8X2ibaeZYznOmOcR+hvPeFWY/h5jOuXOMzYW8pgGuZoW7zTdZpd3KqvkWb2fdv8oBfzDVHMp5rlcNe17GOnLq9ltWm8Ic5mRWE4z6ArEsyge2aJM8bALTZOs727zi/iwGr+wKt20P16QL08SH6rYl9hQMYlkPl1TceTbqwNQzqW5JOD+BbzvOhIqdZL0XTJBxdfkt1hUVBQTreEvFjzOYH+aarRs/W3QUEKyxdfdr+WAuq8vumn7kDCzEu6qcy24wTeprvMSje4YCgkdVU16xN2T7JT+qzly8HuRmPaqjjzjBdKmqu7rnKCB4VZXXlQtTyVn504zm1+ccxxnjS54+N6vijCxx1ppgWD8NKs5OrVCVXCBJTvNgXl8+u6DKHLTDCDXQ3dCs5GNqWDyU15ffbqgBUBCEAAB0q8nTx8aT6A1Nn5M+kWkE3QAkzKB03sSkMQw1fU6K46bMDVow9bgoXV8aowR2TTCdfW6ySryI+gxMH8oBAKuIGcOso0zL56YY1gAA5ejNwFj1MoynPmrmsZbPTU8xrOoGAgF0KBhzCYeVozBaTVprhg4EwBb1EQhrdkh7N1738HlbWH0YWgTaJVkCyz5qpkrT565l3JO5doGTMnvHB0pxNCXTkzsw0yWDSck0ItAks3Mlh2kWCMvsQslgHso0LFArs2slg0nLtFagRmb1B6piyyq5RpQMwUFih6tkDOrdCNVWav3GKlghma4JNe42lAzmmEyXBf6U2eaSwVizzDmBpMy+UHKYlMCszJ4pGcwrMp0ViMtsmxqL/1+F0SpzcYH7WAQA2yTLRNuaPnd1yBnzIu4LEBPS3e8DZhPPaPncFZXpBCgAjCoYs2lRpuByLZ+bqlQVjGYm5CPYBAAcQI8xzJbDSmDLYHXQIwfbTYxkYBZV3XxoDBOA0PK5ySpxFIvWivJr6TqPs8Yw1PI5qx3nZS5DUODC/wkP5PUZLfwL3RJZsm1DOvl8bIn42yz6hTGe8vS5mX2zqCIbZl9to4Gl2mD8Ycdrv2Bfbb3uq01pMHu7PrgnKNrb9dkHGZ/tAUo976j4ngcZ9iOeWNFRjqvurHXEA4KNnCP5Ly8VGaVTDoqk9uFX5r328vmiglTzc24plFknFL0T/wq+rrkF72ZRznNHv7HB+TrvQAGOkyTHeMYXyDn+TLu+MT9K3rFTtkDjjOr9q4EgGOQ7/DULJM13893hHfIQH2cFXOZX7PP4Lof4Br/jGrP1k9fxq84fMzrxxa4/ZmwigSlM4wEW8Bc2ABxEEEdwAifwMlp2TTyL8seMjJXzA9sBs6n+4Nss1ylHvyEK9jLGDSOMDQ7zgn5j13lNdjWgD114zXMD5REmMIoR/G0S3BQmozK04SxexEk04jlUIQRgDatYRBJJzCCuVvBG+g9RLwnb+lFQoAAAAABJRU5ErkJggg==" />
+                        </svg>
+                    </div>
+
+                    <div class="presentation__info">
+                        <h2 class="presentation__title section-title">Waxom Video Presentation</h2>
+
+                        <p class="presentation__text section-text">
+                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur
+                            mutationem consuetudium.
+                        </p>
+                    </div>
+
+                    <time class="presentation__timer" id="presentation-timer">03:26</time>
+                </div>
+
+                <video class="presentation__video" id="presentation-video" src="./src/video/presentation/video.mp4">
+                    Your browser does not support the video. Sorry! 🥹
+                </video>
+
+                <img class="presentation__background" src="./src/img/presentation/photo.png" alt="Background"></img>
+            </section>
         </section>
 
         <section class="mobile">
@@ -431,7 +466,7 @@
 
         <section class="posts">
             <div class="container">
-                
+
             </div>
         </section>
 
