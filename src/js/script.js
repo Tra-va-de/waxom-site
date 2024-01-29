@@ -55,7 +55,6 @@ function filterCards(button) {
     
     // После завершения скрытия прячем карточки
     cardsContainer.addEventListener('transitionend', () => {
-<<<<<<< HEAD
         // Перебираем карточки для фильтрации
         cards.forEach(card => {
             // Отображаем и плавно появляем нужные карточки
@@ -67,11 +66,6 @@ function filterCards(button) {
                 card.style.display = 'none';
             }
         });
-=======
-        // Добавляем категорию отображаемых карточек 
-        // в атрибут контейнера
-        cardsContainer.setAttribute('data-category', category);
->>>>>>> c65bf7478eabcbfb967fec2e7c5e1a3ec7329ac5
 
         // Отображаем контейнер с карточками
         cardsContainer.classList.remove('hide');
