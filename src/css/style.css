@@ -143,9 +143,11 @@ body {
 .container {
   max-width: 1230px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 .container--vertical-padding {
-  padding: 80px 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .section-title {
@@ -235,7 +237,8 @@ body {
 .nav {
   background-color: rgba(0, 0, 0, 0.9);
   color: #FFFFFF;
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -252,12 +255,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0;
-}
-@media screen and (max-width: 1300px) {
-  .nav .container {
-    padding: 0 25px;
-  }
 }
 .nav__elements {
   -webkit-box-pack: justify;
@@ -274,6 +271,9 @@ body {
 }
 .nav__actions {
   width: 8.3333333333%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -469,7 +469,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0;
 }
 .purchase__title {
   font-size: 28px;
@@ -510,6 +509,9 @@ body {
           flex-direction: column;
   gap: 40px;
   width: 100%;
+}
+.projects__filter {
+  display: none;
 }
 .projects__categories {
   gap: 10px;
@@ -553,6 +555,18 @@ body {
 }
 .projects__cards.hide {
   opacity: 0;
+}
+.projects__cards[data-category=web] .card:not([data-categories~=web]) {
+  display: none;
+}
+.projects__cards[data-category=mobile] .card:not([data-categories~=mobile]) {
+  display: none;
+}
+.projects__cards[data-category=illustration] .card:not([data-categories~=illustration]) {
+  display: none;
+}
+.projects__cards[data-category=photography] .card:not([data-categories~=photography]) {
+  display: none;
 }
 .projects .card {
   width: calc((100% - 60px) / 12 * 4);

@@ -1,7 +1,8 @@
 .nav {
     background-color: rgba(0, 0, 0, 0.9);
     color: $text-color;
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
     
     position: fixed;
     top: 0;
@@ -22,12 +23,6 @@
         @extend %flex-align-center;
 
         justify-content: space-between;
-
-        padding: 0;
-
-        @media screen and (max-width: 1300px) {
-            padding: 0 25px;
-        }
     }
 
     &__elements {
@@ -55,6 +50,7 @@
         @extend %flex-align-center;
         
         width: 100% / 12 * 1;
+        min-width: fit-content;
         justify-content: space-between;
         
         * {
