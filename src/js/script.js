@@ -113,6 +113,8 @@ const playPresentationVideo = () => {
 presentationVideo.addEventListener('ended', () => {
     // Удаляем класс отображения видео с блока контента
     presentationContent.classList.remove('show-video');
+    pauseButton.classList.add('hide');
+    playButton.classList.remove('hide');
 });
 
 
