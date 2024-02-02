@@ -52,20 +52,12 @@ function filterCards(button) {
     // Скрываем контейнер с карточками
     cardsContainer.classList.add('hide');
 
-    
+
     // После завершения скрытия прячем карточки
     cardsContainer.addEventListener('transitionend', () => {
-        // Перебираем карточки для фильтрации
-        cards.forEach(card => {
-            // Отображаем и плавно появляем нужные карточки
-            const cardCategories = card.getAttribute('data-categories').split(' ');
-
-            if (category === 'all' || cardCategories.includes(category)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+        // Добавляем категорию отображаемых карточек 
+        // в атрибут контейнера
+        cardsContainer.setAttribute('data-category', category);
 
         // Отображаем контейнер с карточками
         cardsContainer.classList.remove('hide');
@@ -128,7 +120,7 @@ const setCountdown = () => {
     let secondsLeft = presentationVideo.duration - presentationVideo.currentTime;
     // Форматируем с помощью функции convertSeconds()
     let timeLeft = convertSeconds(secondsLeft);
-    
+
     // Устанавливаем значение в тег
     presentationTimer.textContent = timeLeft;
 };
@@ -136,7 +128,7 @@ const setCountdown = () => {
 // Функция конвертации времени в нужный формат
 const convertSeconds = (sec) => {
     let date = new Date(1970, 0, 0, 0, 0, + sec || 0);
-    let time = date.toLocaleTimeString('ru', {minute: '2-digit', second: '2-digit'});
+    let time = date.toLocaleTimeString('ru', { minute: '2-digit', second: '2-digit' });
 
     return time;
 };
