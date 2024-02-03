@@ -6,6 +6,7 @@
     }
 }
 
+
 %hover-icon {
     & path {
         transition: fill 300ms ease-in-out;
@@ -17,6 +18,7 @@
     }
 }
 
+
 %hover-scale {
     transition: scale 300ms;
 
@@ -24,6 +26,7 @@
         scale: 1.1;
     }
 }
+
 
 %active-color {
     transition: filter 300ms;
@@ -33,6 +36,7 @@
     }
 }
 
+
 %hover-and-active {
     @extend %hover-scale;
     @extend %active-color;
@@ -40,21 +44,25 @@
     transition: scale 300ms, filter 300ms;
 }
 
+
 %flex-all-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+
 %flex-align-center {
     display: flex;
     align-items: center;
 }
 
+
 %flex-justify-center {
     display: flex;
     align-items: center;
 }
+
 
 %full-size {
     width: 100%;
