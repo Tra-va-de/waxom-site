@@ -6,9 +6,9 @@ body {
 .container {
     @extend %full-size;
 
-    max-width: 1230px;
+    max-width: $container-width;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 $grid-gap;
     
     
     &--vertical-padding {
