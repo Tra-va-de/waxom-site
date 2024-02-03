@@ -11,6 +11,10 @@
         padding-bottom: 0;
     }
 
+    &__text {
+        width: set-grid-size(8, 12);
+    }
+
     &__img {
         margin-top: 10px;
         

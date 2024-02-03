@@ -30,13 +30,14 @@
 
         justify-content: space-between;
         
-        width: 100% / 12 * 8;
+        width: set-grid-size(8, 12);
     }
 
     &__buttons {
         @extend %flex-align-center;
 
-        gap: 30px;
+        justify-content: flex-start;
+        gap: $grid-gap;
     }
 
     &__button {
@@ -48,10 +49,12 @@
 
     &__actions {
         @extend %flex-align-center;
-        
-        width: 100% / 12 * 1;
-        min-width: fit-content;
+
         justify-content: space-between;
+        gap: $grid-gap;
+        
+        width: set-grid-size(1, 8);
+        min-width: fit-content;
         
         * {
             @extend %hover-icon;

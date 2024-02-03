@@ -16,6 +16,11 @@
 
         position: relative;
         z-index: 998;
+
+
+        * {
+            width: 100%;
+        }
     }
 
     &__info {
@@ -38,6 +43,12 @@
         font-size: 52px;
         font-family: $title-font;
         font-weight: 800;
+    }
+
+    &__text {
+        width: set-grid-size(6, 12) !important;
+
+        line-height: 1.7rem;
     }
     
     .swiper {

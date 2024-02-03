@@ -62,7 +62,7 @@
         flex-direction: column;
         gap: 15px;
 
-        width: 100% / 12 * 6;
+        width: set-grid-size(6, 12);
     }
 
     &__title {
