@@ -126,8 +126,13 @@ const setCountdown = () => {
 };
 
 // Функция конвертации времени в нужный формат
+// Конвертирует секунды в определенный формат времени
+// @param {number} sec - Количество секунд для конвертации
+// @returns {string} - Время в указанном формате
 const convertSeconds = (sec) => {
+    // Создаем новый объект даты с указанными секундами
     let date = new Date(1970, 0, 0, 0, 0, + sec || 0);
+    // Получаем время в указанном формате
     let time = date.toLocaleTimeString('ru', { minute: '2-digit', second: '2-digit' });
 
     return time;
@@ -141,3 +146,51 @@ presentationVideo.addEventListener('loadedmetadata', setCountdown);
 
 // Подключаем функцию к событию обновления времени
 presentationVideo.addEventListener('timeupdate', setCountdown);
+
+
+// Анимированный счетчик секции counters
+
+// Функция для обновления значения статистики с анимацией
+// @param {HTMLElement} element - HTML-элемент для обновления
+// @param {number} targetValue - Целевое значение для анимации
+function updateStatistic(element, targetValue) {
+    let startValue = 0;
+    const increment = Math.ceil(targetValue / 100); // Инкрементное значение для плавного увеличения
+
+    // Функция для анимации обновления значения
+    function animateValue() {
+        startValue += increment; // Увеличение значения
+        if (startValue <= targetValue) {
+            element.textContent = startValue; // Обновление элемента новым значением
+            requestAnimationFrame(animateValue); // Продолжение анимации
+        } else {
+            element.textContent = targetValue; // Установка конечного значения
+        }
+    }
+
+    animateValue();
+
+    window.removeEventListener('scroll', handleScroll); // Удаляем обработчик события после выполнения
+}
+
+
+// Обрабатывает событие прокрутки и обновляет статистику, когда элементы находятся в видимой области
+function handleScroll() {
+    const elements = document.querySelectorAll('.counters__number'); // Находим все элементы с классом counters__number
+
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        // Проверяем, находится ли элемент в видимой области
+        const isSectionVisible = elementPosition >= 0 && elementBottom <= window.innerHeight;
+        if (isSectionVisible) {
+            // Получаем целевое значение элемента и обновляем статистику
+            const targetValue = parseInt(element.textContent);
+            updateStatistic(element, targetValue);
+        }
+    });
+
+}
+
+// Подключаем функцию к событию скролла
+window.addEventListener('scroll', handleScroll);
