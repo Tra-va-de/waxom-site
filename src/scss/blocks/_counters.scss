@@ -1,0 +1,57 @@
+.counters {
+    background-image: $section-gradient;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $grid-gap;
+
+        width: set-grid-size(2, 12);
+    }
+
+    &__icon {
+        height: 44px;
+
+        svg {
+            height: 100%;
+            width: 100%;
+        }
+
+        path {
+            fill: $accent-color;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $grid-gap / 3 * 2;
+    }
+
+    &__number {
+        font-size: $card-number-font-size;
+        color: $text-color;
+        font-weight: 200;
+    }
+
+    &__name {
+        font-size: $card-text-font-size;
+        color: $accent-color;
+        text-transform: uppercase;
+    }
+
+    &__divider {
+        width: $grid-gap;
+        height: 2px;
+
+        border: none;
+        background-color: $text-color;
+    }
+}
