@@ -1,5 +1,5 @@
 .purchase {
-    background-image: linear-gradient(45deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);     
+    background-image: $section-gradient;
     color: $text-color;
     padding: 50px 0;
 
@@ -20,7 +20,7 @@
     &__first-word {
         color: $accent-color;
     }
-      
+
     &__text {
         font-size: 18px;
 
@@ -29,5 +29,5 @@
         color: #615855;
 
         width: auto;
-    }    
+    }
 }

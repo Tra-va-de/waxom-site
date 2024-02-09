@@ -9,8 +9,8 @@ body {
     max-width: $container-width;
     margin: 0 auto;
     padding: 0 $grid-gap;
-    
-    
+
+
     &--vertical-padding {
         padding-top: 80px;
         padding-bottom: 80px;
@@ -53,9 +53,9 @@ body {
     border-radius: 4px;
 
     transition: filter .3s ease-in-out,
-                scale .3s ease-in-out;
+        scale .3s ease-in-out;
 
-    
+
     &:hover {
         filter: brightness(.9);
         scale: 1.05;
