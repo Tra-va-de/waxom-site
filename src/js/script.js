@@ -194,3 +194,19 @@ function handleScroll() {
 
 // Подключаем функцию к событию скролла
 window.addEventListener('scroll', handleScroll);
+
+
+// Свайпер секции posts
+const postsSwiper = new Swiper('.posts__swiper', {
+    // Основные параметры
+    direction: 'horizontal', // Направление
+    loop: true, // Бесконечный слайдер
+    slidesPerView: 3, // Количество слайдов для отображения
+    spaceBetween: 30, // Расстояние между слайдами
+
+    // Стрелки
+    navigation: {
+        nextEl: '.posts__button--next', // Следующий слайд
+        prevEl: '.posts__button--prev', // Предыдущий слайд
+    },
+});

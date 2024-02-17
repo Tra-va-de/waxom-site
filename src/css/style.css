@@ -18,6 +18,14 @@
   fill: #c7b299;
 }
 
+.posts .card__link {
+  -webkit-transition: scale 300ms;
+  transition: scale 300ms;
+}
+.posts .card__link:hover {
+  scale: 1.1;
+}
+
 .presentation__info, .presentation__icon, .presentation__content .container, .projects .card__icons, .services .container, .header .swiper-pagination, .header .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -907,4 +915,165 @@ body {
   height: 2px;
   border: none;
   background-color: #FFFFFF;
+}
+
+.posts .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+.posts__text {
+  width: calc(0.6666666667 * (100% + 30px) - 30px);
+}
+.posts__swiper {
+  width: 100%;
+  overflow: hidden;
+}
+.posts__cards {
+  width: 100%;
+}
+.posts .card__picture {
+  position: relative;
+  width: 100%;
+}
+.posts .card__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 370/220;
+  -webkit-transition: -webkit-filter 200ms ease-in-out;
+  transition: -webkit-filter 200ms ease-in-out;
+  transition: filter 200ms ease-in-out;
+  transition: filter 200ms ease-in-out, -webkit-filter 200ms ease-in-out;
+}
+.posts .card__date {
+  position: absolute;
+  top: 9.0909090909%;
+  left: 5.4054054054%;
+  color: #FFFFFF;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+}
+.posts .card__day {
+  background-color: #363636;
+  font-size: 24px;
+  padding: 5px 10px;
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
+}
+.posts .card__month {
+  background-color: #252525;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  padding: 7px 0;
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
+}
+.posts .card__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
+}
+.posts .card__title, .posts .card__text {
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+.posts .card__title {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+}
+.posts .card__text {
+  font-size: 14px;
+  color: #8c8c8c;
+}
+.posts .card__link {
+  font-size: 14px;
+  color: #c7b299;
+  -ms-flex-item-align: start;
+      align-self: start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.posts .card__link path {
+  fill: #c7b299;
+}
+.posts .card__link-icon {
+  width: 5px;
+  height: 8px;
+}
+.posts .card:hover .card__img {
+  -webkit-filter: brightness(0.4);
+          filter: brightness(0.4);
+}
+.posts .card:hover .card__day {
+  background-color: #c7b299;
+}
+.posts .card:hover .card__month {
+  background-color: #a48d72;
+}
+.posts .card:hover .card__content {
+  background-color: #362f2d;
+}
+.posts .card:hover .card__title {
+  color: #c7b299;
+}
+.posts .card:hover .card__text {
+  color: #FFFFFF;
+}
+.posts__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.posts__button {
+  position: static;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.posts__button path {
+  fill: #8c8c8c;
+  -webkit-transition: fill 0.2s ease;
+  transition: fill 0.2s ease;
+}
+.posts__button::after {
+  display: none;
+}
+.posts__button--next {
+  rotate: 180deg;
+}
+.posts__button:hover path {
+  fill: #c7b299;
 }
