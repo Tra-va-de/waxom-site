@@ -23,14 +23,14 @@
         @extend %flex-align-center;
 
         justify-content: space-between;
+        column-gap: $grid-gap;
     }
 
     &__elements {
         @extend %flex-align-center;
 
         justify-content: space-between;
-        
-        width: set-grid-size(8, 12);
+        column-gap: $grid-gap;
     }
 
     &__buttons {
@@ -69,6 +69,10 @@
 
     font-family: $title-font;
     user-select: none;
+
+    &__img {
+        flex-shrink: 0;
+    }
 
     &__text {
         font-size: 34px;

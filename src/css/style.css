@@ -263,12 +263,17 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
 }
 .nav__elements {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: calc(0.6666666667 * (100% + 30px) - 30px);
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
 }
 .nav__buttons {
   -webkit-box-pack: start;
@@ -303,6 +308,10 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+.logo__img {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .logo__text {
   font-size: 34px;
