@@ -1,25 +1,29 @@
-// Переменные
-@import "./base/vars";
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/extends';
 
-// Утилиты
-@import "./utils/functions";
-@import "./utils/extends";
-@import "./utils/mixins";
+// Base
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/animations';
 
-// Основа
-@import "./base/reset";
-@import "./base/fonts";
-@import "./base/base";
-@import "./base/animations";
+// Components
+@import 'components/nav';
+@import 'components/buttons';
 
-// Секции
-@import "./blocks/nav";
-@import "./blocks/header";
-@import "./blocks/services";
-@import "./blocks/realization";
-@import "./blocks/purchase";
-@import "./blocks/projects";
-@import "./blocks/presentation";
-@import "./blocks/mobile";
-@import "./blocks/counters";
-@import "./blocks/posts";
+// Layouts
+@import 'layouts/header';
+@import 'layouts/grid';
+
+// Pages
+@import 'pages/services';
+@import 'pages/realization';
+@import 'pages/purchase';
+@import 'pages/projects';
+@import 'pages/presentation';
+@import 'pages/mobile';
+@import 'pages/counters';
+@import 'pages/posts';
+@import 'pages/partners';

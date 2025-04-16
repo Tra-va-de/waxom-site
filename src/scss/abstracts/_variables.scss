@@ -1,0 +1,73 @@
+// Breakpoints
+$viewport-max: 1920px;
+$viewport-min: 280px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Grid
+$container-width: 1230px;
+$grid-gap: 30px;
+$container-padding: 15px;
+
+// Base colors
+$white: #FFFFFF;
+$black: #000000;
+$gray-100: #fbfaf8;
+$gray-200: #8c8c8c;
+$gray-300: #736357;
+$gray-400: #555555;
+$brown-100: #c7b299;
+$brown-200: #998675;
+$blue: #00bff3;
+
+// Semantic colors
+$title-color: $gray-400;
+$text-color: $white;
+$text-second-color: $gray-200;
+
+$accent-color: $brown-100;
+$second-accent-color: $gray-100;
+
+$button-color: $brown-200;
+$button-second-color: $gray-300;
+
+$link-color: $blue;
+
+// Gradients
+$section-gradient: linear-gradient(45deg, rgb(33, 27, 25) 0%, rgb(78, 52, 39) 100%);
+
+// Typography
+$title-font: 'Raleway', sans-serif;
+$text-font: 'Montserrat', sans-serif;
+$additional-font: 'Roboto', sans-serif;
+
+// Font Sizes
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Section Typography
+$section-title-font-size: 30px;
+$section-text-font-size: 16px;
+
+// Card Typography
+$card-number-font-size: 48px;
+$card-title-font-size: 20px;
+$card-text-font-size: 14px;
+
+// Footer Typography
+$footer-font-size: 13px;
+
+// Spacing
+$spacing-unit: 8px;
+$spacing-xs: $spacing-unit;
+$spacing-sm: $spacing-unit * 2;
+$spacing-md: $spacing-unit * 3;
+$spacing-lg: $spacing-unit * 4;
+$spacing-xl: $spacing-unit * 5;
+
+// Z-index
+$z-index-header: 1000;
+$z-index-modal: 2000;
+$z-index-tooltip: 3000; 

@@ -70,7 +70,7 @@
     }
 
     // Применение стилей с использованием calc для вычисления адаптивного размера шрифта
-    #{$property}: calc(#{$mobile-font-size} + #{strip-unit($add-size)} * ((100dvw - #{$min-screen-width + px}) / (#{$max-screen-width} - #{$min-screen-width})));
+    #{$property}: calc(#{$mobile-font-size} + #{strip-unit($add-size)} * ((100dvw - #{$viewport-min + px}) / (#{$viewport-max} - #{$viewport-min})));
 }
 
 

@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+// Base Typography
+html,
+body {
+    font-family: $text-font;
+}
+
+// Section Typography
+.section-title {
+    font-family: $title-font;
+    font-weight: 600;
+    font-size: $section-title-font-size;
+    color: $title-color;
+    text-align: center;
+}
+
+.section-text {
+    font-family: $text-font;
+    font-size: $section-text-font-size;
+    font-weight: 500;
+    line-height: 1.7rem;
+    text-align: center;
+    color: $text-second-color;
+}

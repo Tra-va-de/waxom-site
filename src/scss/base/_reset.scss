@@ -1,26 +1,33 @@
 /* Reset and base styles  */
-* {
-	padding: 0px;
-	margin: 0px;
-	border: none;
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+html {
+	font-size: $font-size-base;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-family: $text-font;
+	line-height: $line-height-base;
+	color: $text-color;
+	background-color: $white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Links */
 
 a, a:link, a:visited  {
     text-decoration: none;
-	color: unset;
+	color: inherit;
 }
 
 a:hover  {
 	text-decoration: none;
-	color: unset;
 }
 
 /* Common */
@@ -34,12 +41,14 @@ h1, h2, h3, h4, h5, h6, p {
 	font-weight: inherit;
 }
 
-ul, ul li {
+ul, ol {
 	list-style: none;
 }
 
 img {
-	vertical-align: top;
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
 img, svg {
