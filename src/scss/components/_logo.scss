@@ -1,0 +1,14 @@
+.logo {
+    @extend %flex-align-center;
+
+    font-family: $title-font;
+    user-select: none;
+
+    &__img {
+        flex-shrink: 0;
+    }
+
+    &__text {
+        font-size: 34px;
+    }
+}
