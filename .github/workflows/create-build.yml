@@ -62,8 +62,11 @@ jobs:
           sed -i 's/\.\?\/*src\///g' index.html
           echo "Before updating CSS paths:"
           cat style.css
+          sed -i 's/@import'\''\.\.\/\([^'\'']*\)'\''/@import '\''\1'\''/g' style.css
+          echo "After updating @import paths:"
+          cat style.css
           sed -i 's/url("\.\.\/\([^"]*\)"/url("\1"/g' style.css
-          echo "After updating CSS paths:"
+          echo "After updating url() paths:"
           cat style.css
 
   minify-html:
