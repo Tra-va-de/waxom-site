@@ -1,1 +1,926 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Waxom</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"><link rel="stylesheet" href="style.css"></head><body><nav class="nav nav--top"><div class="container"><a class="nav__logo logo" href="#!"><svg class="logo__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="56px"><defs><filter id="Filter_0"><feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut"/><feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut"/><feBlend mode="normal" in="compOut" in2="SourceGraphic"/></filter></defs><g filter="url(#Filter_0)"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M52.873,55.128 L58.125,45.939 L63.377,55.128 L52.873,55.128 ZM46.303,45.172 L56.811,45.172 L51.557,54.359 L46.303,45.172 ZM51.557,34.451 L56.811,43.641 L46.303,43.641 L51.557,34.451 ZM39.738,33.686 L50.243,33.686 L44.990,42.874 L39.738,33.686 ZM44.990,22.967 L50.243,32.154 L39.738,32.154 L44.990,22.967 ZM33.168,22.202 L43.676,22.202 L38.422,31.390 L33.168,22.202 ZM38.422,11.480 L43.676,20.671 L33.168,20.671 L38.422,11.480 ZM26.600,10.713 L37.108,10.713 L31.854,19.905 L26.600,10.713 ZM31.854,-0.006 L37.108,9.184 L26.600,9.184 L31.854,-0.006 ZM20.032,20.671 L25.286,11.480 L30.540,20.671 L20.032,20.671 ZM13.465,32.154 L18.718,22.967 L23.971,32.154 L13.465,32.154 ZM6.897,43.641 L12.151,34.451 L17.404,43.641 L6.897,43.641 ZM0.331,55.128 L5.582,45.939 L10.836,55.128 L0.331,55.128 ZM17.404,45.172 L12.151,54.359 L6.897,45.172 L17.404,45.172 ZM23.971,33.686 L18.718,42.874 L13.465,33.686 L23.971,33.686 ZM30.540,22.202 L25.286,31.390 L20.032,22.202 L30.540,22.202 ZM37.108,55.128 L26.600,55.128 L31.854,45.939 L37.108,55.128 ZM43.676,45.172 L38.422,54.359 L33.168,45.172 L43.676,45.172 ZM50.243,55.128 L39.738,55.128 L44.990,45.939 L50.243,55.128 Z"/></g></svg><p class="logo__text">Waxom</p></a><div class="nav__elements"><ul class="nav__buttons"><li class="nav__button"><a class="nav__link" href="#!">Home</a></li><li class="nav__button"><a class="nav__link" href="#!">About Us</a></li><li class="nav__button"><a class="nav__link" href="#!">Portfolio</a></li><li class="nav__button"><a class="nav__link" href="#!">Features</a></li><li class="nav__button"><a class="nav__link" href="#!">Blog</a></li><li class="nav__button"><a class="nav__link" href="#!">Pricing</a></li><li class="nav__button"><a class="nav__link" href="#!">Shortcodes</a></li><li class="nav__button"><a class="nav__link" href="#!">Contact</a></li></ul><div class="nav__actions"><a class="nav__cart" href="#!"><svg class="nav__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="24px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M14.995,2.999 L13.496,2.999 C13.496,1.342 11.483,-0.002 8.999,-0.002 C6.514,-0.002 4.501,1.342 4.501,2.999 L3.002,2.999 C1.346,2.999 0.003,4.341 0.003,5.997 L0.003,20.995 C0.003,22.651 1.346,23.994 3.002,23.994 L14.995,23.994 C16.652,23.994 17.994,22.651 17.994,20.995 L17.994,5.997 C17.994,4.341 16.652,2.999 14.995,2.999 ZM8.999,1.498 C10.655,1.498 11.997,1.962 11.997,2.999 L6.000,2.999 C6.000,1.962 7.343,1.498 8.999,1.498 ZM16.495,20.995 C16.495,21.823 15.824,22.494 14.995,22.494 L3.002,22.494 C2.174,22.494 1.502,21.823 1.502,20.995 L1.502,19.495 L16.495,19.495 L16.495,20.995 ZM16.495,17.995 L1.502,17.995 L1.502,5.997 C1.502,5.169 2.174,4.497 3.002,4.497 L4.501,4.497 L4.501,8.998 L6.000,8.998 L6.000,4.497 L11.997,4.497 L11.997,8.998 L13.496,8.998 L13.496,4.497 L14.995,4.497 C15.824,4.497 16.495,5.169 16.495,5.997 L16.495,17.995 Z"/></svg> </a><a class="nav__search" href="#!"><svg class="nav__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M23.762,22.681 L17.569,16.586 C19.190,14.825 20.187,12.494 20.187,9.929 C20.186,4.443 15.668,-0.002 10.093,-0.002 C4.519,-0.002 0.001,4.443 0.001,9.929 C0.001,15.416 4.519,19.862 10.093,19.862 C12.502,19.862 14.711,19.028 16.446,17.644 L22.663,23.763 C22.966,24.062 23.458,24.062 23.761,23.763 C24.065,23.464 24.065,22.979 23.762,22.681 ZM10.093,18.334 C5.377,18.334 1.553,14.572 1.553,9.929 C1.553,5.288 5.377,1.525 10.093,1.525 C14.810,1.525 18.633,5.288 18.633,9.929 C18.633,14.572 14.810,18.334 10.093,18.334 Z"/></svg></a></div></div></div></nav><header class="header"><section class="header__content swiper"><div class="container"><div class="header__info"><div class="header__titles"><h2 class="header__title">Unique and Modern Design</h2><h1 class="header__sub-title">Portfolio PSD Template</h1></div><p class="header__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p></div><a class="header__btn btn" href="#!">GET STARTED</a></div><div class="swiper-wrapper"><div class="swiper-slide"><img class="header__slide" src="img/header/bg-photo.jpg" alt=""></div><div class="swiper-slide"><img class="header__slide" src="img/header/boy-1822614-1920.jpg" alt=""></div><div class="swiper-slide"><img class="header__slide" src="img/header/forest-3119826-1920.jpg" alt=""></div><div class="swiper-slide"><img class="header__slide" src="img/header/forest-438432-1920.jpg" alt=""></div><div class="swiper-slide"><img class="header__slide" src="img/header/nature-3082832-1920.jpg" alt=""></div></div><div class="swiper-pagination"></div><div class="header__slides-buttons"><svg class="header__btn-back swiper-button-prev" width="30px" height="50px" viewBox="0 0 40 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="47.63,75.8 10.375,38.087 47.63,0.375 "></polyline></svg> <svg class="header__btn-forward swiper-button-next" width="30px" height="50px" viewBox="0 0 40 80" xml:space="preserve"><polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="47.63,75.8 10.375,38.087 47.63,0.375 "></polyline></svg></div></section></header><main class="main"><section class="services"><div class="container container--vertical-padding"><div class="services__card card"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M47.668,19.717 L33.402,33.985 L0.534,48.463 L15.011,15.591 L29.279,1.327 C29.898,0.706 30.904,0.706 31.527,1.327 C32.148,1.950 32.148,2.955 31.527,3.576 L17.683,17.422 L9.107,36.888 L12.106,39.887 L31.573,31.314 L45.420,17.470 C46.039,16.847 47.043,16.847 47.668,17.470 C48.289,18.090 48.289,19.100 47.668,19.717 ZM29.745,28.466 C29.434,28.773 29.028,28.931 28.620,28.931 C28.211,28.931 27.805,28.773 27.495,28.466 C26.875,27.843 26.875,26.836 27.495,26.216 L40.827,12.885 C41.450,12.260 42.454,12.260 43.077,12.885 C43.700,13.505 43.700,14.510 43.077,15.134 L29.745,28.466 ZM26.265,24.985 C25.955,25.293 25.549,25.450 25.140,25.450 C24.734,25.450 24.326,25.293 24.015,24.985 C23.394,24.364 23.394,23.354 24.015,22.735 L37.348,9.403 C37.970,8.780 38.974,8.780 39.598,9.403 C40.219,10.023 40.219,11.030 39.598,11.653 L26.265,24.985 ZM22.784,21.502 C22.473,21.814 22.065,21.968 21.659,21.968 C21.253,21.968 20.845,21.814 20.534,21.502 C19.914,20.883 19.914,19.873 20.534,19.253 L33.867,5.922 C34.490,5.298 35.495,5.298 36.117,5.922 C36.739,6.542 36.739,7.548 36.117,8.172 L22.784,21.502 Z"/></svg><div class="card__content"><h3 class="card__title section-title">Web & App Design</h3><p class="card__text section-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p></div><hr class="card__line"></div><div class="services__card card"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44px" height="40px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M0.414,19.697 L4.399,17.548 L21.851,26.958 L39.302,17.548 L43.287,19.697 L21.851,31.253 L0.414,19.697 ZM0.414,11.666 L21.851,0.106 L43.287,11.666 L21.851,23.227 L0.414,11.666 ZM21.851,34.985 L39.302,25.573 L43.287,27.721 L21.851,39.283 L0.414,27.721 L4.399,25.573 L21.851,34.985 Z"/></svg><div class="card__content"><h3 class="card__title section-title">Development</h3><p class="card__text section-text">Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p></div><hr class="card__line"></div><div class="services__card card"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44px" height="44px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M43.927,21.850 C43.927,20.230 42.761,18.501 41.322,17.993 C39.882,17.483 38.487,16.235 38.081,15.251 C37.675,14.269 37.781,12.396 38.436,11.017 C39.092,9.638 38.695,7.591 37.550,6.443 C36.404,5.297 34.357,4.902 32.977,5.558 C31.597,6.214 29.727,6.322 28.746,5.915 C27.765,5.510 26.517,4.112 26.005,2.673 C25.493,1.234 23.764,0.067 22.144,0.067 C20.523,0.067 18.794,1.234 18.282,2.673 C17.770,4.112 16.522,5.509 15.541,5.915 C14.560,6.322 12.690,6.214 11.310,5.558 C9.932,4.902 7.883,5.297 6.737,6.443 C5.592,7.591 5.195,9.638 5.851,11.017 C6.507,12.397 6.611,14.266 6.204,15.250 C5.796,16.232 4.405,17.483 2.966,17.993 C1.526,18.501 0.360,20.230 0.360,21.850 C0.360,23.471 1.526,25.199 2.966,25.711 C4.405,26.223 5.798,27.474 6.206,28.454 C6.614,29.434 6.507,31.304 5.851,32.683 C5.195,34.062 5.592,36.110 6.737,37.255 C7.883,38.402 9.930,38.799 11.310,38.142 C12.690,37.486 14.560,37.381 15.541,37.789 C16.523,38.196 17.770,39.594 18.282,41.032 C18.794,42.468 20.523,43.633 22.144,43.633 C23.764,43.633 25.493,42.468 26.005,41.032 C26.517,39.594 27.763,38.196 28.744,37.786 C29.725,37.378 31.597,37.486 32.977,38.142 C34.356,38.799 36.404,38.402 37.550,37.255 C38.695,36.110 39.092,34.062 38.436,32.683 C37.781,31.304 37.673,29.433 38.079,28.453 C38.485,27.472 39.882,26.223 41.322,25.711 C42.761,25.199 43.927,23.471 43.927,21.850 ZM22.144,29.842 C17.724,29.842 14.150,26.270 14.150,21.859 C14.150,17.440 17.724,13.865 22.144,13.865 C26.554,13.865 30.128,17.440 30.128,21.859 C30.128,26.270 26.554,29.842 22.144,29.842 Z"/></svg><div class="card__content"><h3 class="card__title section-title">Customization</h3><p class="card__text section-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p></div><hr class="card__line"></div><div class="services__card card"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52px" height="36px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M51.411,14.341 L41.921,33.763 C41.326,34.984 39.729,35.984 38.378,35.984 L3.080,35.984 C1.730,35.984 1.112,34.982 1.711,33.763 L11.203,14.341 C11.796,13.118 13.392,12.115 14.742,12.115 L50.040,12.115 C51.394,12.115 52.009,13.118 51.411,14.341 ZM8.1000,13.245 L0.738,30.147 L0.738,7.983 C0.738,6.619 1.843,5.501 3.196,5.502 L14.012,5.502 L14.012,4.058 C14.012,3.063 14.394,2.135 15.094,1.430 C15.793,0.723 16.717,0.335 17.701,0.335 L23.991,0.335 C26.020,0.335 27.675,2.002 27.675,4.058 L27.675,5.501 L38.491,5.501 C39.842,5.501 40.949,6.619 40.949,7.983 L40.949,9.637 L14.742,9.637 C12.475,9.637 10.002,11.187 8.1000,13.245 ZM16.470,5.502 L25.217,5.502 L25.217,4.058 C25.217,3.370 24.667,2.815 23.989,2.815 L17.698,2.815 C17.372,2.815 17.063,2.945 16.832,3.183 C16.602,3.417 16.470,3.730 16.470,4.058 L16.470,5.502 Z"/></svg><div class="card__content"><h3 class="card__title section-title">Marketing</h3><p class="card__text section-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p></div><hr class="card__line"></div></div></section><section class="realization" id="realization"><div class="container container--vertical-padding"><h2 class="realization__title section-title">Waxom is Realization of your Ideas.</h2><p class="realization__text section-text">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p><img class="realization__img" src="img/realization/image.png" alt="Демонстрация проектов"></div></section><section class="purchase" id="purchase"><div class="container"><div class="purchase__info"><h2 class="purchase__title section-title"><span class="purchase__first-word">Waxom</span> Multipurpose WordPress Theme</h2><p class="purchase__text section-text">Don't Forget to Rate the Template. Thanks so much!</p></div><a class="purchase__btn btn" href="#!">PURCHASE NOW</a></div></section><section class="projects" id="projects"><div class="container container--vertical-padding"><header class="projects__header"><h2 class="projects__title section-title">Our Latest Projects.</h2><p class="projects__text section-text">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p></header><main class="projects__main"><ul class="projects__categories"><li class="projects__category"><a class="projects__category-btn projects__category-btn--active" href="#!" data-category="all" onclick="filterCards(this)">All</a></li><li class="projects__category"><a class="projects__category-btn" href="#!" data-category="web" onclick="filterCards(this)">Web Design</a></li><li class="projects__category"><a class="projects__category-btn" href="#!" data-category="mobile" onclick="filterCards(this)">Mobile App</a></li><li class="projects__category"><a class="projects__category-btn" href="#!" data-category="illustration" onclick="filterCards(this)">Illustration</a></li><li class="projects__category"><a class="projects__category-btn" href="#!" data-category="photography" onclick="filterCards(this)">Photography</a></li></ul><div class="projects__cards" data-category="all"><div class="projects__card card" data-categories="web mobile illustration"><div class="card__demo"><img class="card__image" src="img/projects/1.png" alt=""><div class="card__icons"><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z"/></svg> </a><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z"/></svg></a></div></div><div class="card__info"><h3 class="card__title">Claritas Etiam Processus</h3><p class="card__text">Photography, Nature</p></div></div><div class="projects__card card" data-categories="photography"><div class="card__demo"><img class="card__image" src="img/projects/2.png" alt=""><div class="card__icons"><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z"/></svg> </a><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z"/></svg></a></div></div><div class="card__info"><h3 class="card__title">Quam Nutamus Farum</h3><p class="card__text">Graphic Design, Mock-Up</p></div></div><div class="projects__card card" data-categories="illustration"><div class="card__demo"><img class="card__image" src="img/projects/3.png" alt=""><div class="card__icons"><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z"/></svg> </a><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z"/></svg></a></div></div><div class="card__info"><h3 class="card__title">Usus Legentis Videntur</h3><p class="card__text">Photography, Holiday</p></div></div><div class="projects__card card" data-categories="photography"><div class="card__demo"><img class="card__image" src="img/projects/4.png" alt=""><div class="card__icons"><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z"/></svg> </a><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z"/></svg></a></div></div><div class="card__info"><h3 class="card__title">Claritas Etiam Processus</h3><p class="card__text">Photography, Nature</p></div></div><div class="projects__card card" data-categories="illustration"><div class="card__demo"><img class="card__image" src="img/projects/5.png" alt=""><div class="card__icons"><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z"/></svg> </a><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z"/></svg></a></div></div><div class="card__info"><h3 class="card__title">Quam Nutamus Farum</h3><p class="card__text">Graphic Design, Mock-Up</p></div></div><div class="projects__card card" data-categories="photography"><div class="card__demo"><img class="card__image" src="img/projects/6.png" alt=""><div class="card__icons"><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z"/></svg> </a><a class="card__link" href="#!"><svg class="card__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z"/></svg></a></div></div><div class="card__info"><h3 class="card__title">Usus Legentis Videntur</h3><p class="card__text">Photography, Holiday</p></div></div></div><a class="projects__btn btn" href="#!">LOAD MORE</a></main></div></section><section class="presentation" id="presentation"><section class="presentation__content" id="presentation-content"><div class="container"><div class="presentation__icon" onclick="playPresentationVideo()"><svg class="presentation__icon-src" id="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M31.253,18.653 L48.967,33.415 C49.437,33.807 49.709,34.386 49.709,34.997 C49.709,35.609 49.437,36.188 48.967,36.580 L31.253,51.343 C30.876,51.657 30.407,51.820 29.934,51.820 C29.638,51.820 29.339,51.755 29.060,51.626 C28.337,51.287 27.874,50.559 27.874,49.760 L27.874,20.235 C27.874,19.436 28.337,18.708 29.060,18.370 C29.783,18.030 30.640,18.141 31.253,18.653 ZM31.994,45.362 L44.431,34.997 L31.994,24.633 L31.994,45.362 ZM59.759,59.759 C53.033,66.484 44.026,69.998 34.937,69.998 C29.072,69.999 23.173,68.536 17.831,65.528 C16.839,64.970 16.488,63.713 17.046,62.722 C17.604,61.731 18.860,61.379 19.852,61.938 C31.870,68.703 47.082,66.611 56.845,56.845 C68.892,44.798 68.892,25.197 56.845,13.150 C44.798,1.101 25.196,1.102 13.150,13.150 C1.104,25.197 1.104,44.798 13.150,56.845 C13.955,57.650 13.955,58.954 13.150,59.759 C12.347,60.563 11.042,60.563 10.237,59.759 C-3.416,46.105 -3.416,23.890 10.237,10.236 C23.891,-3.416 46.104,-3.417 59.759,10.236 C73.412,23.890 73.412,46.105 59.759,59.759 Z"/></svg> <svg class="presentation__icon-src hide" id="pause-icon" xmlns="http://www.w3.org/2000/svg" width="70px" height="70px" viewBox="0 0 201.24 200.02" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M38.76 161.12c2.78,2.78 2.78,7.28 0,10.05 -2.78,2.78 -7.28,2.78 -10.05,0 -9.85,-9.85 -17.01,-19.98 -21.75,-31.51 -4.73,-11.5 -6.95,-24.15 -6.95,-39.04 0,-27.64 11.27,-52.87 29.55,-71.15 18.16,-18.16 43.25,-29.47 71.07,-29.47 27.86,0 52.98,11.26 71.15,29.43 18.23,18.23 29.47,43.42 29.47,71.19 0,27.9 -10.38,52.57 -28.19,70.39 -17.5,17.51 -42.1,28.32 -71,28.97 -10.05,0.23 -19.71,-0.74 -28.15,-2.63 -9.03,-2.02 -16.79,-5.12 -22.36,-8.99 -3.22,-2.22 -4.03,-6.64 -1.81,-9.86 2.22,-3.22 6.64,-4.03 9.86,-1.81 4.1,2.85 10.14,5.21 17.36,6.82 7.39,1.65 15.9,2.5 24.82,2.3 25.04,-0.56 46.25,-9.82 61.22,-24.81 15.18,-15.19 24.02,-36.35 24.02,-60.39 0,-23.85 -9.65,-45.48 -25.3,-61.14 -15.6,-15.6 -37.17,-25.26 -61.1,-25.26 -23.88,0 -45.42,9.71 -61.01,25.31 -15.7,15.7 -25.39,37.37 -25.39,61.09 0,13.09 1.87,23.99 5.84,33.65 3.96,9.63 10.12,18.27 18.69,26.85zm39.74 -102.14c0,-3.93 3.18,-7.11 7.11,-7.11 3.93,0 7.11,3.18 7.11,7.11l0 82.59c0,3.93 -3.18,7.11 -7.11,7.11 -3.93,0 -7.11,-3.18 -7.11,-7.11l0 -82.59zm28.67 0c0,-3.93 3.18,-7.11 7.11,-7.11 3.93,0 7.11,3.18 7.11,7.11l0 82.59c0,3.93 -3.18,7.11 -7.11,7.11 -3.93,0 -7.11,-3.18 -7.11,-7.11l0 -82.59z"/></svg></div><div class="presentation__info"><h2 class="presentation__title section-title">Waxom Video Presentation</h2><p class="presentation__text section-text">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.</p></div><time class="presentation__timer" id="presentation-timer">03:26</time></div><video class="presentation__video" id="presentation-video" src="video/presentation/video.mp4">Your browser does not support the video. Sorry! 🥹</video><img class="presentation__background" src="img/presentation/photo.png" alt="Background"></section></section><section class="mobile" id="mobile"><div class="container"><section class="mobile__illustration"><img class="mobile__img" src="img/mobile/iPhone in hand.png" alt="IPhone in hand"></section><section class="mobile__content"><h2 class="mobile__title section-title">Excellent for Mobile Devices.</h2><p class="mobile__text section-text">Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p><ul class="mobile__advantages"><li class="mobile__advantage"><div class="mobile__advantage-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M10.5 0c-5.8,0 -10.5,4.7 -10.5,10.5 0,5.8 4.7,10.5 10.5,10.5 5.8,0 10.5,-4.7 10.5,-10.5 0,-5.8 -4.7,-10.5 -10.5,-10.5l0 0zm3.29 11l-4.54 4.54c-0.13,0.13 -0.31,0.21 -0.49,0.21 -0.39,0 -0.7,-0.32 -0.7,-0.7 0,-0.19 0.07,-0.37 0.2,-0.5l4.05 -4.05 -4.05 -4.05c-0.13,-0.13 -0.2,-0.31 -0.2,-0.49 0,-0.39 0.31,-0.7 0.7,-0.7 0.18,0 0.36,0.07 0.49,0.2l4.54 4.54c0.13,0.13 0.2,0.31 0.2,0.5 0,0.19 -0.07,0.37 -0.2,0.5l0 0z"/></svg></div><span class="mobile__advantage-text">Nam liber tempor cum soluta nobis eleifend option;</span></li><li class="mobile__advantage"><div class="mobile__advantage-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M10.5 0c-5.8,0 -10.5,4.7 -10.5,10.5 0,5.8 4.7,10.5 10.5,10.5 5.8,0 10.5,-4.7 10.5,-10.5 0,-5.8 -4.7,-10.5 -10.5,-10.5l0 0zm3.29 11l-4.54 4.54c-0.13,0.13 -0.31,0.21 -0.49,0.21 -0.39,0 -0.7,-0.32 -0.7,-0.7 0,-0.19 0.07,-0.37 0.2,-0.5l4.05 -4.05 -4.05 -4.05c-0.13,-0.13 -0.2,-0.31 -0.2,-0.49 0,-0.39 0.31,-0.7 0.7,-0.7 0.18,0 0.36,0.07 0.49,0.2l4.54 4.54c0.13,0.13 0.2,0.31 0.2,0.5 0,0.19 -0.07,0.37 -0.2,0.5l0 0z"/></svg></div><span class="mobile__advantage-text">Option congue nihil imperdiet doming id quod mazim placerat facer;</span></li><li class="mobile__advantage"><div class="mobile__advantage-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M10.5 0c-5.8,0 -10.5,4.7 -10.5,10.5 0,5.8 4.7,10.5 10.5,10.5 5.8,0 10.5,-4.7 10.5,-10.5 0,-5.8 -4.7,-10.5 -10.5,-10.5l0 0zm3.29 11l-4.54 4.54c-0.13,0.13 -0.31,0.21 -0.49,0.21 -0.39,0 -0.7,-0.32 -0.7,-0.7 0,-0.19 0.07,-0.37 0.2,-0.5l4.05 -4.05 -4.05 -4.05c-0.13,-0.13 -0.2,-0.31 -0.2,-0.49 0,-0.39 0.31,-0.7 0.7,-0.7 0.18,0 0.36,0.07 0.49,0.2l4.54 4.54c0.13,0.13 0.2,0.31 0.2,0.5 0,0.19 -0.07,0.37 -0.2,0.5l0 0z"/></svg></div><span class="mobile__advantage-text">Eodem modo typi, qui nunc nobis videntur parum futurum;</span></li><li class="mobile__advantage"><div class="mobile__advantage-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M10.5 0c-5.8,0 -10.5,4.7 -10.5,10.5 0,5.8 4.7,10.5 10.5,10.5 5.8,0 10.5,-4.7 10.5,-10.5 0,-5.8 -4.7,-10.5 -10.5,-10.5l0 0zm3.29 11l-4.54 4.54c-0.13,0.13 -0.31,0.21 -0.49,0.21 -0.39,0 -0.7,-0.32 -0.7,-0.7 0,-0.19 0.07,-0.37 0.2,-0.5l4.05 -4.05 -4.05 -4.05c-0.13,-0.13 -0.2,-0.31 -0.2,-0.49 0,-0.39 0.31,-0.7 0.7,-0.7 0.18,0 0.36,0.07 0.49,0.2l4.54 4.54c0.13,0.13 0.2,0.31 0.2,0.5 0,0.19 -0.07,0.37 -0.2,0.5l0 0z"/></svg></div><span class="mobile__advantage-text">Investigationes demonstraverunt lectores</span></li></ul></section></div></section><section class="counters" id="counters"><div class="container container--vertical-padding"><ul class="counters__list"><li class="counters__item"><div class="counters__icon"><svg class="counters__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44" preserveAspectRatio="xMidYMid meet"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M19.937,30.250 C25.625,30.250 30.250,24.621 30.250,17.703 C30.250,10.784 25.625,5.156 19.937,5.156 C17.124,5.156 14.498,6.502 12.543,8.944 C10.660,11.298 9.624,14.408 9.625,17.703 C9.625,24.622 14.250,30.250 19.937,30.250 ZM19.937,7.906 C24.107,7.906 27.500,12.300 27.500,17.703 C27.500,23.106 24.107,27.500 19.937,27.500 C15.768,27.500 12.375,23.106 12.372,17.703 C12.372,12.300 15.765,7.906 19.937,7.906 ZM28.598,28.875 C27.838,28.875 27.223,29.490 27.223,30.250 C27.223,31.010 27.838,31.625 28.598,31.625 C33.299,31.625 37.125,35.450 37.125,40.153 C37.125,40.755 36.631,41.250 36.024,41.250 L3.848,41.250 C3.243,41.250 2.750,40.758 2.750,40.153 C2.750,35.450 6.574,31.625 11.274,31.625 C12.034,31.625 12.649,31.010 12.649,30.250 C12.649,29.490 12.034,28.875 11.274,28.875 C5.057,28.875 -0.000,33.934 -0.000,40.153 C-0.000,42.274 1.727,43.1000 3.848,43.1000 L36.024,43.1000 C38.147,43.1000 39.875,42.274 39.875,40.153 C39.875,33.934 34.815,28.875 28.598,28.875 ZM20.943,3.629 C21.927,3.045 22.976,2.751 24.062,2.751 C28.232,2.751 31.625,7.146 31.625,12.547 C31.625,13.516 31.518,14.466 31.305,15.375 C31.131,16.114 31.590,16.854 32.329,17.027 C32.435,17.054 32.539,17.064 32.644,17.064 C33.268,17.064 33.833,16.636 33.982,16.004 C34.241,14.889 34.375,13.726 34.375,12.547 C34.375,5.629 29.750,-0.000 24.062,-0.000 C22.499,-0.000 20.938,0.435 19.544,1.261 C18.889,1.647 18.674,2.491 19.060,3.144 C19.447,3.798 20.292,4.015 20.943,3.629 ZM32.1000,23.375 C32.240,23.375 31.625,23.990 31.625,24.750 C31.625,25.510 32.240,26.125 32.1000,26.125 C37.701,26.125 41.250,30.043 41.250,34.743 C41.250,34.899 41.220,35.053 41.156,35.191 C40.848,35.887 41.161,36.698 41.854,37.006 C42.034,37.087 42.225,37.125 42.413,37.125 C42.939,37.125 43.441,36.819 43.670,36.308 C43.888,35.814 43.1000,35.288 43.1000,34.740 C43.1000,28.527 39.217,23.375 32.1000,23.375 Z"/></svg></div><div class="counters__info"><p class="counters__number">3587</p><p class="counters__name">Satisfied Clients</p></div><hr class="counters__divider"></li><li class="counters__item"><div class="counters__icon"><svg class="counters__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 44"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M46.043,42.749 C46.043,43.440 45.491,43.1000 44.809,43.1000 L1.234,43.1000 C0.553,43.1000 -0.000,43.440 -0.000,42.749 C-0.000,42.058 0.553,41.498 1.234,41.498 L44.809,41.498 C45.491,41.498 46.043,42.058 46.043,42.749 ZM21.769,22.213 C22.007,22.438 22.309,22.549 22.611,22.549 C22.941,22.549 23.270,22.416 23.513,22.152 C23.978,21.647 23.951,20.855 23.453,20.384 C21.337,18.382 21.790,14.314 23.608,12.014 C26.075,8.894 26.618,3.331 23.453,0.337 C22.955,-0.134 22.174,-0.107 21.709,0.398 C21.244,0.904 21.271,1.695 21.769,2.166 C23.670,3.964 23.627,7.989 21.682,10.450 C20.404,12.067 19.640,14.234 19.586,16.396 C19.526,18.759 20.302,20.825 21.769,22.213 ZM47.1000,19.614 L47.1000,22.014 C47.1000,25.455 45.239,28.253 41.846,28.253 L39.091,28.253 C37.221,33.524 32.240,37.304 26.405,37.304 L19.639,37.304 C12.208,37.304 6.163,31.175 6.163,23.642 L6.163,11.232 C6.163,10.541 6.715,9.981 7.397,9.981 L15.312,9.981 C16.918,7.505 16.847,3.854 15.063,2.166 C14.565,1.695 14.538,0.904 15.003,0.398 C15.467,-0.107 16.248,-0.134 16.747,0.337 C19.911,3.331 19.368,8.894 16.902,12.014 C15.083,14.314 14.630,18.383 16.747,20.384 C17.245,20.855 17.272,21.647 16.807,22.152 C16.342,22.657 15.561,22.684 15.063,22.213 C13.595,20.825 12.820,18.759 12.879,16.396 C12.913,15.049 13.222,13.700 13.760,12.483 L8.630,12.483 L8.630,23.642 C8.630,29.796 13.569,34.802 19.639,34.802 L26.405,34.802 C32.475,34.802 37.413,29.796 37.413,23.642 L37.413,12.483 L28.135,12.483 C27.453,12.483 26.901,11.923 26.901,11.232 C26.901,10.541 27.453,9.981 28.135,9.981 L38.647,9.981 C39.329,9.981 39.881,10.541 39.881,11.232 L39.881,13.375 L41.846,13.375 C45.239,13.375 47.1000,16.174 47.1000,19.614 ZM45.532,19.614 C45.532,17.554 43.878,15.877 41.846,15.877 L39.881,15.877 L39.881,25.751 L41.846,25.751 C43.878,25.751 45.532,24.075 45.532,22.014 L45.532,19.614 Z"/></svg></div><div class="counters__info"><p class="counters__number">207</p><p class="counters__name">Cups of coffee</p></div><hr class="counters__divider"></li><li class="counters__item"><div class="counters__icon"><svg class="counters__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M28.873,23.374 L15.126,23.374 C14.367,23.374 13.751,23.990 13.751,24.748 C13.751,25.508 14.367,26.124 15.126,26.124 L28.873,26.124 C29.632,26.124 30.248,25.508 30.248,24.748 C30.248,23.990 29.632,23.374 28.873,23.374 ZM31.622,15.126 L12.376,15.126 C11.617,15.126 11.001,15.741 11.001,16.501 C11.001,17.259 11.617,17.875 12.376,17.875 L31.622,17.875 C32.382,17.875 32.997,17.259 32.997,16.501 C32.997,15.741 32.382,15.126 31.622,15.126 ZM21.999,0.003 C9.852,0.003 0.003,8.620 0.003,19.250 C0.003,25.325 3.227,30.733 8.252,34.261 L8.252,43.995 L17.887,38.149 C19.221,38.368 20.593,38.496 21.999,38.496 C34.148,38.496 43.995,29.879 43.995,19.250 C43.995,8.620 34.148,0.003 21.999,0.003 ZM21.999,35.747 C20.393,35.747 18.843,35.560 17.353,35.242 L10.880,39.133 L10.967,32.756 C6.005,29.772 2.753,24.839 2.753,19.250 C2.753,10.139 11.370,2.753 21.999,2.753 C32.629,2.753 41.246,10.139 41.246,19.250 C41.246,28.360 32.629,35.747 21.999,35.747 Z"/></svg></div><div class="counters__info"><p class="counters__number">2500</p><p class="counters__name">Blog posts</p></div><hr class="counters__divider"></li><li class="counters__item"><div class="counters__icon"><svg class="counters__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M30.250,-0.000 C29.826,-0.000 29.403,0.026 28.982,0.064 C28.828,0.078 28.676,0.100 28.523,0.121 C28.265,0.152 28.010,0.191 27.755,0.238 C27.567,0.272 27.383,0.311 27.203,0.352 C26.992,0.400 26.783,0.456 26.573,0.514 C26.375,0.569 26.177,0.623 25.983,0.686 C25.805,0.744 25.634,0.813 25.459,0.879 C24.1000,1.051 24.551,1.245 24.116,1.461 C24.030,1.503 23.940,1.542 23.856,1.588 C23.627,1.709 23.407,1.843 23.184,1.976 C23.063,2.050 22.940,2.120 22.819,2.198 C22.604,2.336 22.397,2.483 22.191,2.632 C22.129,2.677 22.063,2.718 21.1000,2.764 C19.623,0.975 16.735,-0.000 13.750,-0.000 C6.168,-0.000 -0.000,6.166 -0.000,13.750 C-0.000,26.195 8.002,37.452 21.406,43.863 C21.594,43.954 21.798,43.1000 21.1000,43.1000 C22.202,43.1000 22.405,43.954 22.594,43.863 C35.997,37.452 43.1000,26.195 43.1000,13.750 C43.1000,6.166 37.831,-0.000 30.250,-0.000 ZM21.1000,41.097 C9.934,35.108 2.750,24.927 2.750,13.750 C2.750,7.684 7.685,2.750 13.750,2.750 C15.969,2.750 18.118,3.434 19.940,4.683 C17.805,7.107 16.500,10.275 16.500,13.750 C16.500,14.509 17.114,15.125 17.875,15.125 C18.636,15.125 19.250,14.509 19.250,13.750 C19.250,10.476 20.696,7.539 22.973,5.523 C23.184,5.335 23.405,5.157 23.627,4.987 C23.678,4.951 23.728,4.912 23.779,4.874 C23.998,4.715 24.222,4.562 24.452,4.420 C24.515,4.380 24.578,4.341 24.643,4.304 C24.864,4.171 25.091,4.046 25.321,3.931 C25.400,3.891 25.482,3.852 25.562,3.814 C25.783,3.710 26.005,3.611 26.232,3.521 C26.332,3.481 26.434,3.445 26.537,3.408 C26.751,3.331 26.965,3.259 27.183,3.196 C27.316,3.158 27.445,3.125 27.578,3.093 C27.775,3.044 27.970,2.993 28.171,2.953 C28.353,2.920 28.537,2.896 28.719,2.869 C28.875,2.846 29.031,2.820 29.189,2.803 C29.538,2.771 29.893,2.750 30.250,2.750 C36.315,2.750 41.250,7.684 41.250,13.750 C41.250,24.927 34.066,35.108 21.1000,41.097 ZM30.250,5.500 C29.490,5.500 28.875,6.116 28.875,6.875 C28.875,7.633 29.490,8.250 30.250,8.250 C33.283,8.250 35.750,10.716 35.750,13.750 C35.750,14.509 36.365,15.125 37.125,15.125 C37.885,15.125 38.500,14.509 38.500,13.750 C38.500,9.200 34.799,5.500 30.250,5.500 Z"/></svg></div><div class="counters__info"><p class="counters__number">873</p><p class="counters__name">Likes</p></div><hr class="counters__divider"></li><li class="counters__item"><div class="counters__icon"><svg class="counters__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 54 44"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M52.310,40.611 L1.691,40.611 C0.759,40.611 0.003,41.369 0.003,42.304 C0.003,43.237 0.759,43.995 1.691,43.995 L52.310,43.995 C53.242,43.995 53.998,43.237 53.998,42.304 C53.998,41.369 53.242,40.611 52.310,40.611 ZM28.688,6.771 L28.688,3.387 L32.063,3.387 C32.994,3.387 33.750,2.629 33.750,1.695 C33.750,0.761 32.994,0.003 32.063,0.003 L21.939,0.003 C21.007,0.003 20.251,0.761 20.251,1.695 C20.251,2.629 21.007,3.387 21.939,3.387 L25.314,3.387 C25.314,3.387 25.301,6.910 25.314,6.771 C11.194,7.649 0.003,19.463 0.003,33.843 C0.003,35.217 0.003,34.601 0.003,35.535 C0.003,36.469 0.759,37.227 1.691,37.227 L52.310,37.227 C53.242,37.227 53.998,36.469 53.998,35.535 C53.998,34.601 53.998,35.324 53.998,33.843 C53.998,19.463 42.808,7.649 28.688,6.771 ZM3.378,33.843 C3.378,20.761 13.954,10.155 27.001,10.155 C40.048,10.155 50.623,20.761 50.623,33.843 L3.378,33.843 Z"/></svg></div><div class="counters__info"><p class="counters__number">900</p><p class="counters__name">We launched</p></div><hr class="counters__divider"></li></ul></div></section><section class="posts" id="posts"><div class="container container--vertical-padding"><h2 class="posts__titile section-title">Recent Posts.</h2><p class="posts__text section-text">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p><div class="posts__swiper"><section class="posts__cards swiper-wrapper"><div class="posts__card card swiper-slide"><div class="card__picture"><img class="card__img" src="img/posts/1.png" alt=""><div class="card__date"><p class="card__day">30</p><p class="card__month">Sep.</p></div></div><div class="card__content"><h3 class="card__title">Lorem ipsum dolor sit amet</h3><p class="card__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p><a class="card__link" href="#!"><span class="card__link-text">Read More</span> <svg class="card__link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M0.951,7.815 L4.785,4.348 C4.999,4.156 4.999,3.842 4.785,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.456 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z"/></svg></a></div></div><div class="posts__card card swiper-slide"><div class="card__picture"><img class="card__img" src="img/posts/2.png" alt=""><div class="card__date"><p class="card__day">30</p><p class="card__month">Sep.</p></div></div><div class="card__content"><h3 class="card__title">Lorem ipsum dolor sit amet</h3><p class="card__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p><a class="card__link" href="#!"><span class="card__link-text">Read More</span> <svg class="card__link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M0.951,7.815 L4.785,4.348 C4.999,4.156 4.999,3.842 4.785,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.456 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z"/></svg></a></div></div><div class="posts__card card swiper-slide"><div class="card__picture"><img class="card__img" src="img/posts/3.png" alt=""><div class="card__date"><p class="card__day">30</p><p class="card__month">Sep.</p></div></div><div class="card__content"><h3 class="card__title">Lorem ipsum dolor sit amet</h3><p class="card__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p><a class="card__link" href="#!"><span class="card__link-text">Read More</span> <svg class="card__link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M0.951,7.815 L4.785,4.348 C4.999,4.156 4.999,3.842 4.785,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.456 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z"/></svg></a></div></div><div class="posts__card card swiper-slide"><div class="card__picture"><img class="card__img" src="img/posts/4.png" alt=""><div class="card__date"><p class="card__day">30</p><p class="card__month">Sep.</p></div></div><div class="card__content"><h3 class="card__title">Lorem ipsum dolor sit amet</h3><p class="card__text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p><a class="card__link" href="#!"><span class="card__link-text">Read More</span> <svg class="card__link-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M0.951,7.815 L4.785,4.348 C4.999,4.156 4.999,3.842 4.785,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.456 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z"/></svg></a></div></div></section><div class="posts__buttons"><div class="posts__button posts__button--prev"><svg class="posts__button-icon posts__button-icon--prev" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22 22"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M7.583,10.434 L12.355,5.661 C12.642,5.375 13.108,5.375 13.395,5.661 C13.682,5.949 13.682,6.416 13.395,6.702 L9.141,10.957 L13.395,15.211 C13.682,15.498 13.682,15.963 13.395,16.251 C13.108,16.538 12.642,16.538 12.355,16.251 L7.583,11.480 C7.438,11.335 7.366,11.145 7.367,10.957 C7.367,10.767 7.438,10.579 7.583,10.434 ZM10.987,0.026 C17.053,0.026 21.972,4.943 21.972,11.011 C21.972,17.076 17.053,21.995 10.987,21.995 C4.921,21.995 0.003,17.076 0.003,11.011 C0.003,4.943 4.921,0.026 10.987,0.026 ZM10.987,20.523 C16.232,20.523 20.501,16.253 20.501,11.011 C20.501,5.765 16.232,1.497 10.987,1.497 C5.743,1.497 1.475,5.765 1.475,11.011 C1.475,16.253 5.743,20.523 10.987,20.523 Z"/></svg></div><div class="posts__button posts__button--next"><svg class="posts__button-icon posts__button-icon--next" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M7.583,10.434 L12.355,5.661 C12.642,5.375 13.108,5.375 13.395,5.661 C13.682,5.949 13.682,6.416 13.395,6.702 L9.141,10.957 L13.395,15.211 C13.682,15.498 13.682,15.963 13.395,16.251 C13.108,16.538 12.642,16.538 12.355,16.251 L7.583,11.480 C7.438,11.335 7.366,11.145 7.367,10.957 C7.367,10.767 7.438,10.579 7.583,10.434 ZM10.987,0.026 C17.053,0.026 21.972,4.943 21.972,11.011 C21.972,17.076 17.053,21.995 10.987,21.995 C4.921,21.995 0.003,17.076 0.003,11.011 C0.003,4.943 4.921,0.026 10.987,0.026 ZM10.987,20.523 C16.232,20.523 20.501,16.253 20.501,11.011 C20.501,5.765 16.232,1.497 10.987,1.497 C5.743,1.497 1.475,5.765 1.475,11.011 C1.475,16.253 5.743,20.523 10.987,20.523 Z"/></svg></div></div></div></div></section><section class="partners" id="partners"><div class="container"><div class="partners__cards"><div class="partners__item"><img src="img/partners/logo-01.png" alt="The Barber"></div><div class="partners__item"><img src="img/partners/logo-02.png" alt="Delicious"></div><div class="partners__item"><img src="img/partners/logo-03.png" alt="Designers"></div><div class="partners__item"><img src="img/partners/logo-04.png" alt="Royal"></div></div></div></section></main><footer class="footer"><div class="container"><div class="footer__content"><div class="footer__column footer__about"><div class="footer__logo logo" href="#!"><svg class="logo__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="56px"><defs><filter id="Filter_0"><feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut"/><feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut"/><feBlend mode="normal" in="compOut" in2="SourceGraphic"/></filter></defs><g filter="url(#Filter_0)"><path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M52.873,55.128 L58.125,45.939 L63.377,55.128 L52.873,55.128 ZM46.303,45.172 L56.811,45.172 L51.557,54.359 L46.303,45.172 ZM51.557,34.451 L56.811,43.641 L46.303,43.641 L51.557,34.451 ZM39.738,33.686 L50.243,33.686 L44.990,42.874 L39.738,33.686 ZM44.990,22.967 L50.243,32.154 L39.738,32.154 L44.990,22.967 ZM33.168,22.202 L43.676,22.202 L38.422,31.390 L33.168,22.202 ZM38.422,11.480 L43.676,20.671 L33.168,20.671 L38.422,11.480 ZM26.600,10.713 L37.108,10.713 L31.854,19.905 L26.600,10.713 ZM31.854,-0.006 L37.108,9.184 L26.600,9.184 L31.854,-0.006 ZM20.032,20.671 L25.286,11.480 L30.540,20.671 L20.032,20.671 ZM13.465,32.154 L18.718,22.967 L23.971,32.154 L13.465,32.154 ZM6.897,43.641 L12.151,34.451 L17.404,43.641 L6.897,43.641 ZM0.331,55.128 L5.582,45.939 L10.836,55.128 L0.331,55.128 ZM17.404,45.172 L12.151,54.359 L6.897,45.172 L17.404,45.172 ZM23.971,33.686 L18.718,42.874 L13.465,33.686 L23.971,33.686 ZM30.540,22.202 L25.286,31.390 L20.032,22.202 L30.540,22.202 ZM37.108,55.128 L26.600,55.128 L31.854,45.939 L37.108,55.128 ZM43.676,45.172 L38.422,54.359 L33.168,45.172 L43.676,45.172 ZM50.243,55.128 L39.738,55.128 L44.990,45.939 L50.243,55.128 Z"/></g></svg><p class="logo__text">Waxom</p></div><p class="footer__text">Lorem ipsum dolor sit amet, consec tetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci suscipit lobortis claritatem.</p><a href="#" class="footer__read-more">Read More <svg class="footer__arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill-rule="evenodd" d="M0.951,7.815 L4.786,4.348 C4.999,4.155 4.999,3.841 4.786,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.455 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z"/></svg></a></div><div class="footer__column footer__posts"><h3 class="footer__title">Recent Posts</h3><div class="footer__post"><time class="footer__date">September 08, 2015</time><p class="footer__post-text">Lorem ipsum dolor sit amet, consec tetuer adipiscing elit</p></div><div class="footer__post"><time class="footer__date">September 08, 2015</time><p class="footer__post-text">Diam nonummy nibh euismod tincid unt ut laoreet dolore magna</p></div><div class="footer__post"><time class="footer__date">September 08, 2015</time><p class="footer__post-text">Claritas est etiam processus dynamic us, qui sequitur mutationem per seac ula quarta decima</p></div></div><div class="footer__column footer__twitter"><h3 class="footer__title">Our Twitter</h3><div class="footer__tweet"><p class="footer__tweet-text"><a class="footer__twitter-tag" href="#!">@waxom</a> Cum soluta nobis eleifend option congue nihil imperdiet doming</p><time class="footer__tweet-time">3 mins ago</time></div><div class="footer__tweet"><p class="footer__tweet-text">Mirum est <a class="footer__twitter-tag" href="#!">#envato</a> notare quam littera gothica, quam nunc putamus parum anteposuerit litterarum</p><time class="footer__tweet-time">5 hours ago</time></div><div class="footer__tweet"><p class="footer__tweet-text">Soluta nobis option <a href="#!" class="footer__tweet-link">bit.ly/1Hniso7</a></p><time class="footer__tweet-time">20 days ago</time></div></div><div class="footer__column footer__dribbble"><h3 class="footer__title">Dribbble Widget</h3><div class="footer__dribbble-grid"><a href="#!" class="footer__dribbble-item"><img src="img/footer/dribbble/photo-1.png" alt="Dribbble shot"> </a><a href="#!" class="footer__dribbble-item"><img src="img/footer/dribbble/photo-2.png" alt="Dribbble shot"> </a><a href="#!" class="footer__dribbble-item"><img src="img/footer/dribbble/photo-3.png" alt="Dribbble shot"> </a><a href="#!" class="footer__dribbble-item"><img src="img/footer/dribbble/photo-4.png" alt="Dribbble shot"></a></div></div></div></div><div class="footer__bottom"><div class="container"><div class="footer__bottom-content"><div class="footer__info"><p class="footer__copyright">Copyright © 2015 <span class="footer__copyright-accent">Waxom</span></p><nav class="footer__nav"><a href="#!" class="footer__nav-link">Privacy Policy</a> <a href="#!" class="footer__nav-link">FAQ</a> <a href="#!" class="footer__nav-link">Support</a></nav></div><div class="footer__credits"><p class="footer__credits-text">Designed by <a href="#!" class="footer__credits-link">ThemeFire</a></p><p class="footer__credits-text">Only on <a href="#!" class="footer__credits-link">Envato Market</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script><script src="js/main.js" type="module"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waxom</title>
+    <!-- Подключение SwiperJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Подключение собственного файла стилей -->
+    <link rel="stylesheet" href="./src/css/style.min.css">
+</head>
+
+<body>
+    <nav class="nav nav--top">
+        <div class="container">
+            <a class="nav__logo logo" href="#!">
+                <svg class="logo__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="64px" height="56px">
+                    <defs>
+                        <filter id="Filter_0">
+                            <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut" />
+                            <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                            <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+                        </filter>
+
+                    </defs>
+                    <g filter="url(#Filter_0)">
+                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                            d="M52.873,55.128 L58.125,45.939 L63.377,55.128 L52.873,55.128 ZM46.303,45.172 L56.811,45.172 L51.557,54.359 L46.303,45.172 ZM51.557,34.451 L56.811,43.641 L46.303,43.641 L51.557,34.451 ZM39.738,33.686 L50.243,33.686 L44.990,42.874 L39.738,33.686 ZM44.990,22.967 L50.243,32.154 L39.738,32.154 L44.990,22.967 ZM33.168,22.202 L43.676,22.202 L38.422,31.390 L33.168,22.202 ZM38.422,11.480 L43.676,20.671 L33.168,20.671 L38.422,11.480 ZM26.600,10.713 L37.108,10.713 L31.854,19.905 L26.600,10.713 ZM31.854,-0.006 L37.108,9.184 L26.600,9.184 L31.854,-0.006 ZM20.032,20.671 L25.286,11.480 L30.540,20.671 L20.032,20.671 ZM13.465,32.154 L18.718,22.967 L23.971,32.154 L13.465,32.154 ZM6.897,43.641 L12.151,34.451 L17.404,43.641 L6.897,43.641 ZM0.331,55.128 L5.582,45.939 L10.836,55.128 L0.331,55.128 ZM17.404,45.172 L12.151,54.359 L6.897,45.172 L17.404,45.172 ZM23.971,33.686 L18.718,42.874 L13.465,33.686 L23.971,33.686 ZM30.540,22.202 L25.286,31.390 L20.032,22.202 L30.540,22.202 ZM37.108,55.128 L26.600,55.128 L31.854,45.939 L37.108,55.128 ZM43.676,45.172 L38.422,54.359 L33.168,45.172 L43.676,45.172 ZM50.243,55.128 L39.738,55.128 L44.990,45.939 L50.243,55.128 Z" />
+                    </g>
+                </svg>
+                <p class="logo__text">Waxom</p>
+            </a>
+
+            <div class="nav__elements">
+                <ul class="nav__buttons">
+                    <li class="nav__button"><a class="nav__link" href="#!">Home</a></li>
+                    <li class="nav__button"><a class="nav__link" href="#!">About Us</a></li>
+                    <li class="nav__button"><a class="nav__link" href="#!">Portfolio</a></li>
+                    <li class="nav__button"><a class="nav__link" href="#!">Features</a></li>
+                    <li class="nav__button"><a class="nav__link" href="#!">Blog</a></li>
+                    <li class="nav__button"><a class="nav__link" href="#!">Pricing</a></li>
+                    <li class="nav__button"><a class="nav__link" href="#!">Shortcodes</a></li>
+                    <li class="nav__button"><a class="nav__link" href="#!">Contact</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <a class="nav__cart" href="#!">
+                        <svg class="nav__img" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="24px">
+                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                d="M14.995,2.999 L13.496,2.999 C13.496,1.342 11.483,-0.002 8.999,-0.002 C6.514,-0.002 4.501,1.342 4.501,2.999 L3.002,2.999 C1.346,2.999 0.003,4.341 0.003,5.997 L0.003,20.995 C0.003,22.651 1.346,23.994 3.002,23.994 L14.995,23.994 C16.652,23.994 17.994,22.651 17.994,20.995 L17.994,5.997 C17.994,4.341 16.652,2.999 14.995,2.999 ZM8.999,1.498 C10.655,1.498 11.997,1.962 11.997,2.999 L6.000,2.999 C6.000,1.962 7.343,1.498 8.999,1.498 ZM16.495,20.995 C16.495,21.823 15.824,22.494 14.995,22.494 L3.002,22.494 C2.174,22.494 1.502,21.823 1.502,20.995 L1.502,19.495 L16.495,19.495 L16.495,20.995 ZM16.495,17.995 L1.502,17.995 L1.502,5.997 C1.502,5.169 2.174,4.497 3.002,4.497 L4.501,4.497 L4.501,8.998 L6.000,8.998 L6.000,4.497 L11.997,4.497 L11.997,8.998 L13.496,8.998 L13.496,4.497 L14.995,4.497 C15.824,4.497 16.495,5.169 16.495,5.997 L16.495,17.995 Z" />
+                        </svg>
+                    </a>
+                    <a class="nav__search" href="#!">
+                        <svg class="nav__img" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px">
+
+                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                d="M23.762,22.681 L17.569,16.586 C19.190,14.825 20.187,12.494 20.187,9.929 C20.186,4.443 15.668,-0.002 10.093,-0.002 C4.519,-0.002 0.001,4.443 0.001,9.929 C0.001,15.416 4.519,19.862 10.093,19.862 C12.502,19.862 14.711,19.028 16.446,17.644 L22.663,23.763 C22.966,24.062 23.458,24.062 23.761,23.763 C24.065,23.464 24.065,22.979 23.762,22.681 ZM10.093,18.334 C5.377,18.334 1.553,14.572 1.553,9.929 C1.553,5.288 5.377,1.525 10.093,1.525 C14.810,1.525 18.633,5.288 18.633,9.929 C18.633,14.572 14.810,18.334 10.093,18.334 Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <!-- Slider main container -->
+        <section class="header__content swiper">
+
+            <div class="container">
+                <div class="header__info">
+                    <div class="header__titles">
+                        <h2 class="header__title">Unique and Modern Design</h2>
+                        <h1 class="header__sub-title">Portfolio PSD Template</h1>
+                    </div>
+                    <p class="header__text">
+                        Nam liber tempor cum soluta nobis eleifend option congue
+                        nihil imperdiet doming id quod mazim placerat facer possim
+                        assum.
+                    </p>
+                </div>
+                <a class="header__btn btn" href="#!">GET STARTED</a>
+            </div>
+
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/bg-photo.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/boy-1822614-1920.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/forest-3119826-1920.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/forest-438432-1920.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img class="header__slide" src="./src/img/header/nature-3082832-1920.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="header__slides-buttons">
+                <svg class="header__btn-back swiper-button-prev" width="30px" height="50px" viewBox="0 0 40 80"
+                    xml:space="preserve">
+                    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" points="47.63,75.8 10.375,38.087 47.63,0.375 "></polyline>
+                </svg>
+                <svg class="header__btn-forward swiper-button-next" width="30px" height="50px" viewBox="0 0 40 80"
+                    xml:space="preserve">
+                    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" points="47.63,75.8 10.375,38.087 47.63,0.375 "></polyline>
+                </svg>
+            </div>
+        </section>
+    </header>
+
+    <main class="main">
+        <section class="services">
+            <div class="container container--vertical-padding">
+                <div class="services__card card">
+                    <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="49px">
+                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                            d="M47.668,19.717 L33.402,33.985 L0.534,48.463 L15.011,15.591 L29.279,1.327 C29.898,0.706 30.904,0.706 31.527,1.327 C32.148,1.950 32.148,2.955 31.527,3.576 L17.683,17.422 L9.107,36.888 L12.106,39.887 L31.573,31.314 L45.420,17.470 C46.039,16.847 47.043,16.847 47.668,17.470 C48.289,18.090 48.289,19.100 47.668,19.717 ZM29.745,28.466 C29.434,28.773 29.028,28.931 28.620,28.931 C28.211,28.931 27.805,28.773 27.495,28.466 C26.875,27.843 26.875,26.836 27.495,26.216 L40.827,12.885 C41.450,12.260 42.454,12.260 43.077,12.885 C43.700,13.505 43.700,14.510 43.077,15.134 L29.745,28.466 ZM26.265,24.985 C25.955,25.293 25.549,25.450 25.140,25.450 C24.734,25.450 24.326,25.293 24.015,24.985 C23.394,24.364 23.394,23.354 24.015,22.735 L37.348,9.403 C37.970,8.780 38.974,8.780 39.598,9.403 C40.219,10.023 40.219,11.030 39.598,11.653 L26.265,24.985 ZM22.784,21.502 C22.473,21.814 22.065,21.968 21.659,21.968 C21.253,21.968 20.845,21.814 20.534,21.502 C19.914,20.883 19.914,19.873 20.534,19.253 L33.867,5.922 C34.490,5.298 35.495,5.298 36.117,5.922 C36.739,6.542 36.739,7.548 36.117,8.172 L22.784,21.502 Z" />
+                    </svg>
+
+                    <div class="card__content">
+                        <h3 class="card__title section-title">Web & App Design</h3>
+                        <p class="card__text section-text">
+                            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+                            mazim.
+                        </p>
+                    </div>
+
+                    <hr class="card__line">
+                </div>
+
+                <div class="services__card card">
+                    <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="44px" height="40px">
+                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                            d="M0.414,19.697 L4.399,17.548 L21.851,26.958 L39.302,17.548 L43.287,19.697 L21.851,31.253 L0.414,19.697 ZM0.414,11.666 L21.851,0.106 L43.287,11.666 L21.851,23.227 L0.414,11.666 ZM21.851,34.985 L39.302,25.573 L43.287,27.721 L21.851,39.283 L0.414,27.721 L4.399,25.573 L21.851,34.985 Z" />
+                    </svg>
+
+                    <div class="card__content">
+                        <h3 class="card__title section-title">Development</h3>
+                        <p class="card__text section-text">
+                            Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                            laoreet.
+                        </p>
+                    </div>
+
+                    <hr class="card__line">
+                </div>
+
+                <div class="services__card card">
+                    <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="44px" height="44px">
+                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                            d="M43.927,21.850 C43.927,20.230 42.761,18.501 41.322,17.993 C39.882,17.483 38.487,16.235 38.081,15.251 C37.675,14.269 37.781,12.396 38.436,11.017 C39.092,9.638 38.695,7.591 37.550,6.443 C36.404,5.297 34.357,4.902 32.977,5.558 C31.597,6.214 29.727,6.322 28.746,5.915 C27.765,5.510 26.517,4.112 26.005,2.673 C25.493,1.234 23.764,0.067 22.144,0.067 C20.523,0.067 18.794,1.234 18.282,2.673 C17.770,4.112 16.522,5.509 15.541,5.915 C14.560,6.322 12.690,6.214 11.310,5.558 C9.932,4.902 7.883,5.297 6.737,6.443 C5.592,7.591 5.195,9.638 5.851,11.017 C6.507,12.397 6.611,14.266 6.204,15.250 C5.796,16.232 4.405,17.483 2.966,17.993 C1.526,18.501 0.360,20.230 0.360,21.850 C0.360,23.471 1.526,25.199 2.966,25.711 C4.405,26.223 5.798,27.474 6.206,28.454 C6.614,29.434 6.507,31.304 5.851,32.683 C5.195,34.062 5.592,36.110 6.737,37.255 C7.883,38.402 9.930,38.799 11.310,38.142 C12.690,37.486 14.560,37.381 15.541,37.789 C16.523,38.196 17.770,39.594 18.282,41.032 C18.794,42.468 20.523,43.633 22.144,43.633 C23.764,43.633 25.493,42.468 26.005,41.032 C26.517,39.594 27.763,38.196 28.744,37.786 C29.725,37.378 31.597,37.486 32.977,38.142 C34.356,38.799 36.404,38.402 37.550,37.255 C38.695,36.110 39.092,34.062 38.436,32.683 C37.781,31.304 37.673,29.433 38.079,28.453 C38.485,27.472 39.882,26.223 41.322,25.711 C42.761,25.199 43.927,23.471 43.927,21.850 ZM22.144,29.842 C17.724,29.842 14.150,26.270 14.150,21.859 C14.150,17.440 17.724,13.865 22.144,13.865 C26.554,13.865 30.128,17.440 30.128,21.859 C30.128,26.270 26.554,29.842 22.144,29.842 Z" />
+                    </svg>
+
+                    <div class="card__content">
+                        <h3 class="card__title section-title">Customization</h3>
+                        <p class="card__text section-text">
+                            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+                            mazim.
+                        </p>
+                    </div>
+
+                    <hr class="card__line">
+                </div>
+
+                <div class="services__card card">
+                    <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="52px" height="36px">
+                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                            d="M51.411,14.341 L41.921,33.763 C41.326,34.984 39.729,35.984 38.378,35.984 L3.080,35.984 C1.730,35.984 1.112,34.982 1.711,33.763 L11.203,14.341 C11.796,13.118 13.392,12.115 14.742,12.115 L50.040,12.115 C51.394,12.115 52.009,13.118 51.411,14.341 ZM8.1000,13.245 L0.738,30.147 L0.738,7.983 C0.738,6.619 1.843,5.501 3.196,5.502 L14.012,5.502 L14.012,4.058 C14.012,3.063 14.394,2.135 15.094,1.430 C15.793,0.723 16.717,0.335 17.701,0.335 L23.991,0.335 C26.020,0.335 27.675,2.002 27.675,4.058 L27.675,5.501 L38.491,5.501 C39.842,5.501 40.949,6.619 40.949,7.983 L40.949,9.637 L14.742,9.637 C12.475,9.637 10.002,11.187 8.1000,13.245 ZM16.470,5.502 L25.217,5.502 L25.217,4.058 C25.217,3.370 24.667,2.815 23.989,2.815 L17.698,2.815 C17.372,2.815 17.063,2.945 16.832,3.183 C16.602,3.417 16.470,3.730 16.470,4.058 L16.470,5.502 Z" />
+                    </svg>
+
+                    <div class="card__content">
+                        <h3 class="card__title section-title">Marketing</h3>
+                        <p class="card__text section-text">
+                            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+                            mazim.
+                        </p>
+                    </div>
+
+                    <hr class="card__line">
+                </div>
+            </div>
+        </section>
+
+        <section class="realization" id="realization">
+            <div class="container container--vertical-padding">
+                <h2 class="realization__title section-title">Waxom is Realization of your Ideas.</h2>
+                <p class="realization__text section-text">
+                    Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam
+                    processus dynamicus, qui sequitur mutationem consuetudium.
+                </p>
+                <img class="realization__img" src="./src/img/realization/image.png" alt="Демонстрация проектов">
+            </div>
+        </section>
+
+        <section class="purchase" id="purchase">
+            <div class="container">
+                <div class="purchase__info">
+                    <h2 class="purchase__title section-title"><span class="purchase__first-word">Waxom</span>
+                        Multipurpose WordPress Theme</h2>
+                    <p class="purchase__text section-text">Don't Forget to Rate the Template. Thanks so much!</p>
+                </div>
+                <a class="purchase__btn btn" href="#!">PURCHASE NOW</a>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="container container--vertical-padding">
+                <header class="projects__header">
+                    <h2 class="projects__title section-title">Our Latest Projects.</h2>
+                    <p class="projects__text section-text">
+                        Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est
+                        etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                    </p>
+                </header>
+
+                <main class="projects__main">
+                    <ul class="projects__categories">
+                        <li class="projects__category"><a class="projects__category-btn projects__category-btn--active"
+                                href="#!" data-category="all" onclick="filterCards(this)">All</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!" data-category="web"
+                                onclick="filterCards(this)">Web Design</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!"
+                                data-category="mobile" onclick="filterCards(this)">Mobile App</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!"
+                                data-category="illustration" onclick="filterCards(this)">Illustration</a></li>
+                        <li class="projects__category"><a class="projects__category-btn" href="#!"
+                                data-category="photography" onclick="filterCards(this)">Photography</a></li>
+                    </ul>
+
+                    <div class="projects__cards" data-category="all">
+                        <div class="projects__card card" data-categories="web mobile illustration">
+                            <div class="card__demo">
+                                <img class="card__image" src="./src/img/projects/1.png" alt="">
+                                <div class="card__icons">
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z" />
+                                        </svg>
+                                    </a>
+
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card__info">
+                                <h3 class="card__title">Claritas Etiam Processus</h3>
+                                <p class="card__text">Photography, Nature</p>
+                            </div>
+                        </div>
+
+                        <div class="projects__card card" data-categories="photography">
+                            <div class="card__demo">
+                                <img class="card__image" src="./src/img/projects/2.png" alt="">
+                                <div class="card__icons">
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z" />
+                                        </svg>
+                                    </a>
+
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card__info">
+                                <h3 class="card__title">Quam Nutamus Farum</h3>
+                                <p class="card__text">Graphic Design, Mock-Up</p>
+                            </div>
+                        </div>
+
+                        <div class="projects__card card" data-categories="illustration">
+                            <div class="card__demo">
+                                <img class="card__image" src="./src/img/projects/3.png" alt="">
+                                <div class="card__icons">
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z" />
+                                        </svg>
+                                    </a>
+
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card__info">
+                                <h3 class="card__title">Usus Legentis Videntur</h3>
+                                <p class="card__text">Photography, Holiday</p>
+                            </div>
+                        </div>
+
+                        <div class="projects__card card" data-categories="photography">
+                            <div class="card__demo">
+                                <img class="card__image" src="./src/img/projects/4.png" alt="">
+                                <div class="card__icons">
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z" />
+                                        </svg>
+                                    </a>
+
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card__info">
+                                <h3 class="card__title">Claritas Etiam Processus</h3>
+                                <p class="card__text">Photography, Nature</p>
+                            </div>
+                        </div>
+
+                        <div class="projects__card card" data-categories="illustration">
+                            <div class="card__demo">
+                                <img class="card__image" src="./src/img/projects/5.png" alt="">
+                                <div class="card__icons">
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z" />
+                                        </svg>
+                                    </a>
+
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card__info">
+                                <h3 class="card__title">Quam Nutamus Farum</h3>
+                                <p class="card__text">Graphic Design, Mock-Up</p>
+                            </div>
+                        </div>
+
+                        <div class="projects__card card" data-categories="photography">
+                            <div class="card__demo">
+                                <img class="card__image" src="./src/img/projects/6.png" alt="">
+                                <div class="card__icons">
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M23.499,11.242 L21.573,13.170 L18.386,16.359 C18.233,16.529 18.045,16.683 17.875,16.819 C16.102,18.217 13.750,18.524 11.722,17.724 C10.972,17.433 10.256,16.973 9.643,16.359 L12.284,13.715 C13.239,14.670 14.790,14.670 15.744,13.715 L17.772,11.686 L20.857,8.599 C21.812,7.644 21.812,6.091 20.857,5.137 C19.903,4.182 18.352,4.182 17.397,5.137 L14.943,7.593 C13.409,6.877 11.654,6.757 10.035,7.217 L14.756,2.494 C17.159,0.089 21.096,0.089 23.499,2.494 C25.919,4.915 25.919,8.837 23.499,11.242 ZM14.262,8.293 C15.011,8.582 15.727,9.042 16.341,9.656 L13.699,12.301 C12.745,11.345 11.194,11.345 10.239,12.301 L5.126,17.416 C4.171,18.372 4.171,19.922 5.126,20.878 C6.080,21.834 7.631,21.834 8.586,20.878 L10.938,18.524 C12.949,19.327 13.495,19.394 15.846,18.849 L11.228,23.521 C8.825,25.927 4.887,25.927 2.484,23.521 C0.081,21.117 0.081,17.178 2.484,14.774 L7.597,9.656 C7.665,9.589 7.751,9.503 7.836,9.435 C9.625,7.831 12.131,7.439 14.262,8.293 Z" />
+                                        </svg>
+                                    </a>
+
+                                    <a class="card__link" href="#!">
+                                        <svg class="card__icon" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px">
+                                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                                d="M25.456,24.172 C25.135,24.489 24.714,24.646 24.293,24.646 C23.873,24.646 23.451,24.489 23.130,24.172 L18.795,19.901 C16.902,21.348 14.535,22.218 11.959,22.218 C5.793,22.218 0.777,17.276 0.777,11.202 C0.777,5.128 5.793,0.186 11.959,0.186 C18.125,0.186 23.141,5.128 23.141,11.202 C23.141,13.572 22.370,15.764 21.073,17.563 L25.456,21.881 C26.098,22.514 26.098,23.540 25.456,24.172 ZM11.960,2.778 C7.245,2.778 3.409,6.557 3.409,11.202 C3.409,15.847 7.245,19.626 11.960,19.627 C14.064,19.627 15.990,18.871 17.481,17.624 C17.941,17.240 18.355,16.805 18.724,16.336 C19.840,14.913 20.510,13.135 20.510,11.202 C20.510,6.557 16.674,2.778 11.960,2.778 ZM16.810,9.581 C16.625,9.668 16.429,9.711 16.234,9.711 C15.747,9.711 15.280,9.444 15.052,8.983 C14.347,7.559 12.911,6.674 11.304,6.674 C10.578,6.674 9.989,6.094 9.989,5.377 C9.989,4.663 10.578,4.082 11.304,4.082 C13.925,4.082 16.268,5.525 17.417,7.847 C17.735,8.491 17.464,9.267 16.810,9.581 Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card__info">
+                                <h3 class="card__title">Usus Legentis Videntur</h3>
+                                <p class="card__text">Photography, Holiday</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="projects__btn btn" href="#!">LOAD MORE</a>
+                </main>
+            </div>
+        </section>
+
+        <section class="presentation" id="presentation">
+            <section class="presentation__content" id="presentation-content">
+                <div class="container">
+                    <div class="presentation__icon" onclick="playPresentationVideo()">
+                        <svg class="presentation__icon-src" id="play-icon" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px">
+                            <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                d="M31.253,18.653 L48.967,33.415 C49.437,33.807 49.709,34.386 49.709,34.997 C49.709,35.609 49.437,36.188 48.967,36.580 L31.253,51.343 C30.876,51.657 30.407,51.820 29.934,51.820 C29.638,51.820 29.339,51.755 29.060,51.626 C28.337,51.287 27.874,50.559 27.874,49.760 L27.874,20.235 C27.874,19.436 28.337,18.708 29.060,18.370 C29.783,18.030 30.640,18.141 31.253,18.653 ZM31.994,45.362 L44.431,34.997 L31.994,24.633 L31.994,45.362 ZM59.759,59.759 C53.033,66.484 44.026,69.998 34.937,69.998 C29.072,69.999 23.173,68.536 17.831,65.528 C16.839,64.970 16.488,63.713 17.046,62.722 C17.604,61.731 18.860,61.379 19.852,61.938 C31.870,68.703 47.082,66.611 56.845,56.845 C68.892,44.798 68.892,25.197 56.845,13.150 C44.798,1.101 25.196,1.102 13.150,13.150 C1.104,25.197 1.104,44.798 13.150,56.845 C13.955,57.650 13.955,58.954 13.150,59.759 C12.347,60.563 11.042,60.563 10.237,59.759 C-3.416,46.105 -3.416,23.890 10.237,10.236 C23.891,-3.416 46.104,-3.417 59.759,10.236 C73.412,23.890 73.412,46.105 59.759,59.759 Z" />
+                        </svg>
+
+                        <svg class="presentation__icon-src hide" id="pause-icon" xmlns="http://www.w3.org/2000/svg"
+                            width="70px" height="70px" viewBox="0 0 201.24 200.02"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path
+                                d="M38.76 161.12c2.78,2.78 2.78,7.28 0,10.05 -2.78,2.78 -7.28,2.78 -10.05,0 -9.85,-9.85 -17.01,-19.98 -21.75,-31.51 -4.73,-11.5 -6.95,-24.15 -6.95,-39.04 0,-27.64 11.27,-52.87 29.55,-71.15 18.16,-18.16 43.25,-29.47 71.07,-29.47 27.86,0 52.98,11.26 71.15,29.43 18.23,18.23 29.47,43.42 29.47,71.19 0,27.9 -10.38,52.57 -28.19,70.39 -17.5,17.51 -42.1,28.32 -71,28.97 -10.05,0.23 -19.71,-0.74 -28.15,-2.63 -9.03,-2.02 -16.79,-5.12 -22.36,-8.99 -3.22,-2.22 -4.03,-6.64 -1.81,-9.86 2.22,-3.22 6.64,-4.03 9.86,-1.81 4.1,2.85 10.14,5.21 17.36,6.82 7.39,1.65 15.9,2.5 24.82,2.3 25.04,-0.56 46.25,-9.82 61.22,-24.81 15.18,-15.19 24.02,-36.35 24.02,-60.39 0,-23.85 -9.65,-45.48 -25.3,-61.14 -15.6,-15.6 -37.17,-25.26 -61.1,-25.26 -23.88,0 -45.42,9.71 -61.01,25.31 -15.7,15.7 -25.39,37.37 -25.39,61.09 0,13.09 1.87,23.99 5.84,33.65 3.96,9.63 10.12,18.27 18.69,26.85zm39.74 -102.14c0,-3.93 3.18,-7.11 7.11,-7.11 3.93,0 7.11,3.18 7.11,7.11l0 82.59c0,3.93 -3.18,7.11 -7.11,7.11 -3.93,0 -7.11,-3.18 -7.11,-7.11l0 -82.59zm28.67 0c0,-3.93 3.18,-7.11 7.11,-7.11 3.93,0 7.11,3.18 7.11,7.11l0 82.59c0,3.93 -3.18,7.11 -7.11,7.11 -3.93,0 -7.11,-3.18 -7.11,-7.11l0 -82.59z" />
+                        </svg>
+                    </div>
+
+                    <div class="presentation__info">
+                        <h2 class="presentation__title section-title">Waxom Video Presentation</h2>
+
+                        <p class="presentation__text section-text">
+                            Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur
+                            mutationem consuetudium.
+                        </p>
+                    </div>
+
+                    <time class="presentation__timer" id="presentation-timer">03:26</time>
+                </div>
+
+                <video class="presentation__video" id="presentation-video" src="./src/video/presentation/video.mp4">
+                    Your browser does not support the video. Sorry! 🥹
+                </video>
+
+                <img class="presentation__background" src="./src/img/presentation/photo.png" alt="Background"></img>
+            </section>
+        </section>
+
+        <section class="mobile" id="mobile">
+            <div class="container">
+                <section class="mobile__illustration">
+                    <img class="mobile__img" src="./src/img/mobile/iPhone in hand.png" alt="IPhone in hand">
+                </section>
+                <section class="mobile__content">
+                    <h2 class="mobile__title section-title">Excellent for Mobile Devices.</h2>
+
+                    <p class="mobile__text section-text">
+                        Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                        aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii
+                        legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+                        in futurum.
+                    </p>
+
+                    <ul class="mobile__advantages">
+                        <li class="mobile__advantage">
+                            <div class="mobile__advantage-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path
+                                        d="M10.5 0c-5.8,0 -10.5,4.7 -10.5,10.5 0,5.8 4.7,10.5 10.5,10.5 5.8,0 10.5,-4.7 10.5,-10.5 0,-5.8 -4.7,-10.5 -10.5,-10.5l0 0zm3.29 11l-4.54 4.54c-0.13,0.13 -0.31,0.21 -0.49,0.21 -0.39,0 -0.7,-0.32 -0.7,-0.7 0,-0.19 0.07,-0.37 0.2,-0.5l4.05 -4.05 -4.05 -4.05c-0.13,-0.13 -0.2,-0.31 -0.2,-0.49 0,-0.39 0.31,-0.7 0.7,-0.7 0.18,0 0.36,0.07 0.49,0.2l4.54 4.54c0.13,0.13 0.2,0.31 0.2,0.5 0,0.19 -0.07,0.37 -0.2,0.5l0 0z" />
+                                </svg>
+                            </div>
+
+                            <span class="mobile__advantage-text">
+                                Nam liber tempor cum soluta nobis eleifend option;
+                            </span>
+                        </li>
+
+                        <li class="mobile__advantage">
+                            <div class="mobile__advantage-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path
+                                        d="M10.5 0c-5.8,0 -10.5,4.7 -10.5,10.5 0,5.8 4.7,10.5 10.5,10.5 5.8,0 10.5,-4.7 10.5,-10.5 0,-5.8 -4.7,-10.5 -10.5,-10.5l0 0zm3.29 11l-4.54 4.54c-0.13,0.13 -0.31,0.21 -0.49,0.21 -0.39,0 -0.7,-0.32 -0.7,-0.7 0,-0.19 0.07,-0.37 0.2,-0.5l4.05 -4.05 -4.05 -4.05c-0.13,-0.13 -0.2,-0.31 -0.2,-0.49 0,-0.39 0.31,-0.7 0.7,-0.7 0.18,0 0.36,0.07 0.49,0.2l4.54 4.54c0.13,0.13 0.2,0.31 0.2,0.5 0,0.19 -0.07,0.37 -0.2,0.5l0 0z" />
+                                </svg>
+                            </div>
+
+                            <span class="mobile__advantage-text">
+                                Option congue nihil imperdiet doming id quod mazim placerat facer;
+                            </span>
+                        </li>
+
+                        <li class="mobile__advantage">
+                            <div class="mobile__advantage-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path
+                                        d="M10.5 0c-5.8,0 -10.5,4.7 -10.5,10.5 0,5.8 4.7,10.5 10.5,10.5 5.8,0 10.5,-4.7 10.5,-10.5 0,-5.8 -4.7,-10.5 -10.5,-10.5l0 0zm3.29 11l-4.54 4.54c-0.13,0.13 -0.31,0.21 -0.49,0.21 -0.39,0 -0.7,-0.32 -0.7,-0.7 0,-0.19 0.07,-0.37 0.2,-0.5l4.05 -4.05 -4.05 -4.05c-0.13,-0.13 -0.2,-0.31 -0.2,-0.49 0,-0.39 0.31,-0.7 0.7,-0.7 0.18,0 0.36,0.07 0.49,0.2l4.54 4.54c0.13,0.13 0.2,0.31 0.2,0.5 0,0.19 -0.07,0.37 -0.2,0.5l0 0z" />
+                                </svg>
+                            </div>
+
+                            <span class="mobile__advantage-text">
+                                Eodem modo typi, qui nunc nobis videntur parum futurum;
+                            </span>
+                        </li>
+
+                        <li class="mobile__advantage">
+                            <div class="mobile__advantage-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path
+                                        d="M10.5 0c-5.8,0 -10.5,4.7 -10.5,10.5 0,5.8 4.7,10.5 10.5,10.5 5.8,0 10.5,-4.7 10.5,-10.5 0,-5.8 -4.7,-10.5 -10.5,-10.5l0 0zm3.29 11l-4.54 4.54c-0.13,0.13 -0.31,0.21 -0.49,0.21 -0.39,0 -0.7,-0.32 -0.7,-0.7 0,-0.19 0.07,-0.37 0.2,-0.5l4.05 -4.05 -4.05 -4.05c-0.13,-0.13 -0.2,-0.31 -0.2,-0.49 0,-0.39 0.31,-0.7 0.7,-0.7 0.18,0 0.36,0.07 0.49,0.2l4.54 4.54c0.13,0.13 0.2,0.31 0.2,0.5 0,0.19 -0.07,0.37 -0.2,0.5l0 0z" />
+                                </svg>
+                            </div>
+
+                            <span class="mobile__advantage-text">
+                                Investigationes demonstraverunt lectores
+                            </span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="counters" id="counters">
+            <div class="container container--vertical-padding">
+                <ul class="counters__list">
+                    <li class="counters__item">
+                        <div class="counters__icon">
+                            <svg class="counters__svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44"
+                                preserveAspectRatio="xMidYMid meet">
+                                <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                    d="M19.937,30.250 C25.625,30.250 30.250,24.621 30.250,17.703 C30.250,10.784 25.625,5.156 19.937,5.156 C17.124,5.156 14.498,6.502 12.543,8.944 C10.660,11.298 9.624,14.408 9.625,17.703 C9.625,24.622 14.250,30.250 19.937,30.250 ZM19.937,7.906 C24.107,7.906 27.500,12.300 27.500,17.703 C27.500,23.106 24.107,27.500 19.937,27.500 C15.768,27.500 12.375,23.106 12.372,17.703 C12.372,12.300 15.765,7.906 19.937,7.906 ZM28.598,28.875 C27.838,28.875 27.223,29.490 27.223,30.250 C27.223,31.010 27.838,31.625 28.598,31.625 C33.299,31.625 37.125,35.450 37.125,40.153 C37.125,40.755 36.631,41.250 36.024,41.250 L3.848,41.250 C3.243,41.250 2.750,40.758 2.750,40.153 C2.750,35.450 6.574,31.625 11.274,31.625 C12.034,31.625 12.649,31.010 12.649,30.250 C12.649,29.490 12.034,28.875 11.274,28.875 C5.057,28.875 -0.000,33.934 -0.000,40.153 C-0.000,42.274 1.727,43.1000 3.848,43.1000 L36.024,43.1000 C38.147,43.1000 39.875,42.274 39.875,40.153 C39.875,33.934 34.815,28.875 28.598,28.875 ZM20.943,3.629 C21.927,3.045 22.976,2.751 24.062,2.751 C28.232,2.751 31.625,7.146 31.625,12.547 C31.625,13.516 31.518,14.466 31.305,15.375 C31.131,16.114 31.590,16.854 32.329,17.027 C32.435,17.054 32.539,17.064 32.644,17.064 C33.268,17.064 33.833,16.636 33.982,16.004 C34.241,14.889 34.375,13.726 34.375,12.547 C34.375,5.629 29.750,-0.000 24.062,-0.000 C22.499,-0.000 20.938,0.435 19.544,1.261 C18.889,1.647 18.674,2.491 19.060,3.144 C19.447,3.798 20.292,4.015 20.943,3.629 ZM32.1000,23.375 C32.240,23.375 31.625,23.990 31.625,24.750 C31.625,25.510 32.240,26.125 32.1000,26.125 C37.701,26.125 41.250,30.043 41.250,34.743 C41.250,34.899 41.220,35.053 41.156,35.191 C40.848,35.887 41.161,36.698 41.854,37.006 C42.034,37.087 42.225,37.125 42.413,37.125 C42.939,37.125 43.441,36.819 43.670,36.308 C43.888,35.814 43.1000,35.288 43.1000,34.740 C43.1000,28.527 39.217,23.375 32.1000,23.375 Z" />
+                            </svg>
+                        </div>
+
+                        <div class="counters__info">
+                            <p class="counters__number">3587</p>
+                            <p class="counters__name">Satisfied Clients</p>
+                        </div>
+
+                        <hr class="counters__divider">
+                    </li>
+
+                    <li class="counters__item">
+                        <div class="counters__icon">
+                            <svg class="counters__svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 44">
+                                <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                    d="M46.043,42.749 C46.043,43.440 45.491,43.1000 44.809,43.1000 L1.234,43.1000 C0.553,43.1000 -0.000,43.440 -0.000,42.749 C-0.000,42.058 0.553,41.498 1.234,41.498 L44.809,41.498 C45.491,41.498 46.043,42.058 46.043,42.749 ZM21.769,22.213 C22.007,22.438 22.309,22.549 22.611,22.549 C22.941,22.549 23.270,22.416 23.513,22.152 C23.978,21.647 23.951,20.855 23.453,20.384 C21.337,18.382 21.790,14.314 23.608,12.014 C26.075,8.894 26.618,3.331 23.453,0.337 C22.955,-0.134 22.174,-0.107 21.709,0.398 C21.244,0.904 21.271,1.695 21.769,2.166 C23.670,3.964 23.627,7.989 21.682,10.450 C20.404,12.067 19.640,14.234 19.586,16.396 C19.526,18.759 20.302,20.825 21.769,22.213 ZM47.1000,19.614 L47.1000,22.014 C47.1000,25.455 45.239,28.253 41.846,28.253 L39.091,28.253 C37.221,33.524 32.240,37.304 26.405,37.304 L19.639,37.304 C12.208,37.304 6.163,31.175 6.163,23.642 L6.163,11.232 C6.163,10.541 6.715,9.981 7.397,9.981 L15.312,9.981 C16.918,7.505 16.847,3.854 15.063,2.166 C14.565,1.695 14.538,0.904 15.003,0.398 C15.467,-0.107 16.248,-0.134 16.747,0.337 C19.911,3.331 19.368,8.894 16.902,12.014 C15.083,14.314 14.630,18.383 16.747,20.384 C17.245,20.855 17.272,21.647 16.807,22.152 C16.342,22.657 15.561,22.684 15.063,22.213 C13.595,20.825 12.820,18.759 12.879,16.396 C12.913,15.049 13.222,13.700 13.760,12.483 L8.630,12.483 L8.630,23.642 C8.630,29.796 13.569,34.802 19.639,34.802 L26.405,34.802 C32.475,34.802 37.413,29.796 37.413,23.642 L37.413,12.483 L28.135,12.483 C27.453,12.483 26.901,11.923 26.901,11.232 C26.901,10.541 27.453,9.981 28.135,9.981 L38.647,9.981 C39.329,9.981 39.881,10.541 39.881,11.232 L39.881,13.375 L41.846,13.375 C45.239,13.375 47.1000,16.174 47.1000,19.614 ZM45.532,19.614 C45.532,17.554 43.878,15.877 41.846,15.877 L39.881,15.877 L39.881,25.751 L41.846,25.751 C43.878,25.751 45.532,24.075 45.532,22.014 L45.532,19.614 Z" />
+                            </svg>
+                        </div>
+
+                        <div class="counters__info">
+                            <p class="counters__number">207</p>
+                            <p class="counters__name">Cups of coffee</p>
+                        </div>
+
+                        <hr class="counters__divider">
+                    </li>
+
+                    <li class="counters__item">
+                        <div class="counters__icon">
+                            <svg class="counters__svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44">
+                                <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                    d="M28.873,23.374 L15.126,23.374 C14.367,23.374 13.751,23.990 13.751,24.748 C13.751,25.508 14.367,26.124 15.126,26.124 L28.873,26.124 C29.632,26.124 30.248,25.508 30.248,24.748 C30.248,23.990 29.632,23.374 28.873,23.374 ZM31.622,15.126 L12.376,15.126 C11.617,15.126 11.001,15.741 11.001,16.501 C11.001,17.259 11.617,17.875 12.376,17.875 L31.622,17.875 C32.382,17.875 32.997,17.259 32.997,16.501 C32.997,15.741 32.382,15.126 31.622,15.126 ZM21.999,0.003 C9.852,0.003 0.003,8.620 0.003,19.250 C0.003,25.325 3.227,30.733 8.252,34.261 L8.252,43.995 L17.887,38.149 C19.221,38.368 20.593,38.496 21.999,38.496 C34.148,38.496 43.995,29.879 43.995,19.250 C43.995,8.620 34.148,0.003 21.999,0.003 ZM21.999,35.747 C20.393,35.747 18.843,35.560 17.353,35.242 L10.880,39.133 L10.967,32.756 C6.005,29.772 2.753,24.839 2.753,19.250 C2.753,10.139 11.370,2.753 21.999,2.753 C32.629,2.753 41.246,10.139 41.246,19.250 C41.246,28.360 32.629,35.747 21.999,35.747 Z" />
+                            </svg>
+                        </div>
+
+                        <div class="counters__info">
+                            <p class="counters__number">2500</p>
+                            <p class="counters__name">Blog posts</p>
+                        </div>
+
+                        <hr class="counters__divider">
+                    </li>
+
+                    <li class="counters__item">
+                        <div class="counters__icon">
+                            <svg class="counters__svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 44 44">
+                                <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                    d="M30.250,-0.000 C29.826,-0.000 29.403,0.026 28.982,0.064 C28.828,0.078 28.676,0.100 28.523,0.121 C28.265,0.152 28.010,0.191 27.755,0.238 C27.567,0.272 27.383,0.311 27.203,0.352 C26.992,0.400 26.783,0.456 26.573,0.514 C26.375,0.569 26.177,0.623 25.983,0.686 C25.805,0.744 25.634,0.813 25.459,0.879 C24.1000,1.051 24.551,1.245 24.116,1.461 C24.030,1.503 23.940,1.542 23.856,1.588 C23.627,1.709 23.407,1.843 23.184,1.976 C23.063,2.050 22.940,2.120 22.819,2.198 C22.604,2.336 22.397,2.483 22.191,2.632 C22.129,2.677 22.063,2.718 21.1000,2.764 C19.623,0.975 16.735,-0.000 13.750,-0.000 C6.168,-0.000 -0.000,6.166 -0.000,13.750 C-0.000,26.195 8.002,37.452 21.406,43.863 C21.594,43.954 21.798,43.1000 21.1000,43.1000 C22.202,43.1000 22.405,43.954 22.594,43.863 C35.997,37.452 43.1000,26.195 43.1000,13.750 C43.1000,6.166 37.831,-0.000 30.250,-0.000 ZM21.1000,41.097 C9.934,35.108 2.750,24.927 2.750,13.750 C2.750,7.684 7.685,2.750 13.750,2.750 C15.969,2.750 18.118,3.434 19.940,4.683 C17.805,7.107 16.500,10.275 16.500,13.750 C16.500,14.509 17.114,15.125 17.875,15.125 C18.636,15.125 19.250,14.509 19.250,13.750 C19.250,10.476 20.696,7.539 22.973,5.523 C23.184,5.335 23.405,5.157 23.627,4.987 C23.678,4.951 23.728,4.912 23.779,4.874 C23.998,4.715 24.222,4.562 24.452,4.420 C24.515,4.380 24.578,4.341 24.643,4.304 C24.864,4.171 25.091,4.046 25.321,3.931 C25.400,3.891 25.482,3.852 25.562,3.814 C25.783,3.710 26.005,3.611 26.232,3.521 C26.332,3.481 26.434,3.445 26.537,3.408 C26.751,3.331 26.965,3.259 27.183,3.196 C27.316,3.158 27.445,3.125 27.578,3.093 C27.775,3.044 27.970,2.993 28.171,2.953 C28.353,2.920 28.537,2.896 28.719,2.869 C28.875,2.846 29.031,2.820 29.189,2.803 C29.538,2.771 29.893,2.750 30.250,2.750 C36.315,2.750 41.250,7.684 41.250,13.750 C41.250,24.927 34.066,35.108 21.1000,41.097 ZM30.250,5.500 C29.490,5.500 28.875,6.116 28.875,6.875 C28.875,7.633 29.490,8.250 30.250,8.250 C33.283,8.250 35.750,10.716 35.750,13.750 C35.750,14.509 36.365,15.125 37.125,15.125 C37.885,15.125 38.500,14.509 38.500,13.750 C38.500,9.200 34.799,5.500 30.250,5.500 Z" />
+                            </svg>
+                        </div>
+
+                        <div class="counters__info">
+                            <p class="counters__number">873</p>
+                            <p class="counters__name">Likes</p>
+                        </div>
+
+                        <hr class="counters__divider">
+                    </li>
+
+                    <li class="counters__item">
+                        <div class="counters__icon">
+                            <svg class="counters__svg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 54 44">
+                                <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                    d="M52.310,40.611 L1.691,40.611 C0.759,40.611 0.003,41.369 0.003,42.304 C0.003,43.237 0.759,43.995 1.691,43.995 L52.310,43.995 C53.242,43.995 53.998,43.237 53.998,42.304 C53.998,41.369 53.242,40.611 52.310,40.611 ZM28.688,6.771 L28.688,3.387 L32.063,3.387 C32.994,3.387 33.750,2.629 33.750,1.695 C33.750,0.761 32.994,0.003 32.063,0.003 L21.939,0.003 C21.007,0.003 20.251,0.761 20.251,1.695 C20.251,2.629 21.007,3.387 21.939,3.387 L25.314,3.387 C25.314,3.387 25.301,6.910 25.314,6.771 C11.194,7.649 0.003,19.463 0.003,33.843 C0.003,35.217 0.003,34.601 0.003,35.535 C0.003,36.469 0.759,37.227 1.691,37.227 L52.310,37.227 C53.242,37.227 53.998,36.469 53.998,35.535 C53.998,34.601 53.998,35.324 53.998,33.843 C53.998,19.463 42.808,7.649 28.688,6.771 ZM3.378,33.843 C3.378,20.761 13.954,10.155 27.001,10.155 C40.048,10.155 50.623,20.761 50.623,33.843 L3.378,33.843 Z" />
+                            </svg>
+                        </div>
+
+                        <div class="counters__info">
+                            <p class="counters__number">900</p>
+                            <p class="counters__name">We launched</p>
+                        </div>
+
+                        <hr class="counters__divider">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="posts" id="posts">
+            <div class="container container--vertical-padding">
+                <h2 class="posts__titile section-title">Recent Posts.</h2>
+
+                <p class="posts__text section-text">
+                    Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam
+                    processus dynamicus, qui sequitur mutationem consuetudium.
+                </p>
+
+                <div class="posts__swiper">
+                    <section class="posts__cards swiper-wrapper">
+                        <div class="posts__card card swiper-slide">
+                            <div class="card__picture">
+                                <img class="card__img" src="./src/img/posts/1.png" alt="">
+
+                                <div class="card__date">
+                                    <p class="card__day">30</p>
+                                    <p class="card__month">Sep.</p>
+                                </div>
+                            </div>
+
+                            <div class="card__content">
+                                <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+
+                                <p class="card__text">
+                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                                </p>
+
+                                <a class="card__link" href="#!">
+                                    <span class="card__link-text">Read More</span>
+                                    <svg class="card__link-icon" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                            d="M0.951,7.815 L4.785,4.348 C4.999,4.156 4.999,3.842 4.785,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.456 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="posts__card card swiper-slide">
+                            <div class="card__picture">
+                                <img class="card__img" src="./src/img/posts/2.png" alt="">
+
+                                <div class="card__date">
+                                    <p class="card__day">30</p>
+                                    <p class="card__month">Sep.</p>
+                                </div>
+                            </div>
+
+                            <div class="card__content">
+                                <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+
+                                <p class="card__text">
+                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                                </p>
+                                <a class="card__link" href="#!">
+                                    <span class="card__link-text">Read More</span>
+                                    <svg class="card__link-icon" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                            d="M0.951,7.815 L4.785,4.348 C4.999,4.156 4.999,3.842 4.785,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.456 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="posts__card card swiper-slide">
+                            <div class="card__picture">
+                                <img class="card__img" src="./src/img/posts/3.png" alt="">
+
+                                <div class="card__date">
+                                    <p class="card__day">30</p>
+                                    <p class="card__month">Sep.</p>
+                                </div>
+                            </div>
+
+                            <div class="card__content">
+                                <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+
+                                <p class="card__text">
+                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                                </p>
+                                <a class="card__link" href="#!">
+                                    <span class="card__link-text">Read More</span>
+                                    <svg class="card__link-icon" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                            d="M0.951,7.815 L4.785,4.348 C4.999,4.156 4.999,3.842 4.785,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.456 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="posts__card card swiper-slide">
+                            <div class="card__picture">
+                                <img class="card__img" src="./src/img/posts/4.png" alt="">
+
+                                <div class="card__date">
+                                    <p class="card__day">30</p>
+                                    <p class="card__month">Sep.</p>
+                                </div>
+                            </div>
+
+                            <div class="card__content">
+                                <h3 class="card__title">Lorem ipsum dolor sit amet</h3>
+
+                                <p class="card__text">
+                                    Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                                </p>
+                                <a class="card__link" href="#!">
+                                    <span class="card__link-text">Read More</span>
+                                    <svg class="card__link-icon" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                            d="M0.951,7.815 L4.785,4.348 C4.999,4.156 4.999,3.842 4.785,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.456 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <div class="posts__buttons">
+
+                        <div class="posts__button posts__button--prev">
+                            <svg class="posts__button-icon posts__button-icon--prev" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22 22">
+                                <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                    d="M7.583,10.434 L12.355,5.661 C12.642,5.375 13.108,5.375 13.395,5.661 C13.682,5.949 13.682,6.416 13.395,6.702 L9.141,10.957 L13.395,15.211 C13.682,15.498 13.682,15.963 13.395,16.251 C13.108,16.538 12.642,16.538 12.355,16.251 L7.583,11.480 C7.438,11.335 7.366,11.145 7.367,10.957 C7.367,10.767 7.438,10.579 7.583,10.434 ZM10.987,0.026 C17.053,0.026 21.972,4.943 21.972,11.011 C21.972,17.076 17.053,21.995 10.987,21.995 C4.921,21.995 0.003,17.076 0.003,11.011 C0.003,4.943 4.921,0.026 10.987,0.026 ZM10.987,20.523 C16.232,20.523 20.501,16.253 20.501,11.011 C20.501,5.765 16.232,1.497 10.987,1.497 C5.743,1.497 1.475,5.765 1.475,11.011 C1.475,16.253 5.743,20.523 10.987,20.523 Z" />
+                            </svg>
+                        </div>
+
+                        <div class="posts__button posts__button--next">
+                            <svg class="posts__button-icon posts__button-icon--next" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                    d="M7.583,10.434 L12.355,5.661 C12.642,5.375 13.108,5.375 13.395,5.661 C13.682,5.949 13.682,6.416 13.395,6.702 L9.141,10.957 L13.395,15.211 C13.682,15.498 13.682,15.963 13.395,16.251 C13.108,16.538 12.642,16.538 12.355,16.251 L7.583,11.480 C7.438,11.335 7.366,11.145 7.367,10.957 C7.367,10.767 7.438,10.579 7.583,10.434 ZM10.987,0.026 C17.053,0.026 21.972,4.943 21.972,11.011 C21.972,17.076 17.053,21.995 10.987,21.995 C4.921,21.995 0.003,17.076 0.003,11.011 C0.003,4.943 4.921,0.026 10.987,0.026 ZM10.987,20.523 C16.232,20.523 20.501,16.253 20.501,11.011 C20.501,5.765 16.232,1.497 10.987,1.497 C5.743,1.497 1.475,5.765 1.475,11.011 C1.475,16.253 5.743,20.523 10.987,20.523 Z" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners" id="partners">
+            <div class="container">
+                <div class="partners__cards">
+                    <div class="partners__item">
+                        <img src="./src/img/partners/logo-01.png" alt="The Barber">
+                    </div>
+                    <div class="partners__item">
+                        <img src="./src/img/partners/logo-02.png" alt="Delicious">
+                    </div>
+                    <div class="partners__item">
+                        <img src="./src/img/partners/logo-03.png" alt="Designers">
+                    </div>
+                    <div class="partners__item">
+                        <img src="./src/img/partners/logo-04.png" alt="Royal">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- About Waxom -->
+                <div class="footer__column footer__about">
+                    <div class="footer__logo logo" href="#!">
+                        <svg class="logo__img" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="56px">
+                            <defs>
+                                <filter id="Filter_0">
+                                    <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut" />
+                                    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                                    <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+                                </filter>
+
+                            </defs>
+                            <g filter="url(#Filter_0)">
+                                <path fill-rule="evenodd" fill="rgb(0, 0, 0)"
+                                    d="M52.873,55.128 L58.125,45.939 L63.377,55.128 L52.873,55.128 ZM46.303,45.172 L56.811,45.172 L51.557,54.359 L46.303,45.172 ZM51.557,34.451 L56.811,43.641 L46.303,43.641 L51.557,34.451 ZM39.738,33.686 L50.243,33.686 L44.990,42.874 L39.738,33.686 ZM44.990,22.967 L50.243,32.154 L39.738,32.154 L44.990,22.967 ZM33.168,22.202 L43.676,22.202 L38.422,31.390 L33.168,22.202 ZM38.422,11.480 L43.676,20.671 L33.168,20.671 L38.422,11.480 ZM26.600,10.713 L37.108,10.713 L31.854,19.905 L26.600,10.713 ZM31.854,-0.006 L37.108,9.184 L26.600,9.184 L31.854,-0.006 ZM20.032,20.671 L25.286,11.480 L30.540,20.671 L20.032,20.671 ZM13.465,32.154 L18.718,22.967 L23.971,32.154 L13.465,32.154 ZM6.897,43.641 L12.151,34.451 L17.404,43.641 L6.897,43.641 ZM0.331,55.128 L5.582,45.939 L10.836,55.128 L0.331,55.128 ZM17.404,45.172 L12.151,54.359 L6.897,45.172 L17.404,45.172 ZM23.971,33.686 L18.718,42.874 L13.465,33.686 L23.971,33.686 ZM30.540,22.202 L25.286,31.390 L20.032,22.202 L30.540,22.202 ZM37.108,55.128 L26.600,55.128 L31.854,45.939 L37.108,55.128 ZM43.676,45.172 L38.422,54.359 L33.168,45.172 L43.676,45.172 ZM50.243,55.128 L39.738,55.128 L44.990,45.939 L50.243,55.128 Z" />
+                            </g>
+                        </svg>
+                        <p class="logo__text">Waxom</p>
+                    </div>
+                    <p class="footer__text">
+                        Lorem ipsum dolor sit amet, consec tetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                        nostrud exerci suscipit lobortis claritatem.
+                    </p>
+                    <a href="#" class="footer__read-more">
+                        Read More
+                        <svg class="footer__arrow" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path fill-rule="evenodd"
+                                d="M0.951,7.815 L4.786,4.348 C4.999,4.155 4.999,3.841 4.786,3.648 L4.765,3.637 L0.951,0.178 C0.737,-0.015 0.388,-0.015 0.174,0.178 L0.170,0.184 C0.068,0.274 0.003,0.398 0.003,0.538 L0.003,7.455 C0.003,7.597 0.071,7.724 0.176,7.814 L0.174,7.815 C0.390,8.008 0.737,8.008 0.951,7.815 Z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="footer__column footer__posts">
+                    <h3 class="footer__title">Recent Posts</h3>
+                    <div class="footer__post">
+                        <time class="footer__date">September 08, 2015</time>
+                        <p class="footer__post-text">Lorem ipsum dolor sit amet, consec tetuer adipiscing elit</p>
+                    </div>
+                    <div class="footer__post">
+                        <time class="footer__date">September 08, 2015</time>
+                        <p class="footer__post-text">Diam nonummy nibh euismod tincid unt ut laoreet dolore magna</p>
+                    </div>
+                    <div class="footer__post">
+                        <time class="footer__date">September 08, 2015</time>
+                        <p class="footer__post-text">Claritas est etiam processus dynamic us, qui sequitur mutationem
+                            per seac ula quarta decima</p>
+                    </div>
+                </div>
+
+                <!-- Twitter Feed -->
+                <div class="footer__column footer__twitter">
+                    <h3 class="footer__title">Our Twitter</h3>
+                    <div class="footer__tweet">
+                        <p class="footer__tweet-text">
+                            <a class="footer__twitter-tag" href="#!">@waxom</a>
+                            Cum soluta nobis eleifend option congue nihil imperdiet doming
+                        </p>
+                        <time class="footer__tweet-time">3 mins ago</time>
+                    </div>
+                    <div class="footer__tweet">
+                        <p class="footer__tweet-text">
+                            Mirum est
+                            <a class="footer__twitter-tag" href="#!">#envato</a>
+                            notare quam littera gothica, quam nunc putamus parum anteposuerit litterarum
+                        </p>
+                        <time class="footer__tweet-time">5 hours ago</time>
+                    </div>
+                    <div class="footer__tweet">
+                        <p class="footer__tweet-text">
+                            Soluta nobis option
+                            <a href="#!" class="footer__tweet-link">bit.ly/1Hniso7</a>
+                        </p>
+                        <time class="footer__tweet-time">20 days ago</time>
+                    </div>
+                </div>
+
+                <!-- Dribbble Widget -->
+                <div class="footer__column footer__dribbble">
+                    <h3 class="footer__title">Dribbble Widget</h3>
+                    <div class="footer__dribbble-grid">
+                        <a href="#!" class="footer__dribbble-item">
+                            <img src="./src/img/footer/dribbble/photo-1.png" alt="Dribbble shot">
+                        </a>
+                        <a href="#!" class="footer__dribbble-item">
+                            <img src="./src/img/footer/dribbble/photo-2.png" alt="Dribbble shot">
+                        </a>
+                        <a href="#!" class="footer__dribbble-item">
+                            <img src="./src/img/footer/dribbble/photo-3.png" alt="Dribbble shot">
+                        </a>
+                        <a href="#!" class="footer__dribbble-item">
+                            <img src="./src/img/footer/dribbble/photo-4.png" alt="Dribbble shot">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-content">
+                    <div class="footer__info">
+                        <p class="footer__copyright">
+                            Copyright © 2015 <span class="footer__copyright-accent">Waxom</span>
+                        </p>
+
+                        <nav class="footer__nav">
+                            <a href="#!" class="footer__nav-link">Privacy Policy</a>
+                            <a href="#!" class="footer__nav-link">FAQ</a>
+                            <a href="#!" class="footer__nav-link">Support</a>
+                        </nav>
+                    </div>
+
+                    <div class="footer__credits">
+                        <p class="footer__credits-text">
+                            Designed by <a href="#!" class="footer__credits-link">ThemeFire</a>
+                        </p>
+                        <p class="footer__credits-text">
+                            Only on <a href="#!" class="footer__credits-link">Envato Market</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключение скрипта SwiperJS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Подключение собственного скрипта -->
+    <script src="./src/js/main.js" type="module"></script> 
+</body>
+
+</html>
