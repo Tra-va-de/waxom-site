@@ -1,16 +1,1 @@
-// Настройка навигации при скролле
-export const initNavigation = () => {
-    const nav = document.querySelector(".nav");
-
-    window.addEventListener('scroll', () => {
-        let scrollDistance = window.scrollY;
-
-        if (scrollDistance > 0) {
-            if (nav.classList.contains('nav--top')) {
-                nav.classList.remove('nav--top');
-            }
-        } else {
-            nav.classList.add('nav--top');
-        }
-    });
-}; 
+let initNavigation=()=>{let t=document.querySelector(".nav");window.addEventListener("scroll",()=>{0<window.scrollY?t.classList.contains("nav--top")&&t.classList.remove("nav--top"):t.classList.add("nav--top")})};export{initNavigation};
