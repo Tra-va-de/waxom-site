@@ -31,7 +31,8 @@ jobs:
       - name: Switch to build branch and clean
         run: |
           git checkout build || git checkout -b build
-          find . -not -path './.git*' -not -path './.github*' -not -name '.' -delete
+          find . -not -path './.git*' -not -name '.' -delete
+          rm -rf .github
 
       - name: Copy files from temporary directory
         run: |
