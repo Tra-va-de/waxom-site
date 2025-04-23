@@ -64,6 +64,8 @@
     &__slide {
         @extend %full-size;
 
+        filter: brightness(0.4) sepia(0.3);
+
         object-fit: cover;
     }
     
