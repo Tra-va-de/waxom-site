@@ -208,5 +208,5 @@ jobs:
           git config user.name "${{ secrets.USER_NAME }}"
           git config user.email "${{ secrets.USER_EMAIL }}"
           git add .
-          git commit -m "Build and deploy to build branch: copy files, update paths, minify HTML and JS" || true
+          git commit -m "Build from main: ${{ github.event.head_commit.message }} (SHA: ${{ github.sha }}) at $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || true
           git push origin build
