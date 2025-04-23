@@ -46,14 +46,6 @@ jobs:
       - name: Clean up temporary directory
         run: rm -rf /tmp/main_files
 
-      - name: Commit copied files
-        run: |
-          git config user.name "${{ secrets.USER_NAME }}"
-          git config user.email "${{ secrets.USER_EMAIL }}"
-          git add .
-          git commit -m "Copy files to build branch" || true
-          git push origin build
-
   update-paths:
     runs-on: ubuntu-latest
     needs: copy-files
@@ -68,14 +60,6 @@ jobs:
         run: |
           sed -i 's/<link rel="stylesheet" href="\.\?\/*\(src\/\|\)css\/style\(.\min\)\?.css">/<link rel="stylesheet" href="style.css">/g' index.html
           sed -i 's/\.\?\/*src\///g' index.html
-
-      - name: Commit updated paths
-        run: |
-          git config user.name "${{ secrets.USER_NAME }}"
-          git config user.email "${{ secrets.USER_EMAIL }}"
-          git add index.html
-          git commit -m "Update HTML paths" || true
-          git push origin build
 
   minify-html:
     runs-on: ubuntu-latest
@@ -97,14 +81,6 @@ jobs:
 
       - name: Minify HTML
         run: html-minifier --collapse-whitespace --remove-comments index.html -o index.html
-
-      - name: Commit minified HTML
-        run: |
-          git config user.name "${{ secrets.USER_NAME }}"
-          git config user.email "${{ secrets.USER_EMAIL }}"
-          git add index.html
-          git commit -m "Minify HTML" || true
-          git push origin build
 
   minify-js:
     runs-on: ubuntu-latest
@@ -133,10 +109,10 @@ jobs:
         run: |
           find js/ -type f -name "*.js" -exec sh -c 'uglifyjs "{}" --mangle --compress > "{}.tmp" && mv "{}.tmp" "{}"' \;
 
-      - name: Commit minified JS
+      - name: Commit all changes
         run: |
           git config user.name "${{ secrets.USER_NAME }}"
           git config user.email "${{ secrets.USER_EMAIL }}"
-          git add js/
-          git commit -m "Minify JS" || true
+          git add .
+          git commit -m "Build and deploy to build branch: copy files, update paths, minify HTML and JS" || true
           git push origin build
