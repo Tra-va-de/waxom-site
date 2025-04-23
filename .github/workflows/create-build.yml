@@ -1,0 +1,138 @@
+name: Build and Deploy to Build Branch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to checkout (default: main)'
+        required: false
+        default: 'main'
+
+jobs:
+  copy-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+
+      - name: Copy files from main to temporary directory
+        run: |
+          mkdir -p /tmp/main_files
+          cp index.html /tmp/main_files
+          cp -r src /tmp/main_files
+
+      - name: Switch to build branch and clean
+        run: |
+          git checkout build || git checkout -b build
+          find . -not -path './.git*' -not -name '.' -delete
+
+      - name: Copy files from temporary directory
+        run: |
+          cp /tmp/main_files/index.html .
+          cp -r /tmp/main_files/src/img .
+          cp -r /tmp/main_files/src/fonts .
+          cp -r /tmp/main_files/src/video .
+          cp -r /tmp/main_files/src/js .
+          cp /tmp/main_files/src/css/style.min.css style.css || cp /tmp/main_files/src/css/style.css style.css
+
+      - name: Clean up temporary directory
+        run: rm -rf /tmp/main_files
+
+      - name: Commit copied files
+        run: |
+          git config user.name "${{ secrets.USER_NAME }}"
+          git config user.email "${{ secrets.USER_EMAIL }}"
+          git add .
+          git commit -m "Copy files to build branch" || true
+          git push origin build
+
+  update-paths:
+    runs-on: ubuntu-latest
+    needs: copy-files
+    steps:
+      - name: Checkout build branch
+        uses: actions/checkout@v3
+        with:
+          ref: build
+          token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+
+      - name: Update HTML paths
+        run: |
+          sed -i 's/<link rel="stylesheet" href="\.\?src\/css\/style\(.\min\)\?.css">/<link rel="stylesheet" href="style.css">/g' index.html
+          sed -i 's/\.\?src\///g' index.html
+
+      - name: Commit updated paths
+        run: |
+          git config user.name "${{ secrets.USER_NAME }}"
+          git config user.email "${{ secrets.USER_EMAIL }}"
+          git add index.html
+          git commit -m "Update HTML paths" || true
+          git push origin build
+
+  minify-html:
+    runs-on: ubuntu-latest
+    needs: update-paths
+    steps:
+      - name: Checkout build branch
+        uses: actions/checkout@v3
+        with:
+          ref: build
+          token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install html-minifier
+        run: npm install html-minifier -g
+
+      - name: Minify HTML
+        run: html-minifier --collapse-whitespace --remove-comments index.html -o index.html
+
+      - name: Commit minified HTML
+        run: |
+          git config user.name "${{ secrets.USER_NAME }}"
+          git config user.email "${{ secrets.USER_EMAIL }}"
+          git add index.html
+          git commit -m "Minify HTML" || true
+          git push origin build
+
+  minify-js:
+    runs-on: ubuntu-latest
+    needs: minify-html
+    steps:
+      - name: Checkout build branch
+        uses: actions/checkout@v3
+        with:
+          ref: build
+          token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install uglify-js
+        run: npm install uglify-js -g
+
+      - name: Minify JS
+        run: |
+          for file in js/**/*.js; do
+            uglifyjs "$file" --mangle --compress > "$file.tmp" && mv "$file.tmp" "$file"
+          done
+
+      - name: Commit minified JS
+        run: |
+          git config user.name "${{ secrets.USER_NAME }}"
+          git config user.email "${{ secrets.USER_EMAIL }}"
+          git add js/
+          git commit -m "Minify JS" || true
+          git push origin build
