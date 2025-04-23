@@ -748,6 +748,7 @@ body {
 }
 .services .card__line {
   background-color: #f1eee9;
+  border: none;
   width: 70px;
   height: 3px;
   -webkit-transition: background-color 250ms ease-in-out;
