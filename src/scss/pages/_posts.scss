@@ -53,7 +53,7 @@
         }
 
         &__day {
-            background-color: #363636;
+            background-color: $gray-600;
 
             font-size: 24px;
 
@@ -63,7 +63,7 @@
         }
 
         &__month {
-            background-color: #252525;
+            background-color: $background-darker;
 
             font-size: 12px;
             font-family: $additional-font;
@@ -132,11 +132,11 @@
             }
 
             .card__month {
-                background-color: #a48d72;
+                background-color: $brown-200;
             }
 
             .card__content {
-                background-color: #362f2d;
+                background-color: $background-dark;
             }
 
             .card__title {

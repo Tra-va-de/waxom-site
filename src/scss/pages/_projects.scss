@@ -49,9 +49,9 @@
         border-radius: 3px;
 
         background-color: white;
-        border: 1px solid #ebebeb;
+        border: 1px solid $border-light;
 
-        color: $text-second-color !important;
+        color: $text-muted !important;
 
         transition: background-color .3s ease-in-out,
             filter .3s ease-in-out,
@@ -109,10 +109,10 @@
             }
 
             .card__info {
-                background-color: #362f2d;
+                background-color: $background-dark;
 
                 &::before {
-                    border-bottom-color: #362f2d;
+                    border-bottom-color: $background-dark;
                 }
             }
 
@@ -194,7 +194,7 @@
 
                 border-left: 14px solid transparent;
                 border-right: 14px solid transparent;
-                border-bottom: 10px solid $second-accent-color;
+                border-bottom: 10px solid $background-dark;
 
                 position: absolute;
                 bottom: 100%;

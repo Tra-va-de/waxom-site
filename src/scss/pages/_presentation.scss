@@ -41,7 +41,7 @@
         box-sizing: content-box;
         padding: 15px;
 
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: rgba($black, 0.25);
         border-radius: 50%
     }
 
@@ -89,7 +89,7 @@
         max-width: 100%;
         margin: 0 auto;
 
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: rgba($black, 0.25);
 
         opacity: 0;
 

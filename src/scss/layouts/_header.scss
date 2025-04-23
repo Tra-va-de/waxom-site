@@ -1,7 +1,7 @@
 .header {
     @include section-position;
 
-    background: #9c9b98;
+    background: $gray-250;
 
     height: 100dvh;
 
@@ -94,7 +94,7 @@
 
                 &-active {
                     background: transparent;
-                    border: 2px solid #c1b19f;
+                    border: 2px solid $brown-100;
                 }
             }
         }
@@ -118,13 +118,13 @@
             height: 75px;
 
             polyline {
-                stroke: #9c9b98;
+                stroke: $gray-250;
 
                 transition: stroke 200ms ease-in-out;
             }
 
             &:hover polyline {
-                stroke: #90867a;
+                stroke: $gray-300;
             }
         }
 

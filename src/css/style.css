@@ -393,7 +393,7 @@ body {
 }
 .header .swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
   background: transparent;
-  border: 2px solid #c1b19f;
+  border: 2px solid #c7b299;
 }
 .header__slides-buttons {
   position: absolute;
@@ -418,7 +418,7 @@ body {
 }
 .header__slides-buttons .swiper-button-prev:hover polyline,
 .header__slides-buttons .swiper-button-next:hover polyline {
-  stroke: #90867a;
+  stroke: #736357;
 }
 .header__slides-buttons .swiper-button-next {
   rotate: 180deg;
@@ -798,7 +798,7 @@ body {
   line-height: 1.2;
   -moz-text-align-last: left;
        text-align-last: left;
-  color: #615855;
+  color: #736357;
   width: auto;
 }
 
@@ -961,7 +961,7 @@ body {
   height: 0;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-bottom: 10px solid #fbfaf8;
+  border-bottom: 10px solid #362f2d;
   position: absolute;
   bottom: 100%;
   left: 20px;
@@ -1324,7 +1324,7 @@ body {
   background-color: #c7b299;
 }
 .posts .card:hover .card__month {
-  background-color: #a48d72;
+  background-color: #998675;
 }
 .posts .card:hover .card__content {
   background-color: #362f2d;

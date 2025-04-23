@@ -14,11 +14,20 @@ $container-padding: 15px;
 // Base colors
 $white: #FFFFFF;
 $black: #000000;
+
+$gray-50: #f1eee9;
+$gray-150: #ebebeb;
 $gray-100: #fbfaf8;
 $gray-200: #8c8c8c;
+$gray-250: #9c9b98; 
 $gray-300: #736357;
+$gray-350: #d1d1d1;
 $gray-400: #555555;
+$gray-600: #363636;
+$gray-700: #362f2d;
+$gray-800: #252525;
 $gray-900: #0a0a0a; // Почти черный цвет, поэтому лучше использовать gray-900
+
 $brown-100: #c7b299;
 $brown-200: #998675;
 $blue: #00bff3;
@@ -37,6 +46,11 @@ $button-second-color: $gray-300;
 $link-color: $blue;
 
 $footer-bg: $gray-900;
+
+$border-light: $gray-150;
+$text-muted: $gray-200;
+$background-dark: $gray-700;
+$background-darker: $gray-800;
 
 // Gradients
 $section-gradient: linear-gradient(45deg, rgb(33, 27, 25) 0%, rgb(78, 52, 39) 100%);
@@ -73,4 +87,4 @@ $spacing-xl: $spacing-unit * 5;
 // Z-index
 $z-index-header: 1000;
 $z-index-modal: 2000;
-$z-index-tooltip: 3000; 
+$z-index-tooltip: 3000;
