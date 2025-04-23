@@ -45,6 +45,11 @@ jobs:
       - name: Clean up temporary directory
         run: rm -rf /tmp/main_files
 
+      - name: Debug index.html before upload
+        run: |
+          echo "index.html before upload in copy-files:"
+          cat index.html
+
       - name: Upload copied files as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -67,10 +72,22 @@ jobs:
           name: build-files
           path: .
 
+      - name: Debug index.html before update
+        run: |
+          echo "index.html before update in update-paths:"
+          cat index.html
+
       - name: Update HTML and CSS paths
         run: |
-          sed -i 's/<link rel="stylesheet" href="\.?\/*src\/css\/style\(.\min\)\?.css"\|<link rel="stylesheet" href="\.?\/*css\/style\(.\min\)\?.css">/<link rel="stylesheet" href="style.css">/g' index.html
-          sed -i 's/\.\?\/*src\///g' index.html
+          # Обновляем тег <link> с более гибким регулярным выражением
+          sed -i 's|<link[^>]*rel=["'\'']stylesheet["'\''][^>]*href=["'\'']\.\?\/*src\/css\/style\(.\min\)\?.css["'\'']|<link rel="stylesheet" href="style.css"|' index.html
+          sed -i 's|<link[^>]*rel=["'\'']stylesheet["'\''][^>]*href=["'\'']\.\?\/*css\/style\(.\min\)\?.css["'\'']|<link rel="stylesheet" href="style.css"|' index.html
+          # Удаляем префикс src/ из всех путей
+          sed -i 's|\.\?\/*src\/||g' index.html
+          # Отладка после обновления HTML
+          echo "index.html after update in update-paths:"
+          cat index.html
+          # Обновляем пути в CSS
           echo "Before updating CSS paths:"
           cat style.css
           sed -i 's/@import'\''\.\.\/\([^'\'']*\)'\''/@import '\''\1'\''/g' style.css
@@ -104,6 +121,11 @@ jobs:
           name: build-files
           path: .
 
+      - name: Debug index.html before minification
+        run: |
+          echo "index.html before minification in minify-html:"
+          cat index.html
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -114,6 +136,11 @@ jobs:
 
       - name: Minify HTML
         run: html-minifier --collapse-whitespace --remove-comments index.html -o index.html
+
+      - name: Debug index.html after minification
+        run: |
+          echo "index.html after minification in minify-html:"
+          cat index.html
 
       - name: Upload minified HTML as artifact
         uses: actions/upload-artifact@v4
@@ -148,6 +175,11 @@ jobs:
         with:
           name: minified-html
           path: .
+
+      - name: Debug final index.html before commit
+        run: |
+          echo "Final index.html before commit in minify-js:"
+          cat index.html
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
