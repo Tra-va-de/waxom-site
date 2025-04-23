@@ -16,10 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: main
-          fetch-depth: 0
           token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
 
       - name: Copy files from main to temporary directory
@@ -47,7 +46,7 @@ jobs:
         run: rm -rf /tmp/main_files
 
       - name: Upload copied files as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-files
           path: |
@@ -63,9 +62,10 @@ jobs:
     needs: copy-files
     steps:
       - name: Download copied files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-files
+          path: .
 
       - name: Update HTML and CSS paths
         run: |
@@ -81,7 +81,7 @@ jobs:
           cat style.css
 
       - name: Upload updated files as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: updated-files
           path: |
@@ -93,17 +93,19 @@ jobs:
     needs: update-paths
     steps:
       - name: Download updated files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: updated-files
+          path: .
 
       - name: Download copied files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-files
+          path: .
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
@@ -114,7 +116,7 @@ jobs:
         run: html-minifier --collapse-whitespace --remove-comments index.html -o index.html
 
       - name: Upload minified HTML as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: minified-html
           path: index.html
@@ -124,28 +126,31 @@ jobs:
     needs: minify-html
     steps:
       - name: Checkout build branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: build
           token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
 
       - name: Download copied files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-files
+          path: .
 
       - name: Download updated files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: updated-files
+          path: .
 
       - name: Download minified HTML
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: minified-html
+          path: .
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
