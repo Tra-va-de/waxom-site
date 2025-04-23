@@ -56,10 +56,11 @@ jobs:
           ref: build
           token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
 
-      - name: Update HTML paths
+      - name: Update HTML and CSS paths
         run: |
           sed -i 's/<link rel="stylesheet" href="\.\?\/*\(src\/\|\)css\/style\(.\min\)\?.css">/<link rel="stylesheet" href="style.css">/g' index.html
           sed -i 's/\.\?\/*src\///g' index.html
+          sed -i 's/url("\.\.\/\(img\/[^"]*\)"/url("\1"/g' style.css
 
   minify-html:
     runs-on: ubuntu-latest
