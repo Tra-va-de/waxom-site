@@ -109,16 +109,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: update-paths
     steps:
-      - name: Download updated files
-        uses: actions/download-artifact@v4
-        with:
-          name: updated-files
-          path: .
-
       - name: Download copied files
         uses: actions/download-artifact@v4
         with:
           name: build-files
+          path: .
+
+      - name: Download updated files
+        uses: actions/download-artifact@v4
+        with:
+          name: updated-files
           path: .
 
       - name: Debug index.html before minification
