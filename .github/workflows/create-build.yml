@@ -46,15 +46,26 @@ jobs:
       - name: Clean up temporary directory
         run: rm -rf /tmp/main_files
 
+      - name: Upload copied files as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-files
+          path: |
+            index.html
+            img/
+            fonts/
+            video/
+            js/
+            style.css
+
   update-paths:
     runs-on: ubuntu-latest
     needs: copy-files
     steps:
-      - name: Checkout build branch
-        uses: actions/checkout@v3
+      - name: Download copied files
+        uses: actions/download-artifact@v3
         with:
-          ref: build
-          token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+          name: build-files
 
       - name: Update HTML and CSS paths
         run: |
@@ -69,15 +80,27 @@ jobs:
           echo "After updating url() paths:"
           cat style.css
 
+      - name: Upload updated files as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: updated-files
+          path: |
+            index.html
+            style.css
+
   minify-html:
     runs-on: ubuntu-latest
     needs: update-paths
     steps:
-      - name: Checkout build branch
-        uses: actions/checkout@v3
+      - name: Download updated files
+        uses: actions/download-artifact@v3
         with:
-          ref: build
-          token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+          name: updated-files
+
+      - name: Download copied files
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -90,6 +113,12 @@ jobs:
       - name: Minify HTML
         run: html-minifier --collapse-whitespace --remove-comments index.html -o index.html
 
+      - name: Upload minified HTML as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: minified-html
+          path: index.html
+
   minify-js:
     runs-on: ubuntu-latest
     needs: minify-html
@@ -99,6 +128,21 @@ jobs:
         with:
           ref: build
           token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+
+      - name: Download copied files
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+
+      - name: Download updated files
+        uses: actions/download-artifact@v3
+        with:
+          name: updated-files
+
+      - name: Download minified HTML
+        uses: actions/download-artifact@v3
+        with:
+          name: minified-html
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -117,7 +161,12 @@ jobs:
         run: |
           find js/ -type f -name "*.js" -exec sh -c 'uglifyjs "{}" --mangle --compress > "{}.tmp" && mv "{}.tmp" "{}"' \;
 
-      - name: Commit all changes
+      - name: Debug final style.css before commit
+        run: |
+          echo "Final style.css before commit:"
+          cat style.css
+
+      - name: Commit and push all changes
         run: |
           git config user.name "${{ secrets.USER_NAME }}"
           git config user.email "${{ secrets.USER_EMAIL }}"
