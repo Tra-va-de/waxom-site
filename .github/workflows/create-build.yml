@@ -31,7 +31,7 @@ jobs:
       - name: Switch to build branch and clean
         run: |
           git checkout build || git checkout -b build
-          find . -not -path './.git*' -not -name '.' -delete
+          find . -not -path './.git*' -not -path './.github*' -not -name '.' -delete
 
       - name: Copy files from temporary directory
         run: |
@@ -65,8 +65,8 @@ jobs:
 
       - name: Update HTML paths
         run: |
-          sed -i 's/<link rel="stylesheet" href="\.\?src\/css\/style\(.\min\)\?.css">/<link rel="stylesheet" href="style.css">/g' index.html
-          sed -i 's/\.\?src\///g' index.html
+          sed -i 's/<link rel="stylesheet" href="\.\?\/*\(src\/\|\)css\/style\(.\min\)\?.css">/<link rel="stylesheet" href="style.css">/g' index.html
+          sed -i 's/\.\?\/*src\///g' index.html
 
       - name: Commit updated paths
         run: |
@@ -123,11 +123,14 @@ jobs:
       - name: Install uglify-js
         run: npm install uglify-js -g
 
+      - name: Debug JS files before minification
+        run: |
+          echo "JS files found:"
+          find js/ -type f -name "*.js"
+
       - name: Minify JS
         run: |
-          for file in js/**/*.js; do
-            uglifyjs "$file" --mangle --compress > "$file.tmp" && mv "$file.tmp" "$file"
-          done
+          find js/ -type f -name "*.js" -exec sh -c 'uglifyjs "{}" --mangle --compress > "{}.tmp" && mv "{}.tmp" "{}"' \;
 
       - name: Commit minified JS
         run: |
