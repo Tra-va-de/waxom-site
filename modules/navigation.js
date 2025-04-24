@@ -1,1 +1,0 @@
-let initNavigation=()=>{let t=document.querySelector(".nav");window.addEventListener("scroll",()=>{0<window.scrollY?t.classList.contains("nav--top")&&t.classList.remove("nav--top"):t.classList.add("nav--top")})};export{initNavigation};
