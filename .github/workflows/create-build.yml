@@ -83,18 +83,18 @@ jobs:
             fonts/
             video/
 
-      - name: Upload CSS files as artifact
+      - name: Upload initial CSS files as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: css-files
+          name: initial-css-files
           path: |
             style.min.css
             style.css
 
-      - name: Upload HTML files as artifact
+      - name: Upload initial HTML files as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: html-files
+          name: initial-html-files
           path: |
             index.html
 
@@ -109,16 +109,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: copy-files
     steps:
-      - name: Download HTML files
+      - name: Download initial HTML files
         uses: actions/download-artifact@v4
         with:
-          name: html-files
+          name: initial-html-files
           path: .
 
-      - name: Download CSS files
+      - name: Download initial CSS files
         uses: actions/download-artifact@v4
         with:
-          name: css-files
+          name: initial-css-files
           path: .
 
       - name: Debug index.html before update
@@ -160,14 +160,14 @@ jobs:
       - name: Upload updated HTML files as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: html-files
+          name: updated-html-files
           path: |
             index.html
 
       - name: Upload updated CSS files as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: css-files
+          name: updated-css-files
           path: |
             style.min.css
             style.css
@@ -176,10 +176,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: update-paths
     steps:
-      - name: Download CSS files
+      - name: Download updated CSS files
         uses: actions/download-artifact@v4
         with:
-          name: css-files
+          name: updated-css-files
           path: .
 
       - name: Set up Node.js for CSS minification
@@ -221,10 +221,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: update-paths
     steps:
-      - name: Download HTML files
+      - name: Download updated HTML files
         uses: actions/download-artifact@v4
         with:
-          name: html-files
+          name: updated-html-files
           path: .
 
       - name: Debug index.html before minification
