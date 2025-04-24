@@ -108,7 +108,7 @@ jobs:
         with:
           name: js-files
           path: |
-            js/
+            js
 
   update-paths:
     runs-on: ubuntu-latest
