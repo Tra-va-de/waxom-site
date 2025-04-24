@@ -21,96 +21,61 @@ jobs:
           ref: main
           token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
 
-      - name: Copy files from main to temporary directory
+      - name: Prepare files for artifacts
         run: |
-          mkdir -p /tmp/main_files
-          cp index.html /tmp/main_files 2>/dev/null || true
-          mkdir -p /tmp/main_files/src
-          # Копируем только нужные директории
-          cp -r src/img /tmp/main_files/src/ 2>/dev/null || true
-          cp -r src/fonts /tmp/main_files/src/ 2>/dev/null || true
-          cp -r src/video /tmp/main_files/src/ 2>/dev/null || true
-          cp -r src/js /tmp/main_files/src/ 2>/dev/null || true
-          cp -r src/css /tmp/main_files/src/ 2>/dev/null || true
-
-      - name: Switch to build branch and clean
-        run: |
-          git checkout build || git checkout -b build
-          find . -not -path './.git*' -not -name '.' -delete
-          rm -rf .github
-
-      - name: Copy files to working directory
-        run: |
-          cp /tmp/main_files/index.html . 2>/dev/null || true
-          cp -r /tmp/main_files/src/img . 2>/dev/null || true
-          cp -r /tmp/main_files/src/fonts . 2>/dev/null || true
-          cp -r /tmp/main_files/src/video . 2>/dev/null || true
-          cp -r /tmp/main_files/src/js . 2>/dev/null || true
-          # Проверяем, есть ли style.min.css, иначе копируем style.css
-          if cp /tmp/main_files/src/css/style.min.css . 2>/dev/null; then
-            echo "Copied style.min.css"
-          elif cp /tmp/main_files/src/css/style.css . 2>/dev/null; then
-            echo "style.min.css not found, copied style.css"
+          # Подготавливаем директории для артефактов
+          mkdir -p artifacts/unchanged-files
+          mkdir -p artifacts/js
+          # Копируем неизменяемые файлы
+          cp -r src/img artifacts/unchanged-files/ 2>/dev/null || true
+          cp -r src/fonts artifacts/unchanged-files/ 2>/dev/null || true
+          cp -r src/video artifacts/unchanged-files/ 2>/dev/null || true
+          # Копируем JS файлы
+          cp -r src/js artifacts/js/ 2>/dev/null || true
+          # Копируем HTML и CSS файлы
+          cp index.html artifacts/ 2>/dev/null || true
+          if [ -f src/css/style.min.css ]; then
+            cp src/css/style.min.css artifacts/ 2>/dev/null || true
+          elif [ -f src/css/style.css ]; then
+            cp src/css/style.css artifacts/ 2>/dev/null || true
           else
             echo "Neither style.min.css nor style.css found, failing"
             exit 1
           fi
 
-      - name: Clean up temporary directory
-        run: rm -rf /tmp/main_files
-
-      - name: Debug index.html before upload
+      - name: Debug files before upload
         run: |
-          echo "index.html before upload in copy-files:"
-          cat index.html 2>/dev/null || echo "index.html not found"
-
-      - name: Debug CSS file before upload
-        run: |
-          if [ -f style.min.css ]; then
-            echo "style.min.css before upload in copy-files:"
-            cat style.min.css
-          elif [ -f style.css ]; then
-            echo "style.css before upload in copy-files:"
-            cat style.css
-          fi
-
-      - name: Debug JS files before upload
-        run: |
-          echo "JS files found before upload in copy-files:"
-          find js/ -type f -name "*.js" 2>/dev/null || echo "No JS files found"
+          echo "Files in artifacts directory:"
+          find artifacts -type f -o -type d
 
       - name: Archive JS folder
-        run: tar -czf js-folder.tar.gz js
-        
+        run: tar -czf artifacts/js-folder.tar.gz -C artifacts/js .
+
       - name: Upload unchanged files as artifact
         uses: actions/upload-artifact@v4
         with:
           name: unchanged-files
-          path: |
-            img/
-            fonts/
-            video/
+          path: artifacts/unchanged-files/
 
       - name: Upload initial CSS files as artifact
         uses: actions/upload-artifact@v4
         with:
           name: initial-css-files
           path: |
-            style.min.css
-            style.css
+            artifacts/style.min.css
+            artifacts/style.css
 
       - name: Upload initial HTML files as artifact
         uses: actions/upload-artifact@v4
         with:
           name: initial-html-files
-          path: |
-            index.html
-            
+          path: artifacts/index.html
+
       - name: Upload JS archive as artifact
         uses: actions/upload-artifact@v4
         with:
           name: js-files
-          path: js-folder.tar.gz
+          path: artifacts/js-folder.tar.gz
 
   update-paths:
     runs-on: ubuntu-latest
@@ -168,8 +133,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: updated-html-files
-          path: |
-            index.html
+          path: index.html
 
       - name: Upload updated CSS files as artifact
         uses: actions/upload-artifact@v4
@@ -221,8 +185,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: minified-css
-          path: |
-            style.css
+          path: style.css
 
   minify-html:
     runs-on: ubuntu-latest
@@ -259,8 +222,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: minified-html
-          path: |
-            index.html
+          path: index.html
 
   minify-js:
     runs-on: ubuntu-latest
@@ -272,8 +234,8 @@ jobs:
           name: js-files
           path: .
 
-      - name: Extract archive
-        run: tar -xzf js-folder.tar.gz -C .
+      - name: Extract and delete archive
+        run: tar -xzf js-folder.tar.gz -C . && rm -f js-folder.tar.gz
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -296,12 +258,14 @@ jobs:
             echo "js/ directory not found, skipping minification"
           fi
 
+      - name: Archive JS folder
+        run: tar -czf js-folder.tar.gz js
+
       - name: Upload minified JS as artifact
         uses: actions/upload-artifact@v4
         with:
           name: minified-js
-          path: |
-            js/
+          path: js-folder.tar.gz
 
   deploy:
     runs-on: ubuntu-latest
@@ -312,6 +276,20 @@ jobs:
         with:
           ref: build
           token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+
+      - name: Clean build branch
+        run: |
+          # Переключаемся на ветку build, если она существует, или создаём новую
+          git checkout build || git checkout -b build
+          # Подтягиваем изменения из origin/build, если ветка существует
+          git pull origin build || true
+          # Очищаем содержимое ветки
+          git rm -r --ignore-unmatch '*'
+          rm -rf .github
+          find . -not -path './.git*' -not -name '.' -exec rm -rf {} \;
+          # Убедимся, что рабочая директория пуста (кроме .git)
+          echo "Working directory after cleanup:"
+          ls -la
 
       - name: Download minified HTML
         uses: actions/download-artifact@v4
@@ -336,6 +314,9 @@ jobs:
         with:
           name: unchanged-files
           path: .
+
+      - name: Extract and delete JS archive
+        run: tar -xzf js-folder.tar.gz -C . && rm -f js-folder.tar.gz
 
       - name: Debug final files before commit
         run: |
