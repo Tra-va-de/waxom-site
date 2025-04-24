@@ -40,7 +40,15 @@ jobs:
           cp -r /tmp/main_files/src/fonts .
           cp -r /tmp/main_files/src/video .
           cp -r /tmp/main_files/src/js .
-          cp /tmp/main_files/src/css/style.min.css style.css || cp /tmp/main_files/src/css/style.css style.css
+          # Проверяем, есть ли style.min.css, иначе копируем style.css
+          if cp /tmp/main_files/src/css/style.min.css . 2>/dev/null; then
+            echo "Copied style.min.css"
+          elif cp /tmp/main_files/src/css/style.css . 2>/dev/null; then
+            echo "style.min.css not found, copied style.css"
+          else
+            echo "Neither style.min.css nor style.css found, failing"
+            exit 1
+          fi
 
       - name: Clean up temporary directory
         run: rm -rf /tmp/main_files
@@ -49,6 +57,16 @@ jobs:
         run: |
           echo "index.html before upload in copy-files:"
           cat index.html
+
+      - name: Debug CSS file before upload
+        run: |
+          if [ -f style.min.css ]; then
+            echo "style.min.css before upload in copy-files:"
+            cat style.min.css
+          elif [ -f style.css ]; then
+            echo "style.css before upload in copy-files:"
+            cat style.css
+          fi
 
       - name: Upload copied files as artifact
         uses: actions/upload-artifact@v4
@@ -60,6 +78,7 @@ jobs:
             fonts/
             video/
             js/
+            style.min.css
             style.css
 
   update-paths:
@@ -79,23 +98,34 @@ jobs:
 
       - name: Update HTML and CSS paths
         run: |
-          # Обновляем тег <link> с более гибким регулярным выражением
+          # Определяем, какой CSS файл обновлять
+          if [ -f style.min.css ]; then
+            CSS_FILE="style.min.css"
+            echo "Updating paths in style.min.css"
+          elif [ -f style.css ]; then
+            CSS_FILE="style.css"
+            echo "Updating paths in style.css"
+          else
+            echo "Neither style.min.css nor style.css found, failing"
+            exit 1
+          fi
+          # Обновляем тег <link> в index.html
           sed -i 's|<link[^>]*rel=["'\'']stylesheet["'\''][^>]*href=["'\'']\.\?\/*src\/css\/style\(.\min\)\?.css["'\'']|<link rel="stylesheet" href="style.css"|' index.html
           sed -i 's|<link[^>]*rel=["'\'']stylesheet["'\''][^>]*href=["'\'']\.\?\/*css\/style\(.\min\)\?.css["'\'']|<link rel="stylesheet" href="style.css"|' index.html
-          # Удаляем префикс src/ из всех путей
+          # Удаляем префикс src/ из всех путей в index.html
           sed -i 's|\.\?\/*src\/||g' index.html
           # Отладка после обновления HTML
           echo "index.html after update in update-paths:"
           cat index.html
           # Обновляем пути в CSS
-          echo "Before updating CSS paths:"
-          cat style.css
-          sed -i 's/@import'\''\.\.\/\([^'\'']*\)'\''/@import '\''\1'\''/g' style.css
-          echo "After updating @import paths:"
-          cat style.css
-          sed -i 's/url("\.\.\/\([^"]*\)"/url("\1"/g' style.css
-          echo "After updating url() paths:"
-          cat style.css
+          echo "Before updating CSS paths in $CSS_FILE:"
+          cat "$CSS_FILE"
+          sed -i 's/@import'\''\.\.\/\([^'\'']*\)'\''/@import '\''\1'\''/g' "$CSS_FILE"
+          echo "After updating @import paths in $CSS_FILE:"
+          cat "$CSS_FILE"
+          sed -i 's/url("\.\.\/\([^"]*\)"/url("\1"/g' "$CSS_FILE"
+          echo "After updating url() paths in $CSS_FILE:"
+          cat "$CSS_FILE"
 
       - name: Upload updated files as artifact
         uses: actions/upload-artifact@v4
@@ -103,18 +133,58 @@ jobs:
           name: updated-files
           path: |
             index.html
+            style.min.css
+            style.css
+
+  minify-css:
+    runs-on: ubuntu-latest
+    needs: update-paths
+    steps:
+      - name: Download updated files
+        uses: actions/download-artifact@v4
+        with:
+          name: updated-files
+          path: .
+
+      - name: Set up Node.js for CSS minification
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: Install uglifycss
+        run: npm install uglifycss -g
+
+      - name: Minify or rename CSS
+        run: |
+          if [ -f style.min.css ]; then
+            echo "Found style.min.css, renaming to style.css"
+            mv style.min.css style.css
+          elif [ -f style.css ]; then
+            echo "Found style.css, minifying"
+            uglifycss style.css > style.min.css
+            mv style.min.css style.css
+            echo "Minified style.css"
+          else
+            echo "Neither style.min.css nor style.css found, failing"
+            exit 1
+          fi
+
+      - name: Debug style.css after minification
+        run: |
+          echo "style.css after minification in minify-css:"
+          cat style.css
+
+      - name: Upload minified CSS as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: minified-css
+          path: |
             style.css
 
   minify-html:
     runs-on: ubuntu-latest
     needs: update-paths
     steps:
-      - name: Download copied files
-        uses: actions/download-artifact@v4
-        with:
-          name: build-files
-          path: .
-
       - name: Download updated files
         uses: actions/download-artifact@v4
         with:
@@ -150,36 +220,13 @@ jobs:
 
   minify-js:
     runs-on: ubuntu-latest
-    needs: minify-html
+    needs: update-paths
     steps:
-      - name: Checkout build branch
-        uses: actions/checkout@v4
-        with:
-          ref: build
-          token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
-
       - name: Download copied files
         uses: actions/download-artifact@v4
         with:
           name: build-files
           path: .
-
-      - name: Download updated files
-        uses: actions/download-artifact@v4
-        with:
-          name: updated-files
-          path: .
-
-      - name: Download minified HTML
-        uses: actions/download-artifact@v4
-        with:
-          name: minified-html
-          path: .
-
-      - name: Debug final index.html before commit
-        run: |
-          echo "Final index.html before commit in minify-js:"
-          cat index.html
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -198,10 +245,55 @@ jobs:
         run: |
           find js/ -type f -name "*.js" -exec sh -c 'uglifyjs "{}" --mangle --compress > "{}.tmp" && mv "{}.tmp" "{}"' \;
 
-      - name: Debug final style.css before commit
+      - name: Upload minified JS as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: minified-js
+          path: |
+            js/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [minify-css, minify-html, minify-js]
+    steps:
+      - name: Checkout build branch
+        uses: actions/checkout@v4
+        with:
+          ref: build
+          token: ${{ secrets.WAXOM_SITE_WORKFLOW }}
+
+      - name: Download minified HTML
+        uses: actions/download-artifact@v4
+        with:
+          name: minified-html
+          path: .
+
+      - name: Download minified CSS
+        uses: actions/download-artifact@v4
+        with:
+          name: minified-css
+          path: .
+
+      - name: Download minified JS
+        uses: actions/download-artifact@v4
+        with:
+          name: minified-js
+          path: .
+
+      - name: Download copied files
+        uses: actions/download-artifact@v4
+        with:
+          name: build-files
+          path: .
+
+      - name: Debug final files before commit
         run: |
-          echo "Final style.css before commit:"
+          echo "Final index.html before commit in deploy:"
+          cat index.html
+          echo "Final style.css before commit in deploy:"
           cat style.css
+          echo "JS files after minification:"
+          find js/ -type f -name "*.js"
 
       - name: Commit and push all changes
         run: |
