@@ -24,8 +24,14 @@ jobs:
       - name: Copy files from main to temporary directory
         run: |
           mkdir -p /tmp/main_files
-          cp index.html /tmp/main_files
-          cp -r src /tmp/main_files
+          cp index.html /tmp/main_files 2>/dev/null || true
+          mkdir -p /tmp/main_files/src
+          # Копируем только нужные директории
+          cp -r src/img /tmp/main_files/src/ 2>/dev/null || true
+          cp -r src/fonts /tmp/main_files/src/ 2>/dev/null || true
+          cp -r src/video /tmp/main_files/src/ 2>/dev/null || true
+          cp -r src/js /tmp/main_files/src/ 2>/dev/null || true
+          cp -r src/css /tmp/main_files/src/ 2>/dev/null || true
 
       - name: Switch to build branch and clean
         run: |
@@ -33,13 +39,13 @@ jobs:
           find . -not -path './.git*' -not -name '.' -delete
           rm -rf .github
 
-      - name: Copy files from temporary directory
+      - name: Copy files to working directory
         run: |
-          cp /tmp/main_files/index.html .
-          cp -r /tmp/main_files/src/img .
-          cp -r /tmp/main_files/src/fonts .
-          cp -r /tmp/main_files/src/video .
-          cp -r /tmp/main_files/src/js .
+          cp /tmp/main_files/index.html . 2>/dev/null || true
+          cp -r /tmp/main_files/src/img . 2>/dev/null || true
+          cp -r /tmp/main_files/src/fonts . 2>/dev/null || true
+          cp -r /tmp/main_files/src/video . 2>/dev/null || true
+          cp -r /tmp/main_files/src/js . 2>/dev/null || true
           # Проверяем, есть ли style.min.css, иначе копируем style.css
           if cp /tmp/main_files/src/css/style.min.css . 2>/dev/null; then
             echo "Copied style.min.css"
@@ -56,7 +62,7 @@ jobs:
       - name: Debug index.html before upload
         run: |
           echo "index.html before upload in copy-files:"
-          cat index.html
+          cat index.html 2>/dev/null || echo "index.html not found"
 
       - name: Debug CSS file before upload
         run: |
@@ -68,33 +74,57 @@ jobs:
             cat style.css
           fi
 
-      - name: Upload copied files as artifact
+      - name: Upload unchanged files as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-files
+          name: unchanged-files
           path: |
-            index.html
             img/
             fonts/
             video/
-            js/
+
+      - name: Upload CSS files as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: css-files
+          path: |
             style.min.css
             style.css
+
+      - name: Upload HTML files as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-files
+          path: |
+            index.html
+
+      - name: Upload JS files as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: js-files
+          path: |
+            js/
 
   update-paths:
     runs-on: ubuntu-latest
     needs: copy-files
     steps:
-      - name: Download copied files
+      - name: Download HTML files
         uses: actions/download-artifact@v4
         with:
-          name: build-files
+          name: html-files
+          path: .
+
+      - name: Download CSS files
+        uses: actions/download-artifact@v4
+        with:
+          name: css-files
           path: .
 
       - name: Debug index.html before update
         run: |
           echo "index.html before update in update-paths:"
-          cat index.html
+          cat index.html 2>/dev/null || echo "index.html not found"
 
       - name: Update HTML and CSS paths
         run: |
@@ -116,7 +146,7 @@ jobs:
           sed -i 's|\.\?\/*src\/||g' index.html
           # Отладка после обновления HTML
           echo "index.html after update in update-paths:"
-          cat index.html
+          cat index.html 2>/dev/null || echo "index.html not found"
           # Обновляем пути в CSS
           echo "Before updating CSS paths in $CSS_FILE:"
           cat "$CSS_FILE"
@@ -127,12 +157,18 @@ jobs:
           echo "After updating url() paths in $CSS_FILE:"
           cat "$CSS_FILE"
 
-      - name: Upload updated files as artifact
+      - name: Upload updated HTML files as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: updated-files
+          name: html-files
           path: |
             index.html
+
+      - name: Upload updated CSS files as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: css-files
+          path: |
             style.min.css
             style.css
 
@@ -140,10 +176,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: update-paths
     steps:
-      - name: Download updated files
+      - name: Download CSS files
         uses: actions/download-artifact@v4
         with:
-          name: updated-files
+          name: css-files
           path: .
 
       - name: Set up Node.js for CSS minification
@@ -185,16 +221,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: update-paths
     steps:
-      - name: Download updated files
+      - name: Download HTML files
         uses: actions/download-artifact@v4
         with:
-          name: updated-files
+          name: html-files
           path: .
 
       - name: Debug index.html before minification
         run: |
           echo "index.html before minification in minify-html:"
-          cat index.html
+          cat index.html 2>/dev/null || echo "index.html not found"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -210,7 +246,7 @@ jobs:
       - name: Debug index.html after minification
         run: |
           echo "index.html after minification in minify-html:"
-          cat index.html
+          cat index.html 2>/dev/null || echo "index.html not found"
 
       - name: Upload minified HTML as artifact
         uses: actions/upload-artifact@v4
@@ -222,10 +258,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: update-paths
     steps:
-      - name: Download copied files
+      - name: Download JS files
         uses: actions/download-artifact@v4
         with:
-          name: build-files
+          name: js-files
           path: .
 
       - name: Set up Node.js
@@ -239,11 +275,15 @@ jobs:
       - name: Debug JS files before minification
         run: |
           echo "JS files found:"
-          find js/ -type f -name "*.js"
+          find js/ -type f -name "*.js" 2>/dev/null || echo "No JS files found"
 
       - name: Minify JS
         run: |
-          find js/ -type f -name "*.js" -exec sh -c 'uglifyjs "{}" --mangle --compress > "{}.tmp" && mv "{}.tmp" "{}"' \;
+          if [ -d js ]; then
+            find js/ -type f -name "*.js" -exec sh -c 'uglifyjs "{}" --mangle --compress > "{}.tmp" && mv "{}.tmp" "{}"' \;
+          else
+            echo "js/ directory not found, skipping minification"
+          fi
 
       - name: Upload minified JS as artifact
         uses: actions/upload-artifact@v4
@@ -280,20 +320,20 @@ jobs:
           name: minified-js
           path: .
 
-      - name: Download copied files
+      - name: Download unchanged files
         uses: actions/download-artifact@v4
         with:
-          name: build-files
+          name: unchanged-files
           path: .
 
       - name: Debug final files before commit
         run: |
           echo "Final index.html before commit in deploy:"
-          cat index.html
+          cat index.html 2>/dev/null || echo "index.html not found"
           echo "Final style.css before commit in deploy:"
-          cat style.css
+          cat style.css 2>/dev/null || echo "style.css not found"
           echo "JS files after minification:"
-          find js/ -type f -name "*.js"
+          find js/ -type f -name "*.js" 2>/dev/null || echo "No JS files found"
 
       - name: Commit and push all changes
         run: |
