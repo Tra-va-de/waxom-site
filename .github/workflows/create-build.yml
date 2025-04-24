@@ -74,6 +74,11 @@ jobs:
             cat style.css
           fi
 
+      - name: Debug JS files before upload
+        run: |
+          echo "JS files found before upload in copy-files:"
+          find js/ -type f -name "*.js" 2>/dev/null || echo "No JS files found"
+
       - name: Upload unchanged files as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -252,7 +257,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: minified-html
-          path: index.html
+          path: |
+            index.html
 
   minify-js:
     runs-on: ubuntu-latest
@@ -309,7 +315,7 @@ jobs:
           path: .
 
       - name: Download minified CSS
-        uses: actions/download-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: minified-css
           path: .
