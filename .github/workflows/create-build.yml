@@ -107,8 +107,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: js-files
-          path: |
-            js
+          path: js
 
   update-paths:
     runs-on: ubuntu-latest
