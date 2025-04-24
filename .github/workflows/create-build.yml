@@ -79,6 +79,9 @@ jobs:
           echo "JS files found before upload in copy-files:"
           find js/ -type f -name "*.js" 2>/dev/null || echo "No JS files found"
 
+      - name: Archive JS folder
+        run: tar -czf js-folder.tar.gz js
+        
       - name: Upload unchanged files as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -102,14 +105,12 @@ jobs:
           name: initial-html-files
           path: |
             index.html
-
-      - name: Upload JS files as artifact
+            
+      - name: Upload JS archive as artifact
         uses: actions/upload-artifact@v4
         with:
           name: js-files
-          path: |
-            js/**/*
-            js/
+          path: js-folder.tar.gz
 
   update-paths:
     runs-on: ubuntu-latest
@@ -270,6 +271,9 @@ jobs:
         with:
           name: js-files
           path: .
+
+      - name: Extract archive
+        run: tar -xzf js-folder.tar.gz -C .
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
